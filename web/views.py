@@ -10,3 +10,6 @@ def home(request):
 
 def about(request):
     return render(request,'web/about.html')
+
+def event(request):
+    return render(request,'web/event.html')

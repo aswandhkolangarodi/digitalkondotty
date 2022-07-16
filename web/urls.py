@@ -6,5 +6,6 @@ app_name='web'
 urlpatterns = [
     path('base',views.base,name="base"),
     path('',views.home,name="home"),
-    path('about/',views.about,name="about")
+    path('about/',views.about,name="about"),
+    path('event/',views.event,name="event")
 ]

@@ -49,19 +49,19 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li> <a href="#" >Home <span class="caret"></span></a>
+                        <li> <a href="{% url 'web:home' %}" >Home <span class="caret"></span></a>
                             <!-- <ul class="dropdown-menu">
                                 <li><a href="index-2.html">Default Home Page</a></li>
                                 <li><a href="home-two.html">Home Page Two</a></li>
                                 <li><a href="home-three.html">Home Page Three</a></li>
                             </ul> -->
                         </li>
-                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                        <li class="dropdown"> <a href="{% url 'web:about' %}" 
                                 aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <!-- <ul class="dropdown-menu">
                                 <li><a href="aboutus.html">About One</a></li>
                                 <li><a href="aboutus-two.html">About Two</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">Departments <span class="caret"></span></a>

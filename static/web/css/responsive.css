@@ -216,7 +216,7 @@ ul.reports a {
 .cs-txt .countdown-section {
 	width: 140px;
 	height: 140px;
-	border: 6px solid #f73859;
+	border: 6px solid #f99f00;
 	display: inline-block;
 	border-radius: 100%;
 	margin: 0 5px;
@@ -508,7 +508,7 @@ li.header-weather {
 .cs-txt .countdown-section {
 	width: 140px;
 	height: 140px;
-	border: 6px solid #f73859;
+	border: 6px solid #f99f00;
 	display: inline-block;
 	border-radius: 100%;
 	margin: 0 5px;
@@ -678,7 +678,7 @@ li.header-weather {
 	font-size: 13px;
 }
 .h3-navbar .navbar-toggle {
-	background: #12498a;
+	background: #f99f00;
 }
 .h3-navbar .navbar-toggle .icon-bar {
 	background: #fff;

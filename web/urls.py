@@ -10,8 +10,10 @@ urlpatterns = [
 
     path('news/',views.news,name="news"),
     path('news-single/',views.singleNews,name="news-single"),
-    path('explore/',views.explore,name="explore")
-    
-    path('event/',views.event,name="event")
+    path('explore/',views.explore,name="explore"),
+
+    path('event/',views.event,name="event"),
+    path('contact/',views.contact,name="contact")
+
 
 ]

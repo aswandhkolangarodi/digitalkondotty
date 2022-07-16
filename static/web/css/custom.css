@@ -2883,7 +2883,7 @@ li.header-weather {
 /*********** Mayor Msg with Video Start ***********/
     
 .Mayor-video-msg {
-	background: url(../images/npatt.png);
+	background: url(../images/1-p.png);
 	padding: 40px 0 60px;
 }
 .Mayor-welcome h5 {
@@ -2936,7 +2936,7 @@ li.header-weather {
 }
 .title-style-3 h3 {
 	margin: 0 0 15px;
-	color: #333333;
+	color: #ffffff;
 	font-weight: 700;
 }
 .title-style-3 p {
@@ -3392,7 +3392,7 @@ ul.rep-comments {
 
 
 .depart-info {
-	background: url(../images/deprtinfobg.jpg) no-repeat bottom;
+	background: url(../images/1-p.png) no-repeat bottom;
 	background-size: cover;
 }
 .depart-info.p80 {

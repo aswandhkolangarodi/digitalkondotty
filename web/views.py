@@ -24,3 +24,5 @@ def explore(request):
 def event(request):
     return render(request,'web/event.html')
 
+def contact(request):
+    return render(request,'web/contact.html')

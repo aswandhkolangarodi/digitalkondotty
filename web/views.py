@@ -11,6 +11,7 @@ def home(request):
 def about(request):
     return render(request,'web/about.html')
 
+
 def news(request):
     return render(request,'web/news.html')
 
@@ -19,3 +20,7 @@ def singleNews(request):
 
 def explore(request):
     return render(request,'web/explore.html')
+
+def event(request):
+    return render(request,'web/event.html')
+

@@ -1,6 +1,10 @@
 /******** + ========== + Blue BackgroundColor Start + ========== + ********/
 .city-tour strong,
+<<<<<<< HEAD
 
+=======
+ul.reports,
+>>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 .h3-navbar .donate-btn a:hover,
 .wrap-404 a.back,
 .wrap-404 button.btn,
@@ -17,7 +21,11 @@
 .title-style-2 a:hover,
 .city-highlights .owl-carousel .owl-nav button.owl- next:hover,
 .city-highlights .owl-carousel .owl-nav button.owl-prev:hover,
+<<<<<<< HEAD
 
+=======
+.emergency-info,
+>>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 .stay-connected input[type="submit"],
 .h2-Mayor-msg .Mayor-txt a:hover,
 .team-heading a:hover,
@@ -47,6 +55,7 @@ li.form-submit button,
 .login-account,
 .register-account input[type="submit"],
 .home3.emergency-numbers .newsletter-form button {
+<<<<<<< HEAD
 	background-color: #ffffff;
 	color: #000000;
 }
@@ -54,8 +63,11 @@ li.form-submit button,
 	background-color: #002f3d;
 }
 ul.reports{
+=======
+>>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 	background-color: #002f3d;
 }
+
 /******** + ========== + Blue Text Color Start + ========== + ********/
 
 .sub-menu a,
@@ -169,9 +181,14 @@ ul.team-social:after,
 .site-pagination .pagination>li>span:focus,
 .site-pagination .pagination>li>span:hover,
 .serbox-cap .rm:hover {
+<<<<<<< HEAD
 	background-color: #f99f00;
 	color: black;
 	border: 2px solid #f99f00;
+=======
+	background-color: #f8a106;
+	color: rgb(255, 255, 255);
+>>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 }
 
 /******** + ========== + Pink Text Color Start + ========== + ********/

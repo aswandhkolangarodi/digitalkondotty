@@ -379,7 +379,7 @@ header {
 /***************  Sub Header Start  *****************/
 
 .subheader {
-	background: url(../images/subheaderbg.jpg) no-repeat;
+	background: url(../images/banner1.jpg) no-repeat;
 	background-size: cover;
 	padding: 110px 0;
 }
@@ -469,11 +469,17 @@ header {
 	line-height: 34px;
 	margin: 0 0 30px;
 }
+<<<<<<< HEAD
 
 .slide-content-box a,
 .slider-caption a {
 	background: #f99f00;
 	color: #fff;
+=======
+.slide-content-box a, .slider-caption a {
+	background: #f99f00;
+	color: #1d1d1d;
+>>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -1861,7 +1867,11 @@ ul.team-social a:hover {
 /*** + === + Mayor MSG Start + === + ***/
 
 .h2-Mayor-msg {
+<<<<<<< HEAD
 	background: url(../images/flagbg.jpg) right top no-repeat #f99f00;
+=======
+
+>>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 	padding: 30px;
 	border-radius: 3px;
 	width: 100%;
@@ -1895,7 +1905,7 @@ ul.team-social a:hover {
 }
 
 .h2-Mayor-msg .Mayor-txt p {
-	color: #fff;
+	color: #030303;
 	font-size: 20px;
 	line-height: 28px;
 	font-style: italic;
@@ -2121,7 +2131,7 @@ ul.team-social a:hover {
 }
 
 .newsletter-form {
-	background: url(../images/em-formbg.jpg) no-repeat bottom #144b8d;
+	background: url(../images/subscribebg.jpg) no-repeat bottom ;
 	border-radius: 3px;
 	padding: 30px 30px 35px;
 }
@@ -3278,7 +3288,7 @@ li.header-weather {
 .h3-navbar .nav>li>a:hover,
 .h3-navbar .navbar .navbar-nav>li>a:hover {
 	background: none;
-	color: #f54337;
+	color: #f99f00;
 }
 
 .h3-navbar .navbar .navbar-nav>li>a:hover:after {
@@ -3505,7 +3515,7 @@ li.header-weather {
 
 .title-style-3 h3 {
 	margin: 0 0 15px;
-	color: #ffffff;
+	color: #f99f00;
 	font-weight: 700;
 }
 
@@ -4162,7 +4172,7 @@ ul.reports a i {
 /*********** Recent Events Start ***********/
 
 .recent-events {
-	background: url(../images/eventsbg.jpg) no-repeat;
+	background: url(../images/banner2.jpg) no-repeat;
 	background-size: cover;
 }
 
@@ -4631,7 +4641,7 @@ ul.reports a i {
 /*********** Explore Community End ***********/
 
 .home3.emergency-numbers .newsletter-form {
-	background: url(../images/h3newsletterbg.jpg) no-repeat bottom #d94249;
+	background: url(../images/subscribebg.jpg) no-repeat bottom ;
 }
 
 .home3.emergency-numbers .newsletter-form button {
@@ -4709,7 +4719,7 @@ ul.reports a i {
 }
 
 .events-wrapper .event-post-full .event-post-content {
-	width: 457px;
+	width: 65%;
 }
 
 .events-wrapper .event-post-full {

@@ -843,7 +843,7 @@ ul.funds li strong, .event-counter .countdown-period {
 	line-height: 26px;
 }
 .slider-caption p, .slider-caption a, .h3-logo-row ul.quick-links, .header-contact, .h3-slider-caption a, .h3-slider-caption p {
-	display: none;
+	float: left;
 }
 .city-tour img {
 	width: 100%;

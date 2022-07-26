@@ -13,7 +13,8 @@ urlpatterns = [
     path('explore/',views.explore,name="explore"),
 
     path('event/',views.event,name="event"),
-    path('contact/',views.contact,name="contact")
+    path('contact/',views.contact,name="contact"),
+    path('departments/',views.departments,name="departments")
 
 
 ]

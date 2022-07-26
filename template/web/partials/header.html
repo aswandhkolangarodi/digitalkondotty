@@ -14,16 +14,15 @@
     <div class="h3-logo-row wf100">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-6 col-sm-6">
                     <div class="h3-logo"> <a href=""><img class="logoimage" src="{% static 'web/images/DK .svg' %}"
                                 alt=""></a></div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                    <ul class="header-contact">
+                <div class="col-md-6  col-sm-6">
+                    <ul class="header-contact ">
                         <li><span>Toll Free:</span> <strong>0800 12345</strong></li>
-                        <li class="city-exp"> <i class="fas fa-street-view"></i> <strong>City<br>
-                                Explore</strong> </li>
+                        <li class="city-exp"> <a href="{% url 'web:explore' %}" style="color: black;"><i class="fas fa-street-view"></i> <strong>City<br>
+                                Explore</strong> </a></li>
                         <li class="header-weather"> <i class="fas fa-cloud-sun"></i> 24°C / 75°F </li>
                     </ul>
                 </div>
@@ -56,13 +55,8 @@
                                 <li><a href="aboutus-two.html">About Two</a></li>
                             </ul> -->
                         </li>
-                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-haspopup="true" aria-expanded="false">Departments 
-                            <ul class="dropdown-menu">
-                                <li><a href="departments.html">Departments One</a></li>
-                                <li><a href="department-two.html">Departments Two</a></li>
-                                <li><a href="department-single.html">Departments Details</a></li>
-                            </ul>
+                        <li> <a href="{% url 'web:departments' %}">Department
+
                         </li>
                         <li> <a href="{% url 'web:news' %}">News 
                         </li>
@@ -74,7 +68,6 @@
 
                         
                         </li>
-                        <li><a href="{% url 'web:explore' %}">Explore City</a></li>
                         <!-- <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
                             <ul class="dropdown-menu">

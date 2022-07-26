@@ -1,10 +1,5 @@
 /******** + ========== + Blue BackgroundColor Start + ========== + ********/
 .city-tour strong,
-<<<<<<< HEAD
-
-=======
-ul.reports,
->>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 .h3-navbar .donate-btn a:hover,
 .wrap-404 a.back,
 .wrap-404 button.btn,
@@ -21,28 +16,20 @@ ul.reports,
 .title-style-2 a:hover,
 .city-highlights .owl-carousel .owl-nav button.owl- next:hover,
 .city-highlights .owl-carousel .owl-nav button.owl-prev:hover,
-<<<<<<< HEAD
-
-=======
-.emergency-info,
->>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 .stay-connected input[type="submit"],
 .h2-Mayor-msg .Mayor-txt a:hover,
 .team-heading a:hover,
 .h3-slider-caption a:hover,
-.news-details blockquote,
 .single-post-tags a:hover,
 .post-comments-form input[type="submit"],
 .deprt-icon-box a.rm:hover,
 a.jobs-link:hover,
-.community-links-style-two li a img,
 .widget .upcoming-events li:hover .edate,
 .contact-team,
 .newsletter-style2 button,
 .post-comments-form input[type="submit"],
 .service-page-bottom .newsletter-form button,
 .city-updates li.more-news a:hover,
-.department-links li a,
 .contact-form input[type="submit"],
 .event-date-share .edate,
 .event-gallery .eg-thumb a:hover,
@@ -55,17 +42,24 @@ li.form-submit button,
 .login-account,
 .register-account input[type="submit"],
 .home3.emergency-numbers .newsletter-form button {
-<<<<<<< HEAD
 	background-color: #ffffff;
-	color: #000000;
+	color: black;
+	border: 1px solid rgb(235, 176, 13);
 }
-.emergency-info{
+.news-details blockquote{
 	background-color: #002f3d;
+    color: black;
 }
-ul.reports{
-=======
->>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
+.department-links li a{
+	background-color: #ffffff;
+	color: black;
+}
+
+ul.reports,
+.community-links-style-two li a img ,.emergency-info{
 	background-color: #002f3d;
+	color: black;
+	
 }
 
 /******** + ========== + Blue Text Color Start + ========== + ********/
@@ -76,13 +70,16 @@ ul.reports{
 .community-box h6,
 .twitter-widget a.reply-tw:hover,
 ul.post-time a i,
-.add-box i,
 .event-counter a,
 .event-content ul.emeta li strong,
 .event-gallery .eg-thumb a,
 .campaign-thumb a,
 ul.participants li strong i {
 	color: #40407e;
+}
+
+.add-box i{
+	color: #002f3d;
 }
 
 /******** + ========== + Blue Border Color Start + ========== + ********/
@@ -121,7 +118,6 @@ span.ecat,
 .community-box a.see-more:hover,
 .team-heading a,
 .home3.footer,
-.become-vol,
 .cross-btn:hover,
 .h3-navbar .donate-btn a,
 .h3-slider-caption a,
@@ -166,7 +162,6 @@ li.form-submit button:hover,
 ul.team-social:after,
 .call2action a,
 .h2-Mayor-msg,
-.newsletter-form button,
 .community-box a.see-more:hover,
 .community-box:hover a.see-more,
 .ecat.c1,
@@ -181,19 +176,23 @@ ul.team-social:after,
 .site-pagination .pagination>li>span:focus,
 .site-pagination .pagination>li>span:hover,
 .serbox-cap .rm:hover {
-<<<<<<< HEAD
-	background-color: #f99f00;
-	color: black;
-	border: 2px solid #f99f00;
-=======
 	background-color: #f8a106;
-	color: rgb(255, 255, 255);
->>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
+	color: rgb(0, 0, 0);
+	border: 1px solid #f8a106;
+	
+}
+.newsletter-form button{
+	background-color: #ffffff;
+	color: rgb(0, 0, 0);
+
 }
 
+
+.become-vol{
+	border: 2px solid #002f3d;
+}
 /******** + ========== + Pink Text Color Start + ========== + ********/
 .lb-ser-box li:hover h6,
-.footer-social a:hover,
 .some-facts ul li:hover strong,
 .team-box .team-txt strong,
 .team-box:hover .team-txt h5,
@@ -227,7 +226,6 @@ ul.check-list i,
 .query ul li strong,
 .fact-box strong,
 .e-numbers .info-num strong,
-.e-numbers .em-box strong.em-num,
 .btn-group.share-post button.dropdown-toggle:hover,
 .news-meta .post-user,
 .hc-box .hc-box-cap li:after,
@@ -265,6 +263,12 @@ ul.check-list i,
 .login-account input[type="submit"]:hover,
 .register-account a {
 	color: #f99f00;
+}
+.footer-social a:hover{
+	color: #144b8b;
+}
+.e-numbers .em-box strong.em-num{
+	color: #002f3d;
 }
 
 /******** + ========== + Pink Border Color Start + ========== + ********/

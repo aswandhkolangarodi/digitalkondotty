@@ -469,17 +469,9 @@ header {
 	line-height: 34px;
 	margin: 0 0 30px;
 }
-<<<<<<< HEAD
-
-.slide-content-box a,
-.slider-caption a {
-	background: #f99f00;
-	color: #fff;
-=======
 .slide-content-box a, .slider-caption a {
 	background: #f99f00;
 	color: #1d1d1d;
->>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 	font-family: 'Montserrat', sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -493,8 +485,8 @@ header {
 
 .slide-content-box a:hover,
 .slider-caption a:hover {
-	background: #40407e;
-	color: #fff;
+	background: #d6b10b;
+	color: #000000;
 }
 
 .main-slider .owl-dots {
@@ -1264,7 +1256,7 @@ header {
 }
 
 .c4 {
-	background: #d32f2f;
+	background: #f99f00;
 }
 
 .c5 {
@@ -1527,8 +1519,8 @@ a.see-more:hover {
 }
 
 .fact-box:hover {
-	background: rgba(247, 56, 89, .7);
-	border-color: #f99f00;
+	background: #f99f00;
+
 }
 
 .fact-box:hover span,
@@ -1830,7 +1822,7 @@ ul.team-social a:hover {
 }
 
 .footer p.copyr a:hover {
-	color: #fff;
+	color: #144b8b;
 }
 
 .footer-social {
@@ -1867,11 +1859,6 @@ ul.team-social a:hover {
 /*** + === + Mayor MSG Start + === + ***/
 
 .h2-Mayor-msg {
-<<<<<<< HEAD
-	background: url(../images/flagbg.jpg) right top no-repeat #f99f00;
-=======
-
->>>>>>> 227e4e6c222f74ee15f06720037d1c861a985b49
 	padding: 30px;
 	border-radius: 3px;
 	width: 100%;
@@ -2131,7 +2118,7 @@ ul.team-social a:hover {
 }
 
 .newsletter-form {
-	background: url(../images/subscribebg.jpg) no-repeat bottom ;
+	background: url(../images/subscribebg.jpg) no-repeat bottom #f8a106;
 	border-radius: 3px;
 	padding: 30px 30px 35px;
 }
@@ -2176,7 +2163,6 @@ ul.team-social a:hover {
 
 .newsletter-form button:hover {
 	background: #fff;
-	color: #f43758;
 }
 
 .newsletter-form p {
@@ -2258,7 +2244,7 @@ ul.team-social a:hover {
 
 .e-numbers .em-box i {
 	font-size: 30px;
-	color: #bbbbbb;
+	color: #f99f00;
 }
 
 .e-numbers .em-box strong.em-num {
@@ -2956,7 +2942,7 @@ body .btn-group.open .dropdown-toggle {
 
 .home3.footer a,
 .home3.footer p a {
-	color: #fff;
+	color: rgb(255, 255, 255);
 }
 
 .footer-widget h6 {
@@ -4641,7 +4627,7 @@ ul.reports a i {
 /*********** Explore Community End ***********/
 
 .home3.emergency-numbers .newsletter-form {
-	background: url(../images/subscribebg.jpg) no-repeat bottom ;
+	background: url(../images/subscribebg.jpg) no-repeat bottom #f8a106;
 }
 
 .home3.emergency-numbers .newsletter-form button {
@@ -4651,7 +4637,6 @@ ul.reports a i {
 
 .home3.emergency-numbers .newsletter-form button:hover {
 	background: #fff;
-	color: #144b8b;
 }
 
 .home3.emergency-numbers .e-numbers .em-box i {
@@ -5259,7 +5244,7 @@ ul.member-social a:hover {
 }
 
 a.fb {
-	color: #3b5998;
+	color: #000;
 }
 
 a.tw {
@@ -5842,7 +5827,6 @@ ul.gallery-4-col img:hover {
 
 .service-page-bottom .newsletter-form button:hover {
 	background: #38a1f3;
-	color: #fff;
 }
 
 .service-page-bottom .emergency-info h5 {
@@ -6018,7 +6002,7 @@ body .panel-group .panel+.panel {
 }
 
 .department-links li {
-	width: 33.3333%;
+	width: 25%;
 	float: left;
 	padding: 0 15px 0 0;
 	margin: 0 0 15px;

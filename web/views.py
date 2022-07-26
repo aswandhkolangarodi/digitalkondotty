@@ -26,3 +26,6 @@ def event(request):
 
 def contact(request):
     return render(request,'web/contact.html')
+
+def departments(request):
+    return render(request,'web/departments.html')

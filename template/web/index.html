@@ -41,7 +41,7 @@
                             data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                             data-start="700">
-                            <div class="slide-content-box"> <a href="#" class="con">Join us Now</a> </div>
+                            <!-- <div class="slide-content-box"> <a href="#" class="con">Join us Now</a> </div> -->
                         </div>
                     </li>
                     <li data-transition="slidehorizontal"> <img src="{% static 'web/images/banner1.jpg' %}" alt=""
@@ -75,7 +75,7 @@
                             data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                             data-start="700">
-                            <div class="slide-content-box"> <a href="#" class="con">Learn More</a> </div>
+                            <!-- <div class="slide-content-box"> <a href="#" class="con">Learn More</a> </div> -->
                         </div>
                     </li>
                     <li data-transition="slidevertical"> <img src="{% static 'web/images/banner2.jpg' %}" alt=""
@@ -109,7 +109,7 @@
                             data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                             data-start="700">
-                            <div class="slide-content-box"> <a href="#" class="con">Learn More</a> </div>
+                            <!-- <div class="slide-content-box"> <a href="#" class="con">Learn More</a> </div> -->
                         </div>
                     </li>
                 </ul>
@@ -724,57 +724,7 @@
         </div>
     </section>
     <!-- Explore Community End-->
-    <section class="wf100 home3 emergency-numbers">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-5">
-                    <div class="newsletter-form">
-                        <h5>Be Updated with us</h5>
-                        <ul class="row">
-                            <li class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name">
-                            </li>
-                            <li class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Email Address">
-                            </li>
-                            <li class="col-md-6">
-                                <p>Signup to get the updates on email from the city &amp; town affairs!</p>
-                            </li>
-                            <li class="col-md-6">
-                                <button>Subscribe</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-7">
-                    <div class="e-numbers">
-                        <h5>Emergency Numbers</h5>
-                        <p>Dial these numbers in case of any emergency</p>
-                        <div class="info-num"> <strong>For any Information</strong>
-                            <h3>(08)00 9876</h3>
-                        </div>
-                        <ul class="row">
-                            <li class="col-md-4 col-sm-4">
-                                <div class="em-box"> <i class="fas fa-user-secret"></i> <strong
-                                        class="em-num">911</strong> <strong class="em-deprt">Police
-                                        Department</strong> </div>
-                            </li>
-                            <li class="col-md-4 col-sm-4">
-                                <div class="em-box"> <i class="fas fa-ambulance"></i> <strong
-                                        class="em-num">177</strong> <strong class="em-deprt"> Ambulance
-                                        Services</strong> </div>
-                            </li>
-                            <li class="col-md-4 col-sm-4">
-                                <div class="em-box"> <i class="fas fa-fire-extinguisher"></i> <strong
-                                        class="em-num">103</strong> <strong class="em-deprt">Fire Brigade
-                                        Department</strong> </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'web/partials/subscribe.html' %}
 </div>
 <!--Main Content End-->
 {% endblock %}

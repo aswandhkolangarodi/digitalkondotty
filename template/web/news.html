@@ -30,10 +30,10 @@
                                  <li>30 MAR, 2019</li>
                                  <li>176 Comments</li>
                               </ul>
-                              <h6><a href="#">Media talking about foriegn affairs</a></h6>
+                              <h6><a href="{% url 'web:news-single' %}">Media talking about foriegn affairs</a></h6>
                               <p> How all this mistaken idea of denounce pleasure and praising pain was born I will give you an. </p>
                            </div>
-                           <div class="news-box-f"> <img src="{% static 'web/images/user2.jpg' %}" alt=""> Johny Stewart <a href="#"><i class="fas fa-arrow-right"></i></a> </div>
+                           <div class="news-box-f"> <img src="{% static 'web/images/user2.jpg' %}" alt=""> Johny Stewart <a href="{% url 'web:news-single' %}"><i class="fas fa-arrow-right"></i></a> </div>
                         </div>
                      </div>
                      <!--News Box End--> 
@@ -46,10 +46,10 @@
                                  <li>30 MAR, 2019</li>
                                  <li>176 Comments</li>
                               </ul>
-                              <h6><a href="#">Cras accumsan mauris eget massa</a></h6>
+                              <h6><a href="{% url 'web:news-single' %}">Cras accumsan mauris eget massa</a></h6>
                               <p> How all this mistaken idea of denounce pleasure and praising pain was born I will give you an. </p>
                            </div>
-                           <div class="news-box-f"> <img src="{% static 'web/images/user2.jpg' %}" alt=""> Johny Stewart <a href="#"><i class="fas fa-arrow-right"></i></a> </div>
+                           <div class="news-box-f"> <img src="{% static 'web/images/user2.jpg' %}" alt=""> Johny Stewart <a href="{% url 'web:news-single' %}"><i class="fas fa-arrow-right"></i></a> </div>
                         </div>
                      </div>
                      <!--News Box End--> 
@@ -151,7 +151,7 @@
                      <!--News Box End--> 
                   </div>
                   <div class="row">
-                     <div class="site-pagination">
+                     <div class="site-pagination mb30">
                         <nav aria-label="Page navigation">
                            <ul class="pagination">
                               <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
@@ -168,6 +168,8 @@
                </div>
             </div>
             <!--Events End--> 
+            {% include 'web/partials/subscribe.html' %}
+
          </div>
          <!--Main Content End--> 
 

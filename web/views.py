@@ -29,3 +29,9 @@ def contact(request):
 
 def departments(request):
     return render(request,'web/departments.html')
+
+def donation(request):
+    return render(request, 'web/donation.html')
+
+def gallery(request):
+    return render(request, 'web/gallery.html')

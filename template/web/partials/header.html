@@ -109,6 +109,7 @@
                         </li> -->
                         <li><a href="">Career</a></li>
                         <li><a href="{% url 'web:contact' %}">Contact</a></li>
+                        <li><a href="{% url 'web:gallery' %}">Gallery</a></li>
                     </ul>
                     <ul class="navbar-right">
                         <li class="search-form">
@@ -117,7 +118,7 @@
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </li>
-                        <li class="donate-btn"><a href="#">Donate</a></li>
+                        <li class="donate-btn"><a href="{% url 'web:donation' %}">Donate</a></li>
                     </ul>
                 </div>
             </nav>

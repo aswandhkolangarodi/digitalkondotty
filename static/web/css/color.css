@@ -6,7 +6,6 @@
 .main-slider .owl-carousel button.owl-dot span:hover,
 .main-slider .owl-carousel button.owl-dot.active span,
 .banner-tags li:hover,
-.header .topbar,
 .city-highlights .owl-carousel .owl-nav button.owl-next:hover,
 .city-highlights .owl-carousel .owl-nav button.owl-prev:hover,
 .sub-menu a:hover,
@@ -45,6 +44,10 @@ li.form-submit button,
 	background-color: #ffffff;
 	color: black;
 	border: 1px solid rgb(235, 176, 13);
+}
+
+.header .topbar{
+	background-color: #002f3d;
 }
 .news-details blockquote{
 	background-color: #002f3d;
@@ -202,7 +205,6 @@ ul.check-list i,
 .event-post-full:hover .event-post-txt h5 a,
 .news-post:hover .news-post-txt h5 a,
 .logo-nav-row ul.nav.navbar-nav.navbar-right .search-btn a,
-.logo-nav-row ul.nav.navbar-nav.navbar-right .bars-btn a,
 .logo-nav-row .nav .open>a,
 .logo-nav-row .nav .open>a:focus,
 .logo-nav-row .nav .open>a:hover,

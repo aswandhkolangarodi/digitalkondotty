@@ -1,0 +1,85 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+         <!--Sub Header Start-->
+         <section class="wf100 subheader">
+            <div class="container">
+               <h2>Gallery Grid</h2>
+               <ul>
+                  <li> <a href="index-2.html">Home</a> </li>
+                  <li> <a href="#">Gallery</a> </li>
+                  
+               </ul>
+            </div>
+         </section>
+         <!--Sub Header End--> 
+         <!--Main Content Start-->
+         <div class="main-content p80 gallery">
+            <!-- Gallery Page Start -->
+            <div class="container">
+               <div class="row">
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m1.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m1.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m2.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m2.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m3.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m3.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m4.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m4.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m5.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m5.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m6.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m6.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m7.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m7.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m8.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m8.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+                  <!--Gallery Start-->
+                  <div class="col-md-4 col-sm-4">
+                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m9.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m9.jpg' %}" alt=""> </div>
+                  </div>
+                  <!--Gallery End--> 
+               </div>
+               <div class="site-pagination">
+                  <nav aria-label="Page navigation">
+                     <ul class="pagination">
+                        <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li class="active"><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+            <!-- Gallery Page Start --> 
+         </div>
+         <!--Main Content End--> 
+
+{% endblock %}

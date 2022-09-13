@@ -19,50 +19,16 @@
             <div class="container">
                <div class="row">
                   <!--Gallery Start-->
+{% for gallery in gallery %}
                   <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m1.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m1.jpg' %}" alt=""> </div>
+                     <div class="gallery-thumb"> <a href="{{ gallery.gallery.crop.222x170 }}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{{ gallery.gallery.crop.222x170 }}" alt=""> </div>
                   </div>
+{% endfor %}
+
                   <!--Gallery End--> 
                   <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m2.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m2.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m3.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m3.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m4.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m4.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m5.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m5.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m6.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m6.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m7.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m7.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m8.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m8.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{% static 'web/images/gallery/gallery-m9.jpg' %}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{% static 'web/images/gallery/gallery-m9.jpg' %}" alt=""> </div>
-                  </div>
-                  <!--Gallery End--> 
+                
+             
                </div>
                <div class="site-pagination">
                   <nav aria-label="Page navigation">

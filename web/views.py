@@ -1,12 +1,16 @@
 from django.shortcuts import render
-
+from web.models import *
 # Create your views here.
 
 def base(request):
     return render(request,'web/partials/base.html')
 
 def home(request):
-    return render(request,'web/index.html')
+    news = News.objects.all().order_by('-id')[:4]
+    context = {
+        "news":news
+    }
+    return render(request,'web/index.html',context)
 
 def about(request):
     return render(request,'web/about.html')
@@ -34,4 +38,8 @@ def donation(request):
     return render(request, 'web/donation.html')
 
 def gallery(request):
-    return render(request, 'web/gallery.html')
+    gallery = Gallery.objects.all()
+    context = {
+        "gallery":gallery
+    }
+    return render(request, 'web/gallery.html',context)

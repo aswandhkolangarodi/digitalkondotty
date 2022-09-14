@@ -180,9 +180,9 @@
                                 -webkit-box-orient: vertical;
                             }
                         </style>
-                        <div class="news-box-f"> <img src="{% static 'web/images/tuser1.jpg' %}" alt="">{{
-                            news.news_author }}
-                            <a href="#"><i class="fas fa-arrow-right"></i></a>
+                        <div class="news-box-f"> <img src="{% static 'web/images/tuser1.jpg' %}" alt="">
+                            {{ news.news_author }}
+                            <a href="{% url 'web:news-single' news.id %}"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -388,62 +388,28 @@
                     <div class="recent-event-block">
                         <!--Slider Big Slider Start-->
                         <div class="recent-event-slider">
+                            {% for event in event %}
                             <div class="event-big">
                                 <div class="event-cap">
-                                    <h5><a href="#">2K18 Night Celebration</a></h5>
+                                    <h5><a href="#">{{ event.event_heading }}</a></h5>
                                     <ul>
-                                        <li><i class="fas fa-image"></i> 83 Photos</li>
-                                        <li><i class="fas fa-play-circle"></i> 16 Videos</li>
+                                        <li><i class="fas fa-image"></i> {{ event.event_date }}</li>
+                                        <li><i class="fas fa-play-circle"></i> {{ event.event_start_time }}</li>
                                     </ul>
-                                    <p> Sed nec vehicula est. Sed eget sodales mauris. Class aptent taciti sociosqu ad
-                                        litora torquent per conubia. </p>
+                                    <p> 
+                                        {{ event.event_description|safe }}
+                                    </p>
                                 </div>
-                                <img src="{% static 'web/images/rec-event1.jpg' %}" alt="">
+                                <img src="{{ event.event_image.crop.457x399 }}" alt="">
                             </div>
-                            <div class="event-big">
-                                <div class="event-cap">
-                                    <h5><a href="#">2K18 Night Celebration</a></h5>
-                                    <ul>
-                                        <li><i class="fas fa-image"></i> 83 Photos</li>
-                                        <li><i class="fas fa-play-circle"></i> 16 Videos</li>
-                                    </ul>
-                                    <p> Sed nec vehicula est. Sed eget sodales mauris. Class aptent taciti sociosqu ad
-                                        litora torquent per. </p>
-                                </div>
-                                <img src="{% static 'web/images/rec-event2.jpg' %}" alt="">
-                            </div>
-                            <div class="event-big">
-                                <div class="event-cap">
-                                    <h5><a href="#">2K18 Night Celebration</a></h5>
-                                    <ul>
-                                        <li><i class="fas fa-image"></i> 83 Photos</li>
-                                        <li><i class="fas fa-play-circle"></i> 16 Videos</li>
-                                    </ul>
-                                    <p> Sed nec vehicula est. Sed eget sodales mauris. Class aptent taciti sociosqu ad
-                                        litora torquent per conubia. </p>
-                                </div>
-                                <img src="{% static 'web/images/rec-event3.jpg' %}" alt="">
-                            </div>
-                            <div class="event-big">
-                                <div class="event-cap">
-                                    <h5><a href="#">2K18 Night Celebration</a></h5>
-                                    <ul>
-                                        <li><i class="fas fa-image"></i> 83 Photos</li>
-                                        <li><i class="fas fa-play-circle"></i> 16 Videos</li>
-                                    </ul>
-                                    <p> Sed nec vehicula est. Sed eget sodales mauris. Class aptent taciti sociosqu ad
-                                        litora torquent per. </p>
-                                </div>
-                                <img src="{% static 'web/images/rec-event4.jpg' %}" alt="">
-                            </div>
+                            {% endfor %}
                         </div>
                         <!--Slider Big Slider End-->
                         <!--Slider Big Slider Nav-->
                         <div class="recent-event-slider-nav">
-                            <div><img src="{% static 'web/images/rec-event-small1.jpg' %}" alt=""></div>
-                            <div><img src="{% static 'web/images/rec-event-small2.jpg' %}" alt=""></div>
-                            <div><img src="{% static 'web/images/rec-event-small3.jpg' %}" alt=""></div>
-                            <div><img src="{% static 'web/images/rec-event-small4.jpg' %}" alt=""></div>
+                            {% for event in event %}
+                            <div><img src="{{ event.event_image.crop.105x88 }}" alt=""></div>
+                           {% endfor %}
                         </div>
                         <!--Slider Big Slider Nav-->
                     </div>
@@ -452,112 +418,32 @@
                     <h3>Upcoming Schedules</h3>
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#Events" aria-controls="Events" role="tab"
-                                data-toggle="tab">Next Events</a></li>
-                        <li role="presentation"><a href="#Meetings" aria-controls="Meetings" role="tab"
-                                data-toggle="tab">Meetings</a></li>
+                                data-toggle="tab">Upcoming Events</a></li>
+                        
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="Events">
                             <!--Event List Start-->
+                            {% for event in event %}
                             <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
+
+                                <li> <strong class="edate">{{ event.event_date }}</strong> <strong class="etime">09:00 pm</strong>
                                 </li>
-                                <li><img src="{% static 'web/images/upce-1.jpg' %}" alt=""></li>
+                                <li><img src="{{ event.event_start_time }}" alt=""></li>
                                 <li class="el-title">
-                                    <h6><a href="#">Annual Cycling 2019 for Charity Donation</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
+                                    <h6><a href="{% url 'web:event' %}">{{ event.event_heading }}</a></h6>
+                                    <p><i class="fas fa-map-marker-alt"></i> {{ event.event_location}}</p>
                                 </li>
                                 <li> <a href="#" class="joinnow">Join Now</a> </li>
+
                             </ul>
+                            {% endfor %}
                             <!--Event List End-->
-                            <!--Event List Start-->
-                            <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
-                                </li>
-                                <li><img src="{% static 'web/images/upce-2.jpg' %}" alt=""></li>
-                                <li class="el-title">
-                                    <h6><a href="#">Cultural Festival & Concert at New Year</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
-                                </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
-                            </ul>
-                            <!--Event List End-->
-                            <!--Event List Start-->
-                            <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
-                                </li>
-                                <li><img src="{% static 'web/images/upce-3.jpg' %}" alt=""></li>
-                                <li class="el-title">
-                                    <h6><a href="#">Seminar on Child Labour held in next month</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
-                                </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
-                            </ul>
-                            <!--Event List End-->
-                            <!--Event List Start-->
-                            <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
-                                </li>
-                                <li><img src="{% static 'web/images/upce-4.jpg' %}" alt=""></li>
-                                <li class="el-title">
-                                    <h6><a href="#">Protest against women rights violence</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
-                                </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
-                            </ul>
-                            <!--Event List End-->
+                           
+                       
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="Meetings">
-                            <!--Event List Start-->
-                            <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
-                                </li>
-                                <li><img src="{% static 'web/images/upce-2.jpg' %}" alt=""></li>
-                                <li class="el-title">
-                                    <h6><a href="#">Seminar on Child Labour held in next month</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
-                                </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
-                            </ul>
-                            <!--Event List End-->
-                            <!--Event List Start-->
-                            <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
-                                </li>
-                                <li><img src="{% static 'web/images/upce-3.jpg' %}" alt=""></li>
-                                <li class="el-title">
-                                    <h6><a href="#">Cultural Festival & Concert at New Year</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
-                                </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
-                            </ul>
-                            <!--Event List End-->
-                            <!--Event List Start-->
-                            <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
-                                </li>
-                                <li><img src="{% static 'web/images/upce-4.jpg' %}" alt=""></li>
-                                <li class="el-title">
-                                    <h6><a href="#">Annual Cycling 2019 for Charity Donation</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
-                                </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
-                            </ul>
-                            <!--Event List End-->
-                            <!--Event List Start-->
-                            <ul class="event-list">
-                                <li> <strong class="edate">30 Jan, 2019</strong> <strong class="etime">09:00 pm</strong>
-                                </li>
-                                <li><img src="{% static 'web/images/upce-1.jpg' %}" alt=""></li>
-                                <li class="el-title">
-                                    <h6><a href="#">Protest against women rights violence</a></h6>
-                                    <p><i class="fas fa-map-marker-alt"></i> Mayor Office, New York</p>
-                                </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
-                            </ul>
-                            <!--Event List End-->
-                        </div>
+                        
                     </div>
                 </div>
             </div>

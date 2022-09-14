@@ -33,6 +33,13 @@ class Gallery(models.Model):
 class Event(models.Model):
     event_catagory = models.CharField(max_length=100)
     event_heading = models.CharField(max_length=100)
-    event_date_and_time = models.DateTimeField()
+    event_description = HTMLField()
+    event_date = models.DateField()
+    event_start_time = models.TimeField()
+    event_end_time = models.TimeField()
     event_location = models.CharField(max_length=1000)
     event_image = VersatileImageField(upload_to = "event")
+
+    def __str__(self):
+        return self.event_heading
+

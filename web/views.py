@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from web.models import *
+from django.shortcuts import get_object_or_404, render
 # Create your views here.
 
 def base(request):
@@ -7,8 +8,10 @@ def base(request):
 
 def home(request):
     news = News.objects.all().order_by('-id')[:4]
+    event = Event.objects.all().order_by('-id')[:4]
     context = {
-        "news":news
+        "news":news,
+        "event":event
     }
     return render(request,'web/index.html',context)
 
@@ -17,16 +20,31 @@ def about(request):
 
 
 def news(request):
-    return render(request,'web/news.html')
+    news = News.objects.all().order_by('-id')
+    context = {
+        "news" : news
+    }
+    return render(request,'web/news.html',context)
 
-def singleNews(request):
-    return render(request,'web/news-single.html')
+def singleNews(request, id):
+    single_news= get_object_or_404(News,id=id)
+    context = {
+        "single_news" : single_news
+    }
+    return render(request,'web/news-single.html',context)
 
 def explore(request):
     return render(request,'web/explore.html')
 
 def event(request):
-    return render(request,'web/event.html')
+    event = Event.objects.all().order_by('-id')
+    context = {
+        "event" : event
+    }
+    return render(request,'web/event.html',context)
+    
+def eventsingle(request):
+    return render(request,'web/event-single.html')
 
 def contact(request):
     return render(request,'web/contact.html')

@@ -9,10 +9,11 @@ urlpatterns = [
     path('about/',views.about,name="about"),
 
     path('news/',views.news,name="news"),
-    path('news-single/',views.singleNews,name="news-single"),
+    path('news-single/<str:id>/',views.singleNews,name="news-single"),
     path('explore/',views.explore,name="explore"),
 
     path('event/',views.event,name="event"),
+    path('event-single/',views.eventsingle,name="event-single"),
     path('contact/',views.contact,name="contact"),
     path('departments/',views.departments,name="departments"),
     path('donation/', views.donation, name="donation"),

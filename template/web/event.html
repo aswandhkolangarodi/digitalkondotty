@@ -22,13 +22,14 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12 col-sm-12 text-center">
+{% for event in event %}
                <!--Event List Box Start-->
                <div class="event-post-full">
-                  <div class="thumb"> <a href="{% url 'web:news-single' %}"><i class="fas fa-link"></i></a> <img
-                        src="{% static 'web/images/event-list1.jpg' %}" alt=""> </div>
+                  <div class="thumb"> <a href=""><i class="fas fa-link"></i></a> <img
+                        src="{{ event.event_image.url }}" alt=""> </div>
                   <div class="event-post-content">
                      <div class="event-post-txt">
-                        <span class="ecat c1">Medical Event</span>
+                        <span class="ecat c1">{{ event.event_catagory }}</span>
                         <!--Share Start-->
                         <div class="btn-group share-post">
                            <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -42,212 +43,21 @@
                            </ul>
                         </div>
                         <!--Share End-->
-                        <h5><a href="{% url 'web:news-single' %}">Social Awareness Seminar</a></h5>
+                        <h5><a href="{% url 'web:event-single' %}">{{ event.event_heading }}</a></h5>
                         <ul class="event-meta">
-                           <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
-                           <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
+                           <li><i class="far fa-calendar-alt"></i> {{ event.event_date }}</li>
+                           <li><i class="far fa-clock"></i> {{ event.event_start_time }} - {{ event.event_end_time }}</li>
                         </ul>
-                        <p>Find out about your mental health and make a difference to everyday in your life massa
-                           aliquam suscipit.</p>
+                        <p>
+                           {{ event.event_description|safe }}
+                        </p>
                      </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
+                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> {{ event.event_location }}<a
                            href="#"><i class="fas fa-arrow-right"></i></a> </div>
                   </div>
                </div>
                <!--Event List Box End-->
-               <!--Event List Box Start-->
-               <div class="event-post-full">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img
-                        src="{% static 'web/images/event-list2.jpg' %}" alt=""> </div>
-                  <div class="event-post-content">
-                     <div class="event-post-txt">
-                        <span class="ecat c1">Sports</span>
-                        <!--Share Start-->
-                        <div class="btn-group share-post">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
-                           <ul class="dropdown-menu">
-                              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-                              <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
-                           </ul>
-                        </div>
-                        <!--Share End-->
-                        <h5><a href="#">Motor Sports Event</a></h5>
-                        <ul class="event-meta">
-                           <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
-                           <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
-                        </ul>
-                        <p>Find out about your mental health and make a difference to everyday in your life.</p>
-                     </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
-                           href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                  </div>
-               </div>
-               <!--Event List Box End-->
-               <!--Event List Box Start-->
-               <div class="event-post-full">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img
-                        src="{% static 'web/images/event-list3.jpg' %}" alt=""> </div>
-                  <div class="event-post-content">
-                     <div class="event-post-txt">
-                        <span class="ecat c1">Business</span>
-                        <!--Share Start-->
-                        <div class="btn-group share-post">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
-                           <ul class="dropdown-menu">
-                              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-                              <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
-                           </ul>
-                        </div>
-                        <!--Share End-->
-                        <h5><a href="#">Exhibition 2019 Program</a></h5>
-                        <ul class="event-meta">
-                           <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
-                           <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
-                        </ul>
-                        <p>Find out about your mental health and make a difference to everyday in your life.</p>
-                     </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
-                           href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                  </div>
-               </div>
-               <!--Event List Box End-->
-               <!--Event List Box Start-->
-               <div class="event-post-full">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img
-                        src="{% static 'web/images/event-list4.jpg' %}" alt=""> </div>
-                  <div class="event-post-content">
-                     <div class="event-post-txt">
-                        <span class="ecat c1">Culture</span>
-                        <!--Share Start-->
-                        <div class="btn-group share-post">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
-                           <ul class="dropdown-menu">
-                              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-                              <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
-                           </ul>
-                        </div>
-                        <!--Share End-->
-                        <h5><a href="#">New Year Cultural Festival</a></h5>
-                        <ul class="event-meta">
-                           <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
-                           <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
-                        </ul>
-                        <p>Find out about your mental health and make a difference to everyday in your life.</p>
-                     </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
-                           href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                  </div>
-               </div>
-               <!--Event List Box End-->
-               <!--Event List Box Start-->
-               <div class="event-post-full">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img
-                        src="{% static 'web/images/event-list5.jpg' %}" alt=""> </div>
-                  <div class="event-post-content">
-                     <div class="event-post-txt">
-                        <span class="ecat c1">Human Rights</span>
-                        <!--Share Start-->
-                        <div class="btn-group share-post">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
-                           <ul class="dropdown-menu">
-                              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-                              <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
-                           </ul>
-                        </div>
-                        <!--Share End-->
-                        <h5><a href="#">Violence against women</a></h5>
-                        <ul class="event-meta">
-                           <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
-                           <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
-                        </ul>
-                        <p>Find out about your mental health and make a difference to everyday in your life.</p>
-                     </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
-                           href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                  </div>
-               </div>
-               <!--Event List Box End-->
-               <!--Event List Box Start-->
-               <div class="event-post-full">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img
-                        src="{% static 'web/images/event-list1.jpg' %}" alt=""> </div>
-                  <div class="event-post-content">
-                     <div class="event-post-txt">
-                        <span class="ecat c1">Seminars</span>
-                        <!--Share Start-->
-                        <div class="btn-group share-post">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
-                           <ul class="dropdown-menu">
-                              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-                              <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
-                           </ul>
-                        </div>
-                        <!--Share End-->
-                        <h5><a href="#">Social Awareness Seminar</a></h5>
-                        <ul class="event-meta">
-                           <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
-                           <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
-                        </ul>
-                        <p>Find out about your mental health and make a difference to everyday in your life massa
-                           aliquam suscipit.</p>
-                     </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
-                           href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                  </div>
-               </div>
-               <!--Event List Box End-->
-               <!--Event List Box Start-->
-               <div class="event-post-full">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img
-                        src="{% static 'web/images/event-list2.jpg' %}" alt=""> </div>
-                  <div class="event-post-content">
-                     <div class="event-post-txt">
-                        <span class="ecat c1">Sports</span>
-                        <!--Share Start-->
-                        <div class="btn-group share-post">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
-                           <ul class="dropdown-menu">
-                              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-                              <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
-                           </ul>
-                        </div>
-                        <!--Share End-->
-                        <h5><a href="#">Motor Sports Event</a></h5>
-                        <ul class="event-meta">
-                           <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
-                           <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
-                        </ul>
-                        <p>Find out about your mental health and make a difference to everyday in your life.</p>
-                     </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
-                           href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                  </div>
-               </div>
-               <!--Event List Box End-->
+              {% endfor %}
                <div class="site-pagination ">
                   <nav aria-label="Page navigation">
                      <ul class="pagination">

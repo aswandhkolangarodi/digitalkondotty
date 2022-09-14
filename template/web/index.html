@@ -203,7 +203,7 @@
                     </div>
                     <div class="row">
                         <!--Icon Box Start-->
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon1.png' %}" alt="">
                                 <h6> <a href="#">History & Establishment</a> </h6>
                                 <a class="rm" href="#">Read More</a>
@@ -211,7 +211,7 @@
                         </div>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon2.png' %}" alt="">
                                 <h6> <a href="#">Government Economy</a> </h6>
                                 <a class="rm" href="#">Read More</a>
@@ -219,7 +219,7 @@
                         </div>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon3.png' %}" alt="">
                                 <h6> <a href="#">Constitution & Government Law</a> </h6>
                                 <a class="rm" href="#">Read More</a>
@@ -227,7 +227,7 @@
                         </div>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon4.png' %}" alt="">
                                 <h6> <a href="#">International
                                         & Current Affairs </a> </h6>
@@ -236,7 +236,7 @@
                         </div>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon5.png' %}" alt="">
                                 <h6> <a href="#">Business &
                                         Administrations</a> </h6>
@@ -245,7 +245,7 @@
                         </div>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon6.png' %}" alt="">
                                 <h6> <a href="#">Budget &
                                         Govt. Policies</a> </h6>
@@ -396,7 +396,7 @@
                                         <li><i class="fas fa-image"></i> {{ event.event_date }}</li>
                                         <li><i class="fas fa-play-circle"></i> {{ event.event_start_time }}</li>
                                     </ul>
-                                    <p> 
+                                    <p>
                                         {{ event.event_description|safe }}
                                     </p>
                                 </div>
@@ -409,7 +409,7 @@
                         <div class="recent-event-slider-nav">
                             {% for event in event %}
                             <div><img src="{{ event.event_image.crop.105x88 }}" alt=""></div>
-                           {% endfor %}
+                            {% endfor %}
                         </div>
                         <!--Slider Big Slider Nav-->
                     </div>
@@ -419,7 +419,7 @@
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#Events" aria-controls="Events" role="tab"
                                 data-toggle="tab">Upcoming Events</a></li>
-                        
+
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
@@ -428,7 +428,8 @@
                             {% for event in event %}
                             <ul class="event-list">
 
-                                <li> <strong class="edate">{{ event.event_date }}</strong> <strong class="etime">09:00 pm</strong>
+                                <li> <strong class="edate">{{ event.event_date }}</strong> <strong class="etime">09:00
+                                        pm</strong>
                                 </li>
                                 <li><img src="{{ event.event_start_time }}" alt=""></li>
                                 <li class="el-title">
@@ -440,10 +441,10 @@
                             </ul>
                             {% endfor %}
                             <!--Event List End-->
-                           
-                       
+
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -487,6 +488,7 @@
                         <div class="item">
                             <div class="h3-team-box">
                                 <div class="team-info">
+                                    
                                     <h6>Harry Simon</h6>
                                     <strong>Assistant Mayor</strong>
                                     <p> Stephen is very Compitent person who assist to Mayor of the City. </p>
@@ -497,6 +499,7 @@
                                         <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
+
                                 </div>
                                 <img src="{% static 'web/images/h3-team1.jpg' %}" alt="">
                             </div>
@@ -580,18 +583,19 @@
                         <div id="h3testimonials" class="owl-carousel owl-theme">
                             <!--testimonials box start-->
 
-{% for testimonial in testimonial %}
+                            {% for testimonial in testimonial %}
                             <div class="item">
-                                <p> 
+                                <p>
                                     {{ testimonial.testimonial }}
                                 </p>
                                 <div class="tuser"> <img src="{{ testimonial.person_img.url }}" alt="">
-                                    <strong>{{ testimonial.name }}</strong> {{ testimonial.designation }} </div>
+                                    <strong>{{ testimonial.name }}</strong> {{ testimonial.designation }}
+                                </div>
                             </div>
-{% endfor %}
+                            {% endfor %}
 
                             <!--testimonials box End-->
-            
+
                         </div>
                     </div>
                 </div>

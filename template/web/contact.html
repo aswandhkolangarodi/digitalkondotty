@@ -72,19 +72,20 @@
             <div class="col-md-4 col-sm-5">
                <h3 class="stitle">Get in Touch</h3>
                <div class="contact-form">
-                  <form>
+                  <form method="post">
+                     {% csrf_token %}
                      <ul>
                         <li>
-                           <input type="text" placeholder="Full Name" required>
+                           <input name="name" type="text" placeholder="Full Name" required >
                         </li>
                         <li>
-                           <input type="text" placeholder="Enter Email" required>
+                           <input name="email" type="text" placeholder="Enter Email" required>
                         </li>
                         <li>
-                           <input type="text" placeholder="Subject">
+                           <input name="subject" type="text" placeholder="Subject">
                         </li>
                         <li>
-                           <textarea placeholder="Write Message"></textarea>
+                           <textarea name="message" placeholder="Write Message"></textarea>
                         </li>
                         <li>
                            <input type="submit" value="Send Message">
@@ -96,7 +97,7 @@
             <div class="col-md-8 col-sm-7">
                <div class="map">
                   <iframe
-                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8804.76624205153!2d-74.01069098867131!3d40.71063837912478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY!5e0!3m2!1sen!2s!4v1546499119664"></iframe>
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.6117547550675!2d75.9676425137016!3d11.142265655383666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65139406d4f89%3A0x33b6fe42026767fd!2sGedexo%20Technologies%20LLP!5e0!3m2!1sen!2sin!4v1663143377316!5m2!1sen!2sin"></iframe>
                </div>
             </div>
          </div>

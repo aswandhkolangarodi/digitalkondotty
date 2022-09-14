@@ -1,4 +1,5 @@
 from distutils.command.upload import upload
+from email import message
 from django.db import models
 from tinymce.models import HTMLField
 from versatileimagefield.fields import VersatileImageField
@@ -43,4 +44,22 @@ class Event(models.Model):
 
     def __str__(self):
         return self.event_heading
+
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
+    message = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Official(models.Model):
+    officials_name = models.CharField(max_length=100)
+    official_image = VersatileImageField(upload_to="official")
+    officials_designation = models.CharField(max_length=100)
+    officials_about = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.officials_name
 

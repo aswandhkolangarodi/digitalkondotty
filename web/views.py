@@ -1,3 +1,4 @@
+import email
 from django.shortcuts import render
 from web.models import *
 from django.shortcuts import get_object_or_404, render
@@ -10,10 +11,12 @@ def home(request):
     news = News.objects.all().order_by('-id')[:4]
     event = Event.objects.all().order_by('-id')[:4]
     testimonial = Testimonial.objects.all()
+    official = Official.objects.all()
     context = {
         "news":news,
         "event":event,
-        "testimonial":testimonial
+        "testimonial":testimonial,
+        "official":official
     }
     return render(request,'web/index.html',context)
 
@@ -49,6 +52,14 @@ def eventsingle(request):
     return render(request,'web/event-single.html')
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+        contact_obj = Contact(name = name,email = email,subject = subject,message = message)
+        contact_obj.save()
+
     return render(request,'web/contact.html')
 
 def departments(request):

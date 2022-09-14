@@ -9,3 +9,6 @@ urlpatterns = [
     path('',include('web.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+admin.site.site_header = "Digital Kondotty Administration"
+admin.site.site_title = "Digital Kondotty Admin Portal"
+admin.site.index_title = "Welcome to Digital Kondotty Admin Portal"

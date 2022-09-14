@@ -35,7 +35,7 @@
                               <h6><a href="{% url 'web:news-single' news.id %}">{{ news.news_heading }}</a></h6>
                               <p class="newscontent"> {{ news.news_content|safe }}</p>
                            </div>
-                           <div class="news-box-f"> <img src="{% static 'web/images/user2.jpg' %}" alt=""> Johny Stewart <a href="{% url 'web:news-single' news.id %}"><i class="fas fa-arrow-right"></i></a> </div>
+                           <div class="news-box-f"> <img src="{{ news.author_image.url }}" alt=""> {{ news.news_author }} <a href="{% url 'web:news-single' news.id %}"><i class="fas fa-arrow-right"></i></a> </div>
                         </div>
                      </div>
                      <!--News Box End--> 

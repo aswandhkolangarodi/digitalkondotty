@@ -9,9 +9,11 @@ def base(request):
 def home(request):
     news = News.objects.all().order_by('-id')[:4]
     event = Event.objects.all().order_by('-id')[:4]
+    testimonial = Testimonial.objects.all()
     context = {
         "news":news,
-        "event":event
+        "event":event,
+        "testimonial":testimonial
     }
     return render(request,'web/index.html',context)
 

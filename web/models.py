@@ -21,11 +21,11 @@ class News(models.Model):
 class Testimonial(models.Model):
     testimonial = models.CharField(max_length=100)
     name = models.CharField(max_length=50)
-    testimonial = models.CharField(max_length=100)
+    designation = models.CharField(max_length=100)
     person_img = models.ImageField(upload_to="testimonial")
 
     def __str__(self):
-        return self.person
+        return self.name
 
 class Gallery(models.Model):
     gallery = VersatileImageField(upload_to = "gallery")

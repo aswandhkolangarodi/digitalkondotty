@@ -29,6 +29,7 @@ class Testimonial(models.Model):
 
 class Gallery(models.Model):
     gallery = VersatileImageField(upload_to = "gallery")
+    image_description = models.CharField(max_length=100)
 
 class Event(models.Model):
     event_catagory = models.CharField(max_length=100)

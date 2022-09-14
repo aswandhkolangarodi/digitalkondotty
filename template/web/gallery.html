@@ -1,54 +1,71 @@
 {% extends 'web/partials/base.html' %}
 {% load static %}
 {% block content %}
-         <!--Sub Header Start-->
-         <section class="wf100 subheader">
-            <div class="container">
-               <h2>Gallery </h2>
-               <ul>
-                  <li> <a href="index-2.html">Home</a> </li>
-                  <li> <a href="#">Gallery</a> </li>
+<!--Sub Header Start-->
+<section class="wf100 subheader">
+   <div class="container">
+      <h2>Gallery </h2>
+      <ul>
+         <li> <a href="index-2.html">Home</a> </li>
+         <li> <a href="#">Gallery</a> </li>
+
+      </ul>
+   </div>
+</section>
+<!--Sub Header End-->
+<!--Main Content Start-->
+<div class="main-content p80 gallery">
+   <!-- Gallery Page Start -->
+   <div class="container">
+      <div class="row">
+         <!--Gallery Start-->
+         {% for gallery in gallery %}
+         <div class="col-md-4 col-sm-4">
+            <div class="gallery-thumb"> <img src="{{ gallery.gallery.crop.222x170 }}" alt="">
+
+               <div>
+                  <p class="imagedesc">{{ gallery.image_description }}</p>
+               </div>
+               <style>
+                  .imagedesc{
+                     padding: 0px 12px;
+                     line-height: 60px;
+                     position: relative;
+                     
+                     font-size: 14px;
+                     font-weight: 700;
+                     color: #333333;
+                  }
                   
-               </ul>
+               </style>
             </div>
-         </section>
-         <!--Sub Header End--> 
-         <!--Main Content Start-->
-         <div class="main-content p80 gallery">
-            <!-- Gallery Page Start -->
-            <div class="container">
-               <div class="row">
-                  <!--Gallery Start-->
-{% for gallery in gallery %}
-                  <div class="col-md-4 col-sm-4">
-                     <div class="gallery-thumb"> <a href="{{ gallery.gallery.crop.222x170 }}" data-rel="prettyPhoto[gallery]"><i class="fas fa-search"></i></a> <img src="{{ gallery.gallery.crop.222x170 }}" alt=""> </div>
-                  </div>
-                  <!-- <div>
+         </div>
+         <!-- <div>
                      <p>jshdjsbdjhb</p>
                   </div> -->
-{% endfor %}
+         {% endfor %}
 
-                  <!--Gallery End--> 
-                  <!--Gallery Start-->
-                
-             
-               </div>
-               <div class="site-pagination">
-                  <nav aria-label="Page navigation">
-                     <ul class="pagination">
-                        <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li class="active"><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
-                     </ul>
-                  </nav>
-               </div>
-            </div>
-            <!-- Gallery Page Start --> 
-         </div>
-         <!--Main Content End--> 
+         <!--Gallery End-->
+         <!--Gallery Start-->
+
+
+      </div>
+      <div class="site-pagination">
+         <nav aria-label="Page navigation">
+            <ul class="pagination">
+               <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
+               <li><a href="#">1</a></li>
+               <li><a href="#">2</a></li>
+               <li class="active"><a href="#">3</a></li>
+               <li><a href="#">4</a></li>
+               <li><a href="#">5</a></li>
+               <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+   <!-- Gallery Page Start -->
+</div>
+<!--Main Content End-->
 
 {% endblock %}

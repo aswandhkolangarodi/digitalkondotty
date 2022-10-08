@@ -1,4 +1,6 @@
 {% load static %}
+
+{% comment %}
 <header class="wf100 header-two">
     <div id="closetopbar" class="topbar wf100">
         <div class="container">
@@ -21,8 +23,9 @@
                 <div class="col-md-6  col-sm-6">
                     <ul class="header-contact ">
                         <li><span>Toll Free:</span> <strong>0800 12345</strong></li>
-                        <li class="city-exp"> <a href="{% url 'web:explore' %}" style="color: black;"><i class="fas fa-street-view"></i> <strong>City<br>
-                                Explore</strong> </a></li>
+                        <li class="city-exp"> <a href="{% url 'web:explore' %}" style="color: black;"><i
+                                    class="fas fa-street-view"></i> <strong>City<br>
+                                    Explore</strong> </a></li>
                         <li class="header-weather"> <i class="fas fa-cloud-sun"></i> 24°C / 75°F </li>
                     </ul>
                 </div>
@@ -41,32 +44,19 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li> <a href="{% url 'web:home' %}">Home 
-                            <!-- <ul class="dropdown-menu">
-                                <li><a href="index-2.html">Default Home Page</a></li>
-                                <li><a href="home-two.html">Home Page Two</a></li>
-                                <li><a href="home-three.html">Home Page Three</a></li>
-                            </ul> -->
-                        </li>
-                        <li class="dropdown"> <a href="{% url 'web:about' %}" 
-                                aria-haspopup="true" aria-expanded="false">About
-                            <!-- <ul class="dropdown-menu">
-                                <li><a href="aboutus.html">About One</a></li>
-                                <li><a href="aboutus-two.html">About Two</a></li>
-                            </ul> -->
-                        </li>
-                        <li> <a href="{% url 'web:departments' %}">Department
-
-                        </li>
-                        <li> <a href="{% url 'web:news' %}">News 
+                        <li> <a href="{% url 'web:home' %}">Home</li>
+                        <li class="dropdown"> <a href="{% url 'web:about' %}" aria-haspopup="true"
+                                aria-expanded="false">About </li>
+                        <li> <a href="{% url 'web:departments' %}">Department</li>
+                        <li> <a href="{% url 'web:news' %}">News
                         </li>
 
-                   
 
-                        <li class="dropdown"> <a href="{% url 'web:event' %}" 
-                                aria-haspopup="true" aria-expanded="false">Events </a>
 
-                        
+                        <li class="dropdown"> <a href="{% url 'web:event' %}" aria-haspopup="true"
+                                aria-expanded="false">Events </a>
+
+
                         </li>
                         <!-- <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
@@ -107,7 +97,7 @@
                                 <li><a href="coming-soon.html">Coming Soon</a></li>
                             </ul>
                         </li> -->
-                        
+
                         <li><a href="{% url 'web:contact' %}">Connect</a></li>
                         <li><a href="{% url 'web:gallery' %}">Gallery</a></li>
                     </ul>
@@ -122,6 +112,60 @@
                     </ul>
                 </div>
             </nav>
+        </div>
+    </div>
+</header>
+
+{% endcomment %}
+
+<header class="wf100 header">
+    <div id="closetopbar" class="topbar wf100" style="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-7">
+                    <p></p>
+                </div>
+                <div class="col-md-6 col-sm-5"> <a id="closebtn" href="#" class="cross-btn"><i class="fas fa-times"></i></a> <a href="#" class="become-vol">Become a Volunteer</a> </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo-nav-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar">
+                        <div class="navbar-header">
+                            <button style="background-color: #f99f00;" type="button" class="navbar-toggle collapsed"
+                                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false"> <span class="sr-only">Toggle
+                                    navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                                <span class="icon-bar"></span> </button>
+                            <a class="navbar-brand" href="index-2.html"><img class="logoimage"
+                                    src="{% static 'web/images/DK .svg' %}" alt=""></a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false"
+                            style="height: 1px;">
+                            <ul class="nav navbar-nav">
+
+                                <li><a href="{% url 'web:home' %}">Home</a></li>
+                                <li><a href="{% url 'web:about' %}">About </a></li>
+                                <li><a href="{% url 'web:departments' %}">Departments</a></li>
+                                <li><a href="{% url 'web:news' %}">News</a></li>
+                                <li><a href="{% url 'web:event' %}">Events</a></li>
+                                <li><a href="{% url 'web:contact' %}">Connect</a></li>
+                                <li><a href="{% url 'web:gallery' %}">Gallery</a></li>
+
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="btn donate"><a style="color: #f99f00;" href="{% url 'web:volunteer' %}">Donate</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 </header>

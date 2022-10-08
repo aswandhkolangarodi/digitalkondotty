@@ -21,58 +21,26 @@
    <div class="events-wrapper events-listing">
       <div class="container">
          <div class="row">
-            <div class="col-md-12 col-sm-12 text-center">
-{% for event in event %}
-               <!--Event List Box Start-->
-               <div class="event-post-full">
-                  <div class="thumb"> <a href=""><i class="fas fa-link"></i></a> <img
-                        src="{{ event.event_image.crop.390x202 }}" alt=""> </div>
+            {% for event in event %}
+            <!--Event Start-->
+            <div class="col-md-4 col-sm-6">
+               <div class="event-post">
+                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="{{ event.event_image.crop.390x202 }}" alt=""></div>
                   <div class="event-post-content">
                      <div class="event-post-txt">
-                        <span class="ecat c1">{{ event.event_catagory }}</span>
-                        <!--Share Start-->
-                        <div class="btn-group share-post">
-                           <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
-                           <ul class="dropdown-menu">
-                              <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-                              <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
-                           </ul>
-                        </div>
-                        <!--Share End-->
                         <h5><a href="{% url 'web:event-single' %}">{{ event.event_heading }}</a></h5>
                         <ul class="event-meta">
                            <li><i class="far fa-calendar-alt"></i> {{ event.event_date }}</li>
                            <li><i class="far fa-clock"></i> {{ event.event_start_time }} - {{ event.event_end_time }}</li>
                         </ul>
-                        <p>
-                           {{ event.event_description|safe }}
-                        </p>
+                        <p>{{ event.event_description|safe }}</p>
                      </div>
-                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> {{ event.event_location }}<a
-                           href="#"><i class="fas fa-arrow-right"></i></a> </div>
+                     <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> {{ event.event_location }} <a href="#"><i class="fas fa-arrow-right"></i></a> </div>
                   </div>
                </div>
-               <!--Event List Box End-->
-              {% endfor %}
-               <div class="site-pagination ">
-                  <nav aria-label="Page navigation">
-                     <ul class="pagination">
-                        <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a> </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li class="active"><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
-                     </ul>
-                  </nav>
-               </div>
             </div>
-
+            <!--Event End--> 
+            {% endfor %}
          </div>
       </div>
       <!--Events End-->

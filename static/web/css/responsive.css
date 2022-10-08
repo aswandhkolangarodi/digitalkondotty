@@ -126,7 +126,7 @@
 .h3-navbar ul.navbar-right li.search-form {
 	width: 190px;
 }
-.h3-navbar ul.navbar-right li.donate-btn {
+li.donate-btn {
 	display: none;
 }
 .h3-navbar .navbar .navbar-nav>li>a {

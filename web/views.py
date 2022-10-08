@@ -68,6 +68,9 @@ def departments(request):
 def donation(request):
     return render(request, 'web/donation.html')
 
+def volunteer(request):
+    return render(request, 'web/volunteer.html')
+
 def gallery(request):
     gallery = Gallery.objects.all()
     context = {

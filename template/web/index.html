@@ -44,7 +44,7 @@
                             <!-- <div class="slide-content-box"> <a href="#" class="con">Join us Now</a> </div> -->
                         </div>
                     </li>
-                    <li data-transition="slidehorizontal"> <img src="{% static 'web/images/banner1.jpg' %}" alt=""
+                    <li data-transition="slidehorizontal"> <img src="{% static 'web/images/banner2 copy xs.jpg' %}" alt=""
                             width="1920" height="685" data-bgposition="top center" data-bgfit="cover"
                             data-bgrepeat="no-repeat" data-bgparallax="1">
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -128,10 +128,11 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-4 col-xs-4">
                     <!--Mayor Msg Start-->
-                    <div class="city-tour gallery"> <a href="" data-rel="prettyPhoto"
-                            title="City Tour"><img src="{% static 'web/images/playicon.png' %}" alt=""></a> <img
-                            src="{% static 'web/images/musthafa.jpg' %}" alt=""> </div>
+                    <div class="city-tour gallery"> <a href="#" onclick="lightbox_open();" ><img class="playicon-btn" src="{% static 'web/images/playicon.png' %}" alt=""></a> <img
+                            src="{% static 'web/images/mla2.jpg' %}" alt=""> </div>
                     <!--Mayor Msg End-->
+                   
+                    
                 </div>
                 <div class="col-md-8 col-sm-8 col-4 ">
                     <div class="Mayor-welcome">
@@ -157,7 +158,7 @@
 <div class="row pt-5">
     
     <!--Services Box Start-->
-    <div class="col-md-3 col-xs-6 col-sm-6 ">
+    <div class="col-md-3  col-sm-12 ">
        <div class="service-box">
           <div class="serbox-cap">
              <h6><a href="#">City History,<br>
@@ -171,7 +172,7 @@
     </div>
     <!--Services Box End--> 
     <!--Services Box Start-->
-    <div class="col-md-3 col-xs-6 col-sm-6 ">
+    <div class="col-md-3  col-sm-12 ">
        <div class="service-box">
           <div class="serbox-cap">
              <h6><a href="#">Government<br>
@@ -185,7 +186,7 @@
     </div>
     <!--Services Box End--> 
     <!--Services Box Start-->
-    <div class="col-md-3 col-xs-6 col-sm-6">
+    <div class="col-md-3  col-sm-12">
        <div class="service-box">
           <div class="serbox-cap">
              <h6><a href="#">Constitution &amp; <br>
@@ -199,7 +200,7 @@
     </div>
     <!--Services Box End-->
     <!--Services Box Start-->
-    <div class="col-md-3 col-xs-6 col-sm-6">
+    <div class="col-md-3  col-sm-12">
         <div class="service-box">
            <div class="serbox-cap">
               <h6><a href="#">Constitution &amp; <br>
@@ -618,4 +619,43 @@
     {% include 'web/partials/subscribe.html' %}
 </div>
 <!--Main Content End-->
+
+<div id="light">
+  <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+  <video id="VisaChipCardVideo"  controls  >
+      <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/mp4" >
+      <!--Browser does not support <video> tag -->
+    </video>
+</div>
+
+<div id="fade" onClick="lightbox_close();"></div>
+
+
+
+
+<script>
+    window.document.onkeydown = function(e) {
+  if (!e) {
+    e = event;
+  }
+  if (e.keyCode == 27) {
+    lightbox_close();
+  }
+}
+
+function lightbox_open() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+  window.scrollTo(0, 0);
+  document.getElementById('light').style.display = 'block';
+  document.getElementById('fade').style.display = 'block';
+  lightBoxVideo.play();
+}
+
+function lightbox_close() {
+  var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+  document.getElementById('light').style.display = 'none';
+  document.getElementById('fade').style.display = 'none';
+  lightBoxVideo.pause();
+}
+</script>
 {% endblock %}

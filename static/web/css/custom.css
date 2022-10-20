@@ -169,7 +169,9 @@ body h6 {
 .p70 {
 	padding: 70px 0;
 }
-
+.p50{
+	padding: 40px 0;
+}
 body a,
 body a:hover,
 body a:active,
@@ -8660,3 +8662,6 @@ ul.team-social a,
 }
 
 
+.mt-5{
+	margin-top: 10px;
+}

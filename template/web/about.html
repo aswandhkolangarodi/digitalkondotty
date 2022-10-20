@@ -26,16 +26,20 @@
                 <div class="h2-Mayor-msg">
                    <div class="Mayor-img"> <span class="msig"> <img src="{% static 'web/images/mayer-signature.png' %}" alt=""> </span> <img src="{% static 'web/images/musthafa.jpg' %}" alt=""></div>
                    <div class="Mayor-txt">
-                      <strong>Founder of digital kondotty</strong>
-                      <h4>KC Musthafa</h4>
-                      <p> The Hightst Glory of the Citizen’s revolution was this; it connected in one indissoluble bond the principles of civil government with the principles of humanity. </p>
-                      <a href="#">Contact Me</a> 
+                      
+                      <p> Digitalizing a city like Kondotty has become the need of the hour.
+                        All the world is becoming digitalized one way or the other day by
+                        day. We are far behind this concept. Malappuram is the world's
+                        fastest-growing city and Kondotty is the heart of Malappuram.
+                        #digitalkondotty broadly means the overall development of the
+                        city. </p>
+                      <a href="{% url 'web:contact' %}">Contact Us</a> 
                    </div>
                 </div>
              </div>
              <div class="col-md-4 col-sm-5">
                 <!--Mayor Msg Start-->
-                <div class="city-tour gallery"> <strong> KONDOTTY </strong> <a href="http://youtu.be/VVvgm7AhFc8" data-rel="prettyPhoto" title="City Tour"><img src="{% static 'web/images/playicon.png' %}" alt=""></a> <img class="about-vibrant-city" height="294" src="{% static 'web/images/Kondotty_town.png' %}"  alt=""> </div>
+                <div class="city-tour gallery"> <strong> KONDOTTY </strong> <img class="about-vibrant-city" height="294" src="{% static 'web/images/Kondotty_town.png' %}"  alt=""> </div>
                 <!--Mayor Msg End--> 
              </div>
           </div>
@@ -141,7 +145,7 @@
     <!--City Official Members Start-->
 
 
-
+{% comment %}
 
     <section class="wf100 p80 official-members">
        <div class="container">
@@ -213,6 +217,7 @@
           </div>
        </div>
     </section>
+{% endcomment %}
     <!--City Official Members End--> 
     <!--Emergency Numbers Start-->
     {% include 'web/partials/subscribe.html' %}

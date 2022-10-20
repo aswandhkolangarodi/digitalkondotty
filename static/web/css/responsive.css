@@ -2,6 +2,9 @@
 .h3-slider-caption {
 	top: 50px;
 }
+.d-lg-none{
+	display: none;
+}
 .h3-slider-caption strong {
 	font-size: 32px;
 	line-height: 36px;
@@ -699,7 +702,7 @@ li.header-weather {
 	display: none;
 }
 .Mayor-video-msg .city-tour {
-	margin: 0 0 30px;
+	margin: 0 0 0;
 }
 .recent-event-block, .news-box {
 	margin: 0 0 30px;
@@ -849,6 +852,15 @@ ul.funds li strong, .event-counter .countdown-period {
 	width: 25px !important;
 	position: absolute;
 	
+}
+body h3 {
+    font-size: 21px;
+}
+body h6 {
+    font-size: 13px;
+}
+body h5 {
+    font-size: 16px;
 }
 .city-tour img {
 	width: 100%;

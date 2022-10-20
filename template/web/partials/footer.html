@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row"> 
         <!--Footer Widget Start-->
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
           <div class="textwidget"> <img class="logoimage" src="{% static 'web/images/footer.png' %}" alt="">
             <address>
             <ul>
@@ -21,24 +21,24 @@
         </div>
         <!--Footer Widget End--> 
         <!--Footer Widget Start-->
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
           <div class="footer-widget">
-            <h6>Departments</h6>
+            <h6>Quick Links</h6>
             <ul>
-              <li><a href="#"><i class="fas fa-star"></i> Government Services</a></li>
-              <li><a href="#"><i class="fas fa-star"></i> Kondotty Tourism</a></li>
-              <li><a href="#"><i class="fas fa-star"></i> Kondotty Education</a></li>
-              <li><a href="#"><i class="fas fa-star"></i> Education and Skills</a></li>
-              <li><a href="#"><i class="fas fa-star"></i> Jobs career</a></li>
-              <li><a href="#"><i class="fas fa-star"></i> Buisness List</a></li>
-              <li><a href="#"><i class="fas fa-star"></i> Emergency Service</a></li>
+              <li><a href="{% url 'web:home' %}"><i class="fas fa-star"></i> Home</a></li>
+              <li><a href="{% url 'web:about' %}"><i class="fas fa-star"></i> About</a></li>
+              <li><a href="{% url 'web:departments' %}"><i class="fas fa-star"></i> Departments</a></li>
+              <li><a href="{% url 'web:news' %}"><i class="fas fa-star"></i> News</a></li>
+              <li><a href="{% url 'web:event' %}"><i class="fas fa-star"></i> Events</a></li>
+              <li><a href="{% url 'web:contact' %}"><i class="fas fa-star"></i> Contact Us</a></li>
+              <li><a href="{% url 'web:gallery' %}"><i class="fas fa-star"></i> Gallery</a></li>
              
             </ul>
           </div>
         </div>
         <!--Footer Widget End--> 
         <!--Footer Widget Start-->
-        <div class="col-md-3 col-sm-6">
+        <!-- <div class="col-md-3 col-sm-6">
           <div class="footer-widget">
             <h6>Explore City Highlights</h6>
             <ul>
@@ -52,17 +52,16 @@
               <li><a href="#"><i class="fas fa-star"></i> Nightlife Entertainments</a></li>
             </ul>
           </div>
-        </div>
+        </div> -->
         <!--Footer Widget End--> 
         <!--Footer Widget Start-->
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
           <div class="twitter-widget">
             <div class="tw-txt">
-              <h6>@john.flintoff</h6>
-              <a href="#" class="reply-tw"><i class="fas fa-reply"></i></a>
-              <p> The Hightst Glory of the Citizen’s revolution was this; it connected in one indissoluble bond the principles of civil govt. with humanity principles. </p>
+              <h6>@kc__musthafa</h6>
+              <a href="https://twitter.com/kc__musthafa?t=krnncVwOuBdQrmYxkCr8ZQ&s=09" class="reply-tw" target="_blank"><i class="fas fa-reply"></i></a>
+              <p> #digitalkondotty on action, let’s get updated in the world of technology. Digitalisation in the heart of Malappuram with the art of technology. </p>
             </div>
-            <div class="tw-footer"> @Balad.gov <strong>3 November, 2019</strong> <i class="fab fa-twitter"></i> </div>
           </div>
         </div>
         <!--Footer Widget End--> 
@@ -79,11 +78,9 @@
         </div>
         <div class="col-md-5 col-sm-5">
           <ul class="footer-social">
-            <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.facebook.com/digitalkondotty/" class="fb" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://instagram.com/digitalkondotty" class="insta" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <!-- <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li> -->
           </ul>
         </div>
       </div>

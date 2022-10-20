@@ -1,0 +1,74 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!--Sub Header Start-->
+<section class="wf100 subheader">
+   <div class="container">
+      <h2> Health & Hospital</h2>
+      <ul>
+         <li> <a href="{% url 'web:home' %}">Home</a> </li>
+         <li> <a href="#">
+            Health & Hospital</a> </li>
+
+      </ul>
+   </div>
+</section>
+<!--Sub Header End-->
+<!--Main Content Start-->
+<div class="main-content p80 gallery">
+   <!-- Gallery Page Start -->
+   <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="event-post">
+               <div class="thumb">  <img src="{% static 'web/images/Gov Hospital kondotty.jpg' %}" alt="Kondotty Municipality Office"></div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <h5><a >Gov Hospital Kondotty</a></h5>
+                     <ul class="event-meta">
+                        <li>Kondotty,Malappuram  </li>
+                        
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="event-post">
+               <div class="thumb">  <img src="{% static 'web/images/Mercy Hospital Kondotty by Mk.jpg' %}" alt="Kondotty Municipality Office"></div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <h5><a >Mercy Hospital Kondotty</a></h5>
+                     <ul class="event-meta">
+                        <li>Kondotty,Malappuram </li>
+                        
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-sm-6">
+            <div class="event-post">
+               <div class="thumb">  <img src="{% static 'web/images/relief hospital kondotty.jpg' %}" alt="Relief Hospital"></div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <h5><a >Relief Hospital
+                    </a></h5>
+                     <ul class="event-meta">
+                        <li> Kondotty,Malappuram  
+                        </li>
+                       
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+        
+      </div>
+      
+   </div>
+   <!-- Gallery Page Start -->
+</div>
+<!--Main Content End-->
+
+{% endblock %}

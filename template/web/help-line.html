@@ -1,0 +1,71 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!--Sub Header Start-->
+<section class="wf100 subheader">
+   <div class="container">
+      <h2> Helpline Service </h2>
+      <ul>
+         <li> <a href="{% url 'web:home' %}">Home</a> </li>
+         <li> <a href="#">
+            Helpline Service</a> </li>
+
+      </ul>
+   </div>
+</section>
+<!--Sub Header End-->
+<!--Main Content Start-->
+<div class="main-content p80 gallery">
+   <!-- Gallery Page Start -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-2"></div>
+        <div class="col-md-4 col-sm-6">
+            <div class="event-post">
+               <div class="thumb">  <img src="{% static 'web/images/Daru shifa ambulance service.jpg' %}" alt="Daru shifa ambulance service"></div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <h5><a >Daru shifa ambulance service
+                    </a></h5>
+                     <ul class="event-meta">
+                        <li>Kunnumpuram, Kerala
+                        </li>
+                        
+                        <li>Contact : 070336 99531
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-sm-6">
+            <div class="event-post">
+               <div class="thumb">  <img src="{% static 'web/images/Akshayaecentre Kondotty.jpg' %}" alt="Akshayaecentre Kondotty"></div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <h5><a >Akshayaecentre KOndotty
+
+                    </a></h5>
+                     <ul class="event-meta">
+                        <li> HilalBuilding, BypassRoad, Kondotty</li>
+                        <li>Near Kondotty Busstand
+                        </li>
+                        <li>PIN : 673638</li>
+                        <li>Contact : 9846218366
+                        </li>
+                        <li>Email :aksmpm058@gmail.com
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+      
+   </div>
+   <!-- Gallery Page Start -->
+</div>
+<!--Main Content End-->
+
+{% endblock %}

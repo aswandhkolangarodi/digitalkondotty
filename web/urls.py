@@ -20,6 +20,13 @@ urlpatterns = [
     path('gallery/', views.gallery, name="gallery"),
 
     path('volunteer/', views.volunteer, name="volunteer"),
+    path('city-jobs-all/',views.career_all, name="city_jobs_all"),
+    path('history&tourism/',views.history_tourism, name="history_tourism"),
+    path('muncipality&village/',views.muncipality_village, name="muncipality_village"),
+    path('education/',views.education, name="education"),
+    path('health&hospitals/',views.health_hospital, name="health_hospital"),
+    path('business/',views.business, name="business"),
+    path('help-line-services/',views.help_line, name="help_line"),
 
 
 ]

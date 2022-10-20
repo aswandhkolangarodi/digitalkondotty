@@ -1,0 +1,67 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!--Sub Header Start-->
+<section class="wf100 subheader">
+   <div class="container">
+      <h2>
+        Business & Shops </h2>
+      <ul>
+         <li> <a href="{% url 'web:home' %}">Home</a> </li>
+         <li> <a href="#"> Business & Shops</a> </li>
+
+      </ul>
+   </div>
+</section>
+<!--Sub Header End-->
+<!--Main Content Start-->
+<div class="main-content p80 gallery">
+   <!-- Gallery Page Start -->
+   <div class="container">
+      <div class="row">
+         
+         <div class="col-md-2"></div>
+         <div class="col-md-8 col-sm-8 ">
+            <!--Event List Box Start-->
+            <div class="event-post-full">
+               <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="images/event-list1.jpg" alt=""> </div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <span class="ecat c1">Medical Event</span> 
+                     <!--Share Start-->
+                     <div class="btn-group share-post">
+                        <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-share-alt"></i> Share </button>
+                        <ul class="dropdown-menu">
+                           <li><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a></li>
+                           <li><a href="#" class="tw"><i class="fab fa-twitter"></i></a></li>
+                           <li><a href="#" class="insta"><i class="fab fa-instagram"></i></a></li>
+                           <li><a href="#" class="linken"><i class="fab fa-linkedin-in"></i></a></li>
+                           <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                     </div>
+                     <!--Share End-->
+                     <h5><a href="#">Social Awareness Seminar</a></h5>
+                     <ul class="event-meta">
+                        <li><i class="far fa-calendar-alt"></i> 3-5 March, 2019</li>
+                        <li><i class="far fa-clock"></i> 09:00am - 06:00pm</li>
+                     </ul>
+                     <p>Find out about your mental health and make a difference to everyday in your life massa aliquam suscipit.</p>
+                  </div>
+                  <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a href="#"><i class="fas fa-arrow-right"></i></a> </div>
+               </div>
+            </div>
+            <!--Event List Box End--> 
+           
+         </div>
+         <div class="col-md-2"></div>
+        
+
+
+      </div>
+      
+   </div>
+   <!-- Gallery Page Start -->
+</div>
+<!--Main Content End-->
+
+{% endblock %}

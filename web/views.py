@@ -77,3 +77,25 @@ def gallery(request):
         "gallery":gallery
     }
     return render(request, 'web/gallery.html',context)
+
+def career_all(request):
+    return render(request, "web/career-all.html")
+
+
+def history_tourism(request):
+        return render(request, "web/history-tourism.html")
+
+def muncipality_village(request):
+    return render(request, "web/muncipality-village.html")
+
+def education(request):
+    return render(request, 'web/education.html')
+
+def health_hospital(request):
+    return render(request, "web/health_hospital.html")
+
+def business(request):
+    return render(request, "web/business.html")
+
+def help_line(request):
+    return render(request, "web/help-line.html")

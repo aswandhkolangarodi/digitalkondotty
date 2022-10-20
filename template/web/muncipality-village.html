@@ -1,0 +1,64 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!--Sub Header Start-->
+<section class="wf100 subheader">
+   <div class="container">
+      <h2> Municipality & Villages </h2>
+      <ul>
+         <li> <a href="{% url 'web:home' %}">Home</a> </li>
+         <li> <a href="#">
+            Municipality & Villages</a> </li>
+
+      </ul>
+   </div>
+</section>
+<!--Sub Header End-->
+<!--Main Content Start-->
+<div class="main-content p80 gallery">
+   <!-- Gallery Page Start -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-2"></div>
+        <div class="col-md-4 col-sm-6">
+            <div class="event-post">
+               <div class="thumb">  <img src="{% static 'web/images/Kondotty Municipality Office.jpg' %}" alt="Kondotty Municipality Office"></div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <h5><a >Municipality</a></h5>
+                     <ul class="event-meta">
+                        <li>Mahakavi Moyinkutty Vaidyar Smarakam</li>
+                        <li>Near Kozhikode - Palakkad Highway
+                        </li>
+                        <li>Contact : 0483 271 2037
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4 col-sm-6">
+            <div class="event-post">
+               <div class="thumb">  <img src="{% static 'web/images/Kondotty Villages Office.jpg' %}" alt=""></div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+                     <h5><a >Kondotty Villages Office
+                    </a></h5>
+                     <ul class="event-meta">
+                        <li> Kozhikode-Nilambur-Gudallur Road</li>
+                        <li>Malappuram, Kerala </li>
+                        <li>PIN : 673638</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2"></div>
+      </div>
+      
+   </div>
+   <!-- Gallery Page Start -->
+</div>
+<!--Main Content End-->
+
+{% endblock %}

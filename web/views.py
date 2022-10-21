@@ -8,6 +8,8 @@ def base(request):
     return render(request,'web/partials/base.html')
 
 def home(request):
+    explore_comunity_1 = ExploreComunity.objects.all()[:4]
+    explore_comunity_2 = ExploreComunity.objects.all()[4:8]
     news = News.objects.all().order_by('-id')[:4]
     event = Event.objects.all().order_by('-id')[:4]
     testimonial = Testimonial.objects.all()
@@ -16,7 +18,9 @@ def home(request):
         "news":news,
         "event":event,
         "testimonial":testimonial,
-        "official":official
+        "official":official,
+        "explore_comunity_1":explore_comunity_1,
+        "explore_comunity_2":explore_comunity_2,
     }
     return render(request,'web/index.html',context)
 
@@ -99,3 +103,7 @@ def business(request):
 
 def help_line(request):
     return render(request, "web/help-line.html")
+
+def explore_comunity_single(request, id):
+    data = ExploreComunity.objects.get(id=id)
+    return render(request, "web/explore-comunity-single.html",{"data":data})

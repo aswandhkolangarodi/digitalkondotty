@@ -129,7 +129,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-4 col-xs-4">
                     <!--Mayor Msg Start-->
-                    <a href="#" onclick="lightbox_open();">
+                    <a href="#" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">
                         <div class="city-tour gallery"> 
                             <!-- <img class="playicon-btn d-lg-none" src="{% static 'web/images/playicon.png' %}" alt=""> -->
                             <img
@@ -169,7 +169,7 @@
                     <div class="event-post">
                         
                         <div class="event-post-content">
-                            <div class="event-post-txt">
+                            <div class="event-post-txt city-jobs">
                                 <h5><a href="{% url 'web:city_jobs_all' %}">Business Development Executive
                                 </a></h5>
                                 <ul class="event-meta">
@@ -180,8 +180,7 @@
                                     </li>
                                 </ul>
                                 <p>Strong communication & Presentation skill
-                                    Any Degree or Marketing Experience
-                                    Freshers can also apply.
+                                    A..
                                     </p>
                             </div>
                             <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
@@ -195,7 +194,7 @@
                     <div class="event-post">
                        
                         <div class="event-post-content">
-                            <div class="event-post-txt">
+                            <div class="event-post-txt city-jobs">
                                 <h5><a href="{% url 'web:city_jobs_all' %}"> Python Developer
                                 </a></h5>
                                 <ul class="event-meta">
@@ -219,7 +218,7 @@
                     <div class="event-post">
                         <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> </div>
                         <div class="event-post-content">
-                            <div class="event-post-txt">
+                            <div class="event-post-txt city-jobs">
                                 <h5><a href="{% url 'web:city_jobs_all' %}">Content Writer</a></h5>
                                 <ul class="event-meta">
                                     <li>COMPANY : Gedexo Technologies LLP
@@ -228,9 +227,7 @@
                                     <li>MAIL		: gedexohr@gmail.com
                                     </li>
                                 </ul>
-                                <p>Good Communication Skills (Verbal & Written in English)
-                                    Adaptability    <br>Passion for IT & Interest in Latest Digital Marketting Trends
-                                    Freshers can also apply
+                                <p>Good Communication Skills (Verbal & Written ...
                                     
                                     
                                 </p>
@@ -269,9 +266,9 @@
                         <div class="new-txt">
                             <ul class="news-meta">
                                 <li>{{ news.news_date }}</li>
-
+                                
                             </ul>
-                            <h6><a href="#" class="newscontent">{{ news.news_heading }}</a></h6>
+                            <h6><a href="{% url 'web:news-single' news.id %}" class="newscontent-heading">{{ news.news_heading|truncatechars:30 }}</a></h6>
                             <p class="newscontent"> {{ news.news_content|safe }}</p>
                         </div>
                         <style>
@@ -569,20 +566,24 @@
                             <ul class="community-links-style-two">
                                 <div class="row">
                                     <div class="col-md-12 col-xs-6">
-                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon1.png' %}" alt="">KNW</a> </li>
-                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
+                                        {% for explore_comunity in explore_comunity_1 %}
+                                        <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{% static 'web/images/excomm-icon1.png' %}" alt="">{{explore_comunity.comunity_name}}</a> </li>
+                                        <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
                                         <li> <a href="#"> <img src="{% static 'web/images/excomm-icon3.png' %}" alt=""> BNI</a> </li>
-                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon4.png' %}" alt=""> M Park
+                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon4.png' %}" alt=""> M Park -->
                                             </a> </li>
+                                            {% endfor %}
                                     </div>
                                     <div class="col-md-12 col-xs-6">
-                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon5.png' %}" alt=""> CITU</a> </li>
-                                <li> <a href="#"> <img src="{% static 'web/images/excomm-icon6.png' %}" alt=""> STU
+                                        {% for explore_comunity in explore_comunity_2 %}
+                                        <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{% static 'web/images/excomm-icon5.png' %}" alt=""> CITU</a> </li>
+                                <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon6.png' %}" alt=""> STU
                                     </a> </li>
                                 <li> <a href="#"> <img src="{% static 'web/images/excomm-icon7.png' %}" alt="">Political Parties
                                     </a> </li>
                                 <li> <a href="#"> <img src="{% static 'web/images/excomm-icon8.png' %}" alt=""> Sports </a>
-                                </li>
+                                </li> -->
+                                {% endfor %}
                                     </div>
                                 </div>
                                
@@ -670,42 +671,47 @@
 </div>
 <!--Main Content End-->
 
-<div id="light">
-    <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
-    <video id="VisaChipCardVideo" controls>
-        <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/mp4">
-        <!--Browser does not support <video> tag -->
-    </video>
-</div>
+
 
 <div id="fade" onClick="lightbox_close();"></div>
-
-
-
-
+<div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+        <div class="embed-responsive embed-responsive-16by9">
+          <video id="gossVideo" class="embed-responsive-item" controls="controls" poster="http://www.gossettmktg.com/video/dangot.png">
+            <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/mp4">
+            <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/webm">
+            <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/ogg">
+            <object type="application/x-shockwave-flash" data="https://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="353" height="190">
+              <param name="movie" value="https://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+              <param name="allowFullScreen" value="true">		<param name="wmode" value="transparent">
+              <param name="flashVars" value="config={'playlist':['http%3A%2F%2Fwww.gossettmktg.com%2Fvideo%2Fdangot.png',{'url':'http%3A%2F%2Fwww.gossettmktg.com%2Fvideo%2Fdangot.mp4','autoPlay':false}]}">
+              <img alt="Big Buck Bunny" src="http://www.gossettmktg.com/video/dangot.png" width="353" height="190" title="No video playback capabilities, please download the video below">
+            </object>
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- <div id="vidBox">
+    <div id="videCont">
+        <video autoplay id="v1" loop controls="controls">
+            <source src="video/VideoPopUpHTML5.webm" type="video/webm">
+            
+        </video>
+    </div>
+</div> -->
 <script>
-    window.document.onkeydown = function (e) {
-        if (!e) {
-            e = event;
-        }
-        if (e.keyCode == 27) {
-            lightbox_close();
-        }
-    }
+    var vid = document.getElementById("gossVideo"); 
 
-    function lightbox_open() {
-        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
-        window.scrollTo(0, 0);
-        document.getElementById('light').style.display = 'block';
-        document.getElementById('fade').style.display = 'block';
-        lightBoxVideo.play();
-    }
+function playVid() { 
+vid.play(); 
+} 
 
-    function lightbox_close() {
-        var lightBoxVideo = document.getElementById("VisaChipCardVideo");
-        document.getElementById('light').style.display = 'none';
-        document.getElementById('fade').style.display = 'none';
-        lightBoxVideo.pause();
-    }
+function pauseVid() { 
+vid.pause(); 
+} 
 </script>
+
 {% endblock %}

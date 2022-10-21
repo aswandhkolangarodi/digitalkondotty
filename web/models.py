@@ -62,3 +62,20 @@ class Official(models.Model):
     def __str__(self):
         return self.officials_name
 
+class ExploreComunity(models.Model):
+    comunity_name =models.CharField(max_length=100)
+    icon_image = VersatileImageField(upload_to = "explorecity")
+    content = HTMLField()
+    president_name =models.CharField(max_length=100)
+    president_image = VersatileImageField(upload_to = "explorecity")
+    vice_president_name =models.CharField(max_length=100)
+    vice_president_image = VersatileImageField(upload_to = "explorecity")
+    secretary_name = models.CharField(max_length=100)
+    secretary_image = VersatileImageField(upload_to = "explorecity")
+    chairman_name = models.CharField(max_length=100)
+    chairman_image = VersatileImageField(upload_to = "explorecity")
+    contact_number = models.CharField(max_length=100 ,default="+91")
+    whatsapp_number = models.CharField(max_length=100 ,default="+91")
+
+    def __str__(self):
+        return self.comunity_name

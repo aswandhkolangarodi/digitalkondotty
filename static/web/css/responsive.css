@@ -730,7 +730,7 @@ li.header-weather {
 	padding: 50px 0;
 }
 .subheader h2 {
-	font-size: 28px;
+	font-size: 20px;
 }
 .newsletter-form button {
 	margin: 10px 0 0;
@@ -864,22 +864,29 @@ body h6 {
 	margin: 0 0 6px;
 }
 .Mayor-welcome p {
-	font-size: 8px;
+	font-size: 9px;
+	line-height: 15px;
 }
 .new-txt ul.news-meta li {
 	font-size: 7px;
 }
 .new-txt h6 {
-	font-size: 15px;
+	font-size: 17px;
+}
+.joinnow{
+	display: none;
 }
 .new-txt p {
-	font-size: 10px;
+	font-size: 12px;
+}
+.joinnow{
+	display: none !important;
 }
 .news-box-f span{
 	margin-left: 15px;
 }
 .news-box-f {
-	font-size: 7px;
+	font-size: 10px;
 }
 .team-info {
 	bottom: -46px;

@@ -14,51 +14,40 @@
    </div>
 </section>
 <!--Sub Header End-->
+
+
 <!--Main Content Start-->
 <div class="main-content p80 gallery">
    <!-- Gallery Page Start -->
    <div class="container">
       <div class="row">
-         <div class="col-md-2"></div>
-        <div class="col-md-4 col-sm-6">
-            <div class="event-post">
-               <div class="thumb">  <img src="{% static 'web/images/Kondotty Municipality Office.jpg' %}" alt="Kondotty Municipality Office"></div>
-               <div class="event-post-content">
-                  <div class="event-post-txt">
-                     <h5><a >Municipality</a></h5>
-                     <ul class="event-meta">
-                        <li>Mahakavi Moyinkutty Vaidyar Smarakam</li>
-                        <li>Near Kozhikode - Palakkad Highway
-                        </li>
-                        <li>Contact : 0483 271 2037
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
+         {% for municipality_villages in municipality_villages %}
+
+<div class="col-md-3 col-sm-6 col-6">
+   <div class="event-post" style="height: 430px;">
+      <div class="thumb">  <img src="{{ municipality_villages.village_image.url }}" alt="Daru shifa ambulance service"></div>
+      <div class="event-post-content">
+         <div class="event-post-txt">
+            <h5><a >{{ municipality_villages.village_head }}
+           </a></h5>
+            <ul class="event-meta">
+               <li>{{ municipality_villages.village_address|safe }}</li>
+               <li>{{ municipality_villages.village_phone }}</li>
+            </ul>
          </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="event-post">
-               <div class="thumb">  <img src="{% static 'web/images/Kondotty Villages Office.jpg' %}" alt=""></div>
-               <div class="event-post-content">
-                  <div class="event-post-txt">
-                     <h5><a >Kondotty Villages Office
-                    </a></h5>
-                     <ul class="event-meta">
-                        <li> Kozhikode-Nilambur-Gudallur Road</li>
-                        <li>Malappuram, Kerala </li>
-                        <li>PIN : 673638</li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-2"></div>
+      </div>
+   </div>
+</div>
+
+{% endfor %}
+ 
+
       </div>
       
    </div>
    <!-- Gallery Page Start -->
 </div>
 <!--Main Content End-->
+
 
 {% endblock %}

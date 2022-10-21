@@ -12,8 +12,7 @@ class News(models.Model):
     news_date = models.DateTimeField()
     news_image = VersatileImageField(upload_to = "news")
     news_content = HTMLField()
-    news_author = models.CharField(max_length=100)
-    author_image = VersatileImageField(upload_to = "author image")
+    
 
     def __str__(self):
         return self.news_heading

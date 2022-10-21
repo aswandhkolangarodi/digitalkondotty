@@ -114,7 +114,7 @@ body h2 {
 }
 
 body h3 {
-	font-size: 32px;
+	font-size: 28px;
 }
 
 body h4 {
@@ -122,13 +122,15 @@ body h4 {
 }
 
 body h5 {
-	font-size: 24px;
+	font-size: 20px;
 }
 
 body h6 {
 	font-size: 18px;
 }
-
+.upcoming-event {
+	font-size: 10px !important;
+}
 .wf100 {
 	width: 100%;
 	float: left;
@@ -3536,6 +3538,7 @@ li.header-weather {
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, .07);
+	margin-bottom: 10px;
 }
 
 .new-txt {
@@ -4282,7 +4285,7 @@ ul.reports a i {
 .event-list li strong.edate {
 	display: block;
 	color: #f99f00;
-	font-size: 16px;
+	font-size: 10px;
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -4290,7 +4293,7 @@ ul.reports a i {
 .event-list li strong.etime {
 	display: block;
 	color: #aaaaaa;
-	font-size: 16px;
+	font-size: 10px;
 	font-weight: 500;
 	text-transform: uppercase;
 }
@@ -4305,7 +4308,7 @@ ul.reports a i {
 	line-height: 28px;
 	display: inline-block;
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 10px;
 	color: #a0a0a0;
 	padding: 0 20px;
 	border-radius: 15px;
@@ -4319,8 +4322,11 @@ ul.reports a i {
 
 .event-list li.el-title {
 	width: 40%;
+	font-size: 10px;
 }
-
+.event-list li.el-title h6{
+	font-size: 12px;
+}
 .event-list li.el-title h6 {
 	color: #222222;
 	margin: 0 0 7px;
@@ -4530,7 +4536,7 @@ ul.reports a i {
 .team-info {
 	position: absolute;
 	left: 0;
-	bottom: -95px;
+	bottom: -77px;
 	padding: 20px;
 	z-index: 99;
 }
@@ -6125,7 +6131,7 @@ body .panel-group .panel+.panel {
 
 .gallery-thumb img {
 	width: 100%;
-	height: auto;
+	height: 331px;
 	border-radius: 3px;
 }
 
@@ -8664,4 +8670,7 @@ ul.team-social a,
 
 .mt-5{
 	margin-top: 10px;
+}
+.ml-2{
+	margin-left: 15px;
 }

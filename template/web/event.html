@@ -25,7 +25,7 @@
             <!--Event Start-->
             <div class="col-md-4 col-sm-6">
                <div class="event-post">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="{{ event.event_image.crop.390x202 }}" alt=""></div>
+                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="{{ event.event_image.url }}" alt=""></div>
                   <div class="event-post-content">
                      <div class="event-post-txt">
                         <h5><a href="{% url 'web:event-single' %}">{{ event.event_heading }}</a></h5>

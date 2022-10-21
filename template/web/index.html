@@ -133,7 +133,7 @@
                         <div class="city-tour gallery"> 
                             <!-- <img class="playicon-btn d-lg-none" src="{% static 'web/images/playicon.png' %}" alt=""> -->
                             <img
-                                src="{% static 'web/images/TV.jpg' %}" alt=""> </div>
+                                src="{% static 'web/images/mla.jpg' %}" alt=""> </div>
                     </a>
                     <!--Mayor Msg End-->
 
@@ -146,9 +146,7 @@
                         <p>Digital transformation is happening everywhere around the world. Bringing leading-edge
                             technology into Malappuram, #DigitalKondotty forges a path to digital ease for everyone.
                         </p>
-                        <h6>
-                            
-                        </h6>
+                       
 
                     </div>
                 </div>
@@ -162,8 +160,8 @@
         <div class="container">
             <div class="title-style-3">
                 <h3>City Jobs</h3>
-                <p>Place your career in the most promising firms
-                </p>
+                <!-- <p>Place your career in the most promising firms
+                </p> -->
             </div>
             <div class="row">
                 <!--Event Start-->
@@ -258,8 +256,8 @@
     <section class="wf100 city-news ">
         <div class="container">
             <div class="title-style-3">
-                <h3>  News & Updated</h3>
-                <p>Read the News Updates and Articles about Government </p>
+                <h3>  News & Updates</h3>
+                <!-- <p>Read the News Updates and Articles about Government </p> -->
             </div>
             <div class="row">
                 <!--News Box Start-->
@@ -267,7 +265,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="news-box">
                         <div class="new-thumb"> <span class="cat c1">{{ news.news_catagory }}</span> <img
-                                src="{{ news.news_image.crop.262x201 }}" alt=""> </div>
+                                src="{{ news.news_image.url }}" alt=""> </div>
                         <div class="new-txt">
                             <ul class="news-meta">
                                 <li>{{ news.news_date }}</li>
@@ -287,8 +285,8 @@
                                 -webkit-box-orient: vertical;
                             }
                         </style>
-                        <div class="news-box-f"> <img src="{{ news.author_image.url }}" alt="">
-                            {{ news.news_author }}
+                        <div class="news-box-f"> 
+                            <span class="ml-2">Read more</span>
                             <a href="{% url 'web:news-single' news.id %}"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -510,7 +508,7 @@
                                         {{ event.event_description|safe }}
                                     </p>
                                 </div>
-                                <img src="{{ event.event_image.crop.457x399 }}" alt="">
+                                <img src="{{ event.event_image.url }}" alt="">
                             </div>
                             {% endfor %}
                         </div>
@@ -518,7 +516,7 @@
                         <!--Slider Big Slider Nav-->
                         <div class="recent-event-slider-nav">
                             {% for event in event %}
-                            <div><img src="{{ event.event_image.crop.105x88 }}" alt=""></div>
+                            <div><img src="{{ event.event_image.url }}" alt=""></div>
                             {% endfor %}
                         </div>
                         <!--Slider Big Slider Nav-->
@@ -527,7 +525,7 @@
                 <div class="col-md-7">
                     <h3>Upcoming Schedules</h3>
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#Events" aria-controls="Events" role="tab"
+                        <li role="presentation" class="active"><a href="#Events" class="upcoming-event" aria-controls="Events" role="tab"
                                 data-toggle="tab">Upcoming Events</a></li>
 
                     </ul>
@@ -546,7 +544,7 @@
                                     <h6><a href="{% url 'web:event' %}">{{ event.event_heading }}</a></h6>
                                     <p><i class="fas fa-map-marker-alt"></i> {{ event.event_location}}</p>
                                 </li>
-                                <li> <a href="#" class="joinnow">Join Now</a> </li>
+                                <li> <a href="{% url 'web:event' %}" class="joinnow">Join Now</a> </li>
 
                             </ul>
                             {% endfor %}
@@ -567,24 +565,35 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Explore Community</h3>
-                    <ul class="community-links-style-two">
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon1.png' %}" alt="">KNW</a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon3.png' %}" alt=""> BNI</a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon4.png' %}" alt=""> M Park
-                            </a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon5.png' %}" alt=""> CITU</a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon6.png' %}" alt=""> STU
-                            </a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon7.png' %}" alt="">Political Parties
-                            </a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon8.png' %}" alt=""> Sports </a>
-                        </li>
-                        <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon9.png' %}" alt=""> City Council
-                            </a> </li>
-                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon10.png' %}" alt=""> Important
-                                Numbers </a> </li> -->
-                    </ul>
+                   
+                            <ul class="community-links-style-two">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-6">
+                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon1.png' %}" alt="">KNW</a> </li>
+                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
+                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon3.png' %}" alt=""> BNI</a> </li>
+                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon4.png' %}" alt=""> M Park
+                                            </a> </li>
+                                    </div>
+                                    <div class="col-md-12 col-xs-6">
+                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon5.png' %}" alt=""> CITU</a> </li>
+                                <li> <a href="#"> <img src="{% static 'web/images/excomm-icon6.png' %}" alt=""> STU
+                                    </a> </li>
+                                <li> <a href="#"> <img src="{% static 'web/images/excomm-icon7.png' %}" alt="">Political Parties
+                                    </a> </li>
+                                <li> <a href="#"> <img src="{% static 'web/images/excomm-icon8.png' %}" alt=""> Sports </a>
+                                </li>
+                                    </div>
+                                </div>
+                               
+                                
+                                <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon9.png' %}" alt=""> City Council
+                                    </a> </li>
+                                <li> <a href="#"> <img src="{% static 'web/images/excomm-icon10.png' %}" alt=""> Important
+                                        Numbers </a> </li> -->
+                            </ul>
+                       
+                   
                 </div>
                 <div class="col-md-6 ">
                     <h3>Meet Officials</h3>
@@ -599,16 +608,16 @@
                                     <h6>{{ official.officials_name }}</h6>
                                     <strong>{{ official.officials_designation }}</strong>
                                     <!-- <p> {{ official.officials_about }} </p> -->
-                                    <ul>
+                                    <!-- <ul>
                                         <li><strong>Connect:</strong></li>
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                         <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    </ul>
+                                    </ul> -->
 
                                 </div>
-                                <img src="{{ official.official_image.crop.262x334 }}" alt="">
+                                <img src="{{ official.official_image.url }}" alt="">
                             </div>
                         </div>
                         {% endfor %}

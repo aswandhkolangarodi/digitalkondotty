@@ -859,8 +859,36 @@ body h3 {
 body h6 {
     font-size: 13px;
 }
-body h5 {
-    font-size: 16px;
+.Mayor-welcome h5{
+    font-size: 12px;
+	margin: 0 0 6px;
+}
+.Mayor-welcome p {
+	font-size: 8px;
+}
+.new-txt ul.news-meta li {
+	font-size: 7px;
+}
+.new-txt h6 {
+	font-size: 15px;
+}
+.new-txt p {
+	font-size: 10px;
+}
+.news-box-f span{
+	margin-left: 15px;
+}
+.news-box-f {
+	font-size: 7px;
+}
+.team-info {
+	bottom: -46px;
+}
+.community-links-style-two li a{
+	font-size: 10px;
+}
+.Mayor-video-msg {
+	padding: 40px 0 10px;
 }
 .city-tour img {
 	width: 100%;

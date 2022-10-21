@@ -19,48 +19,30 @@
    <!-- Gallery Page Start -->
    <div class="container">
       <div class="row">
-         <div class="col-md-2"></div>
-        <div class="col-md-4 col-sm-6">
-            <div class="event-post">
-               <div class="thumb">  <img src="{% static 'web/images/Daru shifa ambulance service.jpg' %}" alt="Daru shifa ambulance service"></div>
-               <div class="event-post-content">
-                  <div class="event-post-txt">
-                     <h5><a >Daru shifa ambulance service
-                    </a></h5>
-                     <ul class="event-meta">
-                        <li>Kunnumpuram, Kerala
-                        </li>
-                        
-                        <li>Contact : 070336 99531
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="event-post">
-               <div class="thumb">  <img src="{% static 'web/images/Akshayaecentre Kondotty.jpg' %}" alt="Akshayaecentre Kondotty"></div>
-               <div class="event-post-content">
-                  <div class="event-post-txt">
-                     <h5><a >Akshayaecentre KOndotty
+{% for helpline_Service in helpline_Service %}
 
-                    </a></h5>
-                     <ul class="event-meta">
-                        <li> HilalBuilding, BypassRoad, Kondotty</li>
-                        <li>Near Kondotty Busstand
-                        </li>
-                        <li>PIN : 673638</li>
-                        <li>Contact : 9846218366
-                        </li>
-                        <li>Email :aksmpm058@gmail.com
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
+<div class="col-md-3 col-sm-6">
+   <div class="event-post" style="height: 430px;">
+      <div class="thumb">  <img src="{{ helpline_Service.helpline_image.url }}" alt="Daru shifa ambulance service"></div>
+      <div class="event-post-content">
+         <div class="event-post-txt">
+            <h5><a >{{ helpline_Service.helpline_head }}
+           </a></h5>
+            <ul class="event-meta">
+               <li>{{ helpline_Service.helpline_address|safe  }}
+               </li>
+               
+               <li>{{ helpline_Service.helpline_phone  }}
+               </li>
+            </ul>
          </div>
-         <div class="col-md-2"></div>
+      </div>
+   </div>
+</div>
+
+{% endfor %}
+ 
+
       </div>
       
    </div>

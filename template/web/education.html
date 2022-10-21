@@ -20,110 +20,38 @@
         <div class="row">
 
             <div class="col-md-12">
-
-
-
-
-
-
-
-
                 <div class="city-updates">
+                    <div class="title-style-3">
                     <h3>Schools</h3>
+                </div>
                     <div class="row">
+                        {% for educational_institution in educational_institution %}
                         <div class="col-md-4">
                             <ul>
-                                <li> <strong><a href="#">AMLPS VALIYAPARAMBA</a></strong> </li>
-                                <li> <strong><a href="#">AMLPS KOTTAPPURAM</a></strong> </li>
-                                <li> <strong><a href="#">FLOREAT INTERNATIONAL SCHOOL</a></strong> </li>
-                                <li> <strong><a href="#">AMLPS ANTHIYURKUNNU</a></strong> </li>
-
-                                <li> <strong><a href="#">KIDS HOME ANTHIYURKUNNU</a></strong> </li>
-                                <li> <strong><a href="#">AMLPS VALIYAPARAMBA WEST</a></strong> </li>
-                                <li> <strong><a href="#">ROSE LAND PUBLIC SCHOOL OLAVATTUR</a></strong> </li>
-                                <li> <strong><a href="#">AMLPBS MUTTAYUR</a></strong> </li>
-
+                                <li> <strong><a href="#">{{ educational_institution.school_name }}</a></strong> </li>
                             </ul>
                         </div>
-                        <div class="col-md-4">
-                            <ul>
-                                <li> <strong><a href="#">GMLPS ALPARAMBA</a></strong> </li>
-                                <li> <strong><a href="#">IAUPS VALIYAPARAMBA </a></strong> </li>
-                                <li> <strong><a href="#">AMMHS PULIKKAL</a></strong> </li>
-                                <li> <strong><a href="#">GHSS KOTTAPPURAM</a></strong> </li>
-                                <li> <strong><a href="#">ANSAR EMHS KODIKUTHIPARAMBA</a></strong> </li>
-                                <li> <strong><a href="#">AMMLPS PULIKKAL</a></strong> </li>
-                                <li> <strong><a href="#">JAMIYA SALAFIYA ENGLISH SCHOOL</a></strong> </li>
-                                <li> <strong><a href="#">ALPS PALLIKKAL</a></strong> </li>
-                            </ul>
-                        </div>
-                        
 
-
-
-
-
-
-
-
-                        <div class="col-md-4">
-                            <ul>
-                                <li> <strong><a href="#">AMUPS KOZHIPURAM</a></strong> </li>
-                                <li> <strong><a href="#">AMLPS VENNAYUR</a></strong> </li>
-                                <li> <strong><a href="#">AMUPS PUTHURPALLIKKAL</a></strong> </li>
-                                <li> <strong><a href="#">NAVA BHARATH MODEL SCHOOL</a></strong> </li>
-                                <li> <strong><a href="#">SANDEEPANI VIDYA NIKETHAN AMBALAPPADI</a></strong> </li>
-                                <li> <strong><a href="#">AMLPS KOONULMADU</a></strong> </li>
-                                <li> <strong><a href="#">VPKMMHSS PUTHURPALLIKKAL</a></strong> </li>
-                                <li> <strong><a href="#">AMUPS PALLIKKAL</a></strong> </li>
-                            </ul>
-                        </div>
+                        {% endfor %}
                     </div>
 
                 </div>
-                <div class="city-updates">
+                <div class="city-updates mt-5">
+                    <div class="title-style-3">
                     <h3>Collages</h3>
+                </div>
                     <div class="row">
-                        <div class="col-md-2"></div>
+                  
+
+                        {% for educational_institution in educational_institution %}
                         <div class="col-md-4">
                             <ul>
-                                <li> <strong><a href="#">EMEA College of Arts & Science
-                                </a></strong> </li>
-                                <li> <strong><a href="#">Kondotty Co-Operative Arts & Science College</a></strong> </li>
-                                <li> <strong><a href="#">EMEA Training College</a></strong> </li>
-                                <li> <strong><a href="#">Jamia Salafia Pharmacy College</a></strong> </li>
-
-                                <li> <strong><a href="#">Jamia Salafia Teaching Training Institute</a></strong> </li>
-                                <li> <strong><a href="#">Jamia Salafia D.Ed College</a></strong> </li>
-                                <li> <strong><a href="#">Skytex Technology Service
-                                </a></strong> </li>
-                                <li> <strong><a href="#">Devaki Amma Memorial Teacher Education College</a></strong> </li>
-
+                                <li> <strong><a href="#">{{ educational_institution.college_name }}</a></strong> </li>
                             </ul>
                         </div>
-                        <div class="col-md-4">
-                            <ul>
-                                <li> <strong><a href="#">skytex technology</a></strong> </li>
-                                <li> <strong><a href="#">Oriental College</a></strong> </li>
-                                <li> <strong><a href="#">Brilliance College</a></strong> </li>
-                                <li> <strong><a href="#">Navabharath ITI</a></strong> </li>
-                                <li> <strong><a href="#">Pulikkal Cooperative College</a></strong> </li>
-                                <li> <strong><a href="#">Victoria College</a></strong> </li>
-                               
-                            </ul>
-                        </div>
-                        
 
-
-
-
-
-
-
-
-                        <div class="col-md-2">
-                            
-                        </div>
+                        {% endfor %}
+                    
                     </div>
 
                 </div>

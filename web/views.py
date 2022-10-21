@@ -83,19 +83,41 @@ def career_all(request):
 
 
 def history_tourism(request):
-        return render(request, "web/history-tourism.html")
+    history_tourism = History_Tourism.objects.all()
+    context = {
+        "history_tourism":history_tourism
+    }
+    return render(request, "web/history-tourism.html",context)
+
+
 
 def muncipality_village(request):
-    return render(request, "web/muncipality-village.html")
+    municipality_villages = Municipality_Villages.objects.all()
+    context = {
+        "municipality_villages":municipality_villages
+    }
+    return render(request, "web/muncipality-village.html",context)
 
 def education(request):
-    return render(request, 'web/education.html')
+    educational_institution = Educational_Institution.objects.all()
+    context = {
+        "educational_institution" : educational_institution
+    }
+    return render(request, 'web/education.html',context)
 
 def health_hospital(request):
-    return render(request, "web/health_hospital.html")
+    health_hospital = Health_Hospital.objects.all()
+    context = {
+        "health_hospital" : health_hospital
+    }
+    return render(request, "web/health_hospital.html",context)
 
 def business(request):
     return render(request, "web/business.html")
 
 def help_line(request):
-    return render(request, "web/help-line.html")
+    helpline_Service = Helpline_Service.objects.all()
+    context = {
+        "helpline_Service" : helpline_Service
+    }
+    return render(request, "web/help-line.html",context)

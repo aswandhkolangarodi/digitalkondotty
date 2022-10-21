@@ -18,9 +18,26 @@
    <!-- Gallery Page Start -->
    <div class="container">
       <div class="row">
-
+       
          <div class="col-md-2"></div>
          <div class="col-md-8 col-sm-8 ">
+{% for history_tourism in history_tourism %}
+            <div class="event-post-full">
+               <div class="thumb"> <img src="{{ history_tourism.history_image.url }}"
+                     alt="{{ history_tourism.explore_city_head }}"> </div>
+               <div class="event-post-content">
+                  <div class="event-post-txt">
+
+                     <h5><a>{{ history_tourism.history_heading }}
+                        </a></h5>
+
+                     <p>{{ history_tourism.history_description|safe }}
+                     </p>
+                  </div>
+               </div>
+            </div>
+{% endfor %}
+
             <!--Event List Box Start-->
             <div class="event-post-full">
                <div class="thumb"> <img src="{% static 'web/images/Maha Kavi Moyinkutty Vaidyar Smaraka.jpg' %}"

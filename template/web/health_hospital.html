@@ -14,56 +14,37 @@
    </div>
 </section>
 <!--Sub Header End-->
+
+
 <!--Main Content Start-->
 <div class="main-content p80 gallery">
    <!-- Gallery Page Start -->
    <div class="container">
       <div class="row">
-        <div class="col-md-4 col-sm-6">
-            <div class="event-post">
-               <div class="thumb">  <img src="{% static 'web/images/Gov Hospital kondotty.jpg' %}" alt="Kondotty Municipality Office"></div>
-               <div class="event-post-content">
-                  <div class="event-post-txt">
-                     <h5><a >Gov Hospital Kondotty</a></h5>
-                     <ul class="event-meta">
-                        <li>Kondotty,Malappuram  </li>
-                        
-                     </ul>
-                  </div>
-               </div>
-            </div>
+{% for health_hospital in health_hospital %}
+
+<div class="col-md-3 col-sm-6">
+   <div class="event-post" style="height: 430px;">
+      <div class="thumb">  <img src="{{ health_hospital.hospital_image.url }}" alt="Daru shifa ambulance service"></div>
+      <div class="event-post-content">
+         <div class="event-post-txt">
+            <h5><a >{{ health_hospital.hospital_head }}
+           </a></h5>
+            <ul class="event-meta">
+               <li>{{ health_hospital.hospital_address|safe  }}
+               </li>
+               
+               <li>{{ health_hospital.hospital_phone  }}
+               </li>
+            </ul>
          </div>
-        <div class="col-md-4 col-sm-6">
-            <div class="event-post">
-               <div class="thumb">  <img src="{% static 'web/images/Mercy Hospital Kondotty by Mk.jpg' %}" alt="Kondotty Municipality Office"></div>
-               <div class="event-post-content">
-                  <div class="event-post-txt">
-                     <h5><a >Mercy Hospital Kondotty</a></h5>
-                     <ul class="event-meta">
-                        <li>Kondotty,Malappuram </li>
-                        
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4 col-sm-6">
-            <div class="event-post">
-               <div class="thumb">  <img src="{% static 'web/images/relief hospital kondotty.jpg' %}" alt="Relief Hospital"></div>
-               <div class="event-post-content">
-                  <div class="event-post-txt">
-                     <h5><a >Relief Hospital
-                    </a></h5>
-                     <ul class="event-meta">
-                        <li> Kondotty,Malappuram  
-                        </li>
-                       
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-        
+      </div>
+   </div>
+</div>
+
+{% endfor %}
+ 
+
       </div>
       
    </div>

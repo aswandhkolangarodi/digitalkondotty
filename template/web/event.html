@@ -6,7 +6,7 @@
 <!--Sub Header Start-->
 <section class="wf100 subheader">
    <div class="container">
-      <h2>Upcoming Events in the City</h2>
+      <h2>Events </h2>
       <ul>
          <li> <a href="{% url 'web:home' %}">Home</a> </li>
          <li> <a href="#"> Events </a> </li>
@@ -25,10 +25,10 @@
             <!--Event Start-->
             <div class="col-md-4 col-sm-6">
                <div class="event-post">
-                  <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> <img src="{{ event.event_image.url }}" alt=""></div>
+                  <div class="thumb">  <img src="{{ event.event_image.url }}" alt=""></div>
                   <div class="event-post-content">
                      <div class="event-post-txt">
-                        <h5><a href="{% url 'web:event-single' %}">{{ event.event_heading }}</a></h5>
+                        <h5>{{ event.event_heading }}</h5>
                         <ul class="event-meta">
                            <li><i class="far fa-calendar-alt"></i> {{ event.event_date }}</li>
                            <li><i class="far fa-clock"></i> {{ event.event_start_time }} - {{ event.event_end_time }}</li>

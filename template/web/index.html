@@ -184,7 +184,7 @@
                                     </p>
                             </div>
                             <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
-                                    href="#"><i class="fas fa-arrow-right"></i></a> </div>
+                                    href="{% url 'web:city_jobs_all' %}"><i class="fas fa-arrow-right"></i></a> </div>
                         </div>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                                 </ul>
                             </div>
                             <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
-                                    href="#"><i class="fas fa-arrow-right"></i></a> </div>
+                                    href="{% url 'web:city_jobs_all' %}"><i class="fas fa-arrow-right"></i></a> </div>
                         </div>
                     </div>
                 </div>
@@ -233,12 +233,14 @@
                                 </p>
                             </div>
                             <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
-                                    href="#"><i class="fas fa-arrow-right"></i></a> </div>
+                                    href="{% url 'web:city_jobs_all' %}"><i class="fas fa-arrow-right"></i></a> </div>
                         </div>
                     </div>
                 </div>
                 <!--Event End-->
-               
+               <div class="col-md-12 text-center mt-10">
+                <a href="{% url 'web:city_jobs_all' %}" class="btn btn-warning">More jobs</a>
+               </div>
                 
             </div>
         </div>
@@ -305,36 +307,45 @@
                     </div>
                     <div class="row">
                         <!--Icon Box Start-->
+                        <a href="{% url 'web:history_tourism' %}">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
-                            <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon1.png' %}" alt="">
+                          <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon1.png' %}" alt="">
                                 <h6> <a href="{% url 'web:history_tourism' %}">History & Tourism</a> </h6>
 
                             </div>
+                        
                         </div>
+                    </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
+                        <a href="{% url 'web:muncipality_village' %}">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon2.png' %}" alt="">
                                 <h6> <a href="{% url 'web:muncipality_village' %}">Municipality & Villages </a> </h6>
 
                             </div>
                         </div>
+                    </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
+                        <a href="{% url 'web:education' %}">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon3.png' %}" alt="">
                                 <h6> <a href="{% url 'web:education' %}">Educational Institute</a> </h6>
 
                             </div>
                         </div>
+                    </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
+                        <a href="{% url 'web:health_hospital' %}">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon4.png' %}" alt="">
                                 <h6> <a href="{% url 'web:health_hospital' %}">Health & Hospital</a> </h6>
 
                             </div>
                         </div>
+                    </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
@@ -345,12 +356,14 @@
                         </div>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
+                        <a href="{% url 'web:help_line' %}">
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon6.png' %}" alt="">
                                 <h6> <a href="{% url 'web:help_line' %}">Helpline Service</a> </h6>
 
                             </div>
                         </div>
+                    </a>
                         <!--Icon Box End-->
                     </div>
                 </div>

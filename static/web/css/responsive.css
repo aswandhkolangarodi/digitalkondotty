@@ -557,6 +557,9 @@ li.header-weather {
 	background: #144b8c;
 	margin: 25px 0 0 0;
 }
+.d-sm-only{
+	display: block !important;
+}
 .logo-nav-row .navbar-toggle .icon-bar {
 	background: #fff;
 }

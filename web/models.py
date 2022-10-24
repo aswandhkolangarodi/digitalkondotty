@@ -60,7 +60,7 @@ class Health_Hospital(models.Model):
         return self.hospital_head
 
 class Testimonial(models.Model):
-    testimonial = models.CharField(max_length=100)
+    testimonial = models.TextField()
     name = models.CharField(max_length=50)
     designation = models.CharField(max_length=100)
     person_img = models.ImageField(upload_to="testimonial")

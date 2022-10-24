@@ -12,7 +12,7 @@ urlpatterns = [
     path('explore/',views.explore,name="explore"),
 
     path('event/',views.event,name="event"),
-    path('event-single/',views.eventsingle,name="event-single"),
+    path('event-single/<str:id>',views.eventsingle,name="event-single"),
     path('contact/',views.contact,name="contact"),
     path('departments/',views.departments,name="departments"),
     path('donation/', views.donation, name="donation"),

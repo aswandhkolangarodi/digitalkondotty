@@ -279,22 +279,11 @@
                                 <li>{{ news.news_date }}</li>
 
                             </ul>
-                            <h6><a href="{% url 'web:news-single' news.id %}" class="newscontent-heading">{{
-                                    news.news_heading|truncatechars:30 }}</a></h6>
-                            <p class="newscontent"> {{ news.news_content|safe }}</p>
+                            <h6><a href="{% url 'web:news-single' news.id %}" class="newscontent-heading">{{ news.news_heading|truncatechars:65 }}</a></h6>
+                            <p class="newscontent"> {{ news.news_content|safe|truncatechars:100 }}</p>
                         </div>
-                        <style>
-                            .newscontent {
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 2;
-                                /* number of lines to show */
-                                line-clamp: 2;
-                                -webkit-box-orient: vertical;
-                            }
-                        </style>
-                        <div class="news-box-f">
+                       
+                        <div class="news-box-f"> 
                             <span class="ml-2">Read more</span>
                             <a href="{% url 'web:news-single' news.id %}"><i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -518,14 +507,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <h3>Recent Events</h3>
+                    <h3>Digital Kondotty Events</h3>
                     <div class="recent-event-block">
                         <!--Slider Big Slider Start-->
                         <div class="recent-event-slider">
                             {% for event in event %}
                             <div class="event-big">
                                 <div class="event-cap">
-                                    <h5><a href="#">{{ event.event_heading }}</a></h5>
+                                    <h5><a href="{% url 'web:event-single' event.id %}">{{ event.event_heading }}</a></h5>
                                     <ul>
                                         <li><i class="fas fa-image"></i> {{ event.event_date }}</li>
                                         <li><i class="fas fa-play-circle"></i> {{ event.event_start_time }}</li>
@@ -549,7 +538,7 @@
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <h3>Upcoming Schedules</h3>
+                    <h3>City Programmes</h3>
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#Events" class="upcoming-event"
                                 aria-controls="Events" role="tab" data-toggle="tab">Upcoming Events</a></li>
@@ -570,7 +559,7 @@
                                     <h6><a href="{% url 'web:event' %}">{{ event.event_heading }}</a></h6>
                                     <p><i class="fas fa-map-marker-alt"></i> {{ event.event_location}}</p>
                                 </li>
-                                <li> <a href="{% url 'web:event' %}" class="joinnow">Join Now</a> </li>
+                                <li> <a href="{% url 'web:event' %}" class="joinnow">More Details</a> </li>
 
                             </ul>
                             {% endfor %}
@@ -591,24 +580,21 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Explore Community</h3>
-
-                    <ul class="community-links-style-two">
-                        <div class="row">
-                            <div class="col-md-12 col-xs-6">
-                                {% for explore_comunity in explore_comunity_1 %}
-                                <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img
-                                            src="{% static 'web/images/excomm-icon1.png' %}"
-                                            alt="">{{explore_comunity.comunity_name}}</a> </li>
-                                <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
+                   
+                            <ul class="community-links-style-two">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-6">
+                                        {% for explore_comunity in explore_comunity_1 %}
+                                        <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{{explore_comunity.icon_image.crop.45x45}}" alt="">{{explore_comunity.comunity_name}}</a> </li>
+                                        <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
                                         <li> <a href="#"> <img src="{% static 'web/images/excomm-icon3.png' %}" alt=""> BNI</a> </li>
                                         <li> <a href="#"> <img src="{% static 'web/images/excomm-icon4.png' %}" alt=""> M Park -->
-                                </a> </li>
-                                {% endfor %}
-                            </div>
-                            <div class="col-md-12 col-xs-6">
-                                {% for explore_comunity in explore_comunity_2 %}
-                                <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img
-                                            src="{% static 'web/images/excomm-icon5.png' %}" alt=""> CITU</a> </li>
+                                            </a> </li>
+                                            {% endfor %}
+                                    </div>
+                                    <div class="col-md-12 col-xs-6">
+                                        {% for explore_comunity in explore_comunity_2 %}
+                                        <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{{explore_comunity.icon_image.crop.45x45}}" alt=""> {{explore_comunity.comunity_name}}</a> </li>
                                 <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon6.png' %}" alt=""> STU
                                     </a> </li>
                                 <li> <a href="#"> <img src="{% static 'web/images/excomm-icon7.png' %}" alt="">Political Parties

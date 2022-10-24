@@ -8,8 +8,10 @@ def base(request):
     return render(request,'web/partials/base.html')
 
 def home(request):
-    explore_comunity_1 = ExploreComunity.objects.all()[:4]
-    explore_comunity_2 = ExploreComunity.objects.all()[4:8]
+    explore_all = ExploreComunity.objects.all().count()
+    print(explore_all)
+    explore_comunity_1 = ExploreComunity.objects.all()[:explore_all/2]
+    explore_comunity_2 = ExploreComunity.objects.all()[explore_all/2:explore_all]
     news = News.objects.all().order_by('-id')[:4]
     event = Event.objects.all().order_by('-id')[:4]
     testimonial = Testimonial.objects.all()
@@ -52,8 +54,9 @@ def event(request):
     }
     return render(request,'web/event.html',context)
     
-def eventsingle(request):
-    return render(request,'web/event-single.html')
+def eventsingle(request , id):
+    data = Event.objects.get(id=id)
+    return render(request,'web/event-single.html',{'data':data})
 
 def contact(request):
     if request.method == "POST":

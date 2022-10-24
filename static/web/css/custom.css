@@ -4342,7 +4342,9 @@ ul.reports a i {
 	font-weight: 400;
 	line-height: 18px;
 }
-
+.d-sm-only{
+	display: none !important;
+}
 .event-list li.el-title h6 a {
 	color: #222;
 }

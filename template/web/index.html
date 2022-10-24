@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 
+
+
 <!--Slider Start-->
 <div class="main-slider wf100">
     <div class="home2-slider rev_slider_wrapper">
@@ -10,9 +12,9 @@
         <div class="rev_slider_wrapper fullwidthbanner-container">
             <div id="rev-slider2" class="rev_slider fullwidthabanner">
                 <ul>
-                    <li data-transition="fade"> <img src="{% static 'web/images/banner2 copy xs.jpg' %}" alt="" width="1920"
-                            height="685" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                            data-bgparallax="1">
+                    <li data-transition="fade"> <img src="{% static 'web/images/city.jpg' %}" alt=""
+                            width="1920" height="685" data-bgposition="top center" data-bgfit="cover"
+                            data-bgrepeat="no-repeat" data-bgparallax="1">
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
                             data-voffset="175" data-transform_idle="o:1;"
                             data-transform_in="x:[-75%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
@@ -45,8 +47,8 @@
                             <!-- <div class="slide-content-box"> <a href="#" class="con">Join us Now</a> </div> -->
                         </div>
                     </li>
-                    <li data-transition="slidehorizontal"> <img src="{% static 'web/images/banner3.jpg' %}"
-                            alt="" width="1920" height="685" data-bgposition="top center" data-bgfit="cover"
+                    <li data-transition="slidehorizontal"> <img src="{% static 'web/images/smarakam.jpg' %}" alt=""
+                            width="1920" height="685" data-bgposition="top center" data-bgfit="cover"
                             data-bgrepeat="no-repeat" data-bgparallax="1">
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
                             data-voffset="175" data-transform_idle="o:1;"
@@ -79,7 +81,7 @@
                             <!-- <div class="slide-content-box"> <a href="#" class="con">Learn More</a> </div> -->
                         </div>
                     </li>
-                    <li data-transition="slidevertical"> <img src="{% static 'web/images/banner2.jpg' %}" alt=""
+                    <li data-transition="slidevertical"> <img src="{% static 'web/images/kubha.jpg' %}" alt=""
                             width="1920" height="685" data-bgposition="top center" data-bgfit="cover"
                             data-bgrepeat="no-repeat" data-bgparallax="1">
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -90,7 +92,7 @@
                             data-start="700">
                             <div class="slide-content-box">
                                 <h1>Tales Of A Digital City
-                                    </h1>
+                                </h1>
                             </div>
                         </div>
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -120,6 +122,9 @@
     </div>
 </div>
 <!--Slider End-->
+
+
+
 <!--Main Content Start-->
 <div class="main-content">
     <!--Mayor Msg with Video Start-->
@@ -129,10 +134,10 @@
                 <div class="col-md-4 col-sm-4 col-4 col-xs-4">
                     <!--Mayor Msg Start-->
                     <a href="#" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">
-                        <div class="city-tour gallery"> 
+                        <div class="city-tour gallery">
                             <!-- <img class="playicon-btn d-lg-none" src="{% static 'web/images/playicon.png' %}" alt=""> -->
-                            <img
-                                src="{% static 'web/images/mla.jpg' %}" alt=""> </div>
+                            <img src="{% static 'web/images/mla.jpg' %}" alt="">
+                        </div>
                     </a>
                     <!--Mayor Msg End-->
 
@@ -142,9 +147,15 @@
                     <div class="Mayor-welcome">
                         <h5>Welcome to Digital Kondotty
                         </h5>
-                        <p>#Digital Kondotty is the technological revolution of Kondotty to empower the digital culture by educating and make available of technology for every individual of Kondotty. We have started the milestone journey of #Digital Kondotty. Join this digital revolution of Kondotty and together we can easily achieve our technological triumph. The digital kondotty project looks forward to the overall development of the city and its individuals. The digitalisation will aid the public in more reliable ways and digital kondotty will be a milestone in this achievement of the city. Together we can bring our city to the greatest digital achievement.
+                        <p>#Digital Kondotty is the technological revolution of Kondotty to empower the digital culture
+                            by educating and make available of technology for every individual of Kondotty. We have
+                            started the milestone journey of #Digital Kondotty. Join this digital revolution of Kondotty
+                            and together we can easily achieve our technological triumph. The digital kondotty project
+                            looks forward to the overall development of the city and its individuals. The digitalisation
+                            will aid the public in more reliable ways and digital kondotty will be a milestone in this
+                            achievement of the city. Together we can bring our city to the greatest digital achievement.
                         </p>
-                       
+
 
                     </div>
                 </div>
@@ -165,21 +176,21 @@
                 <!--Event Start-->
                 <div class="col-md-4 col-sm-6">
                     <div class="event-post">
-                        
+
                         <div class="event-post-content">
                             <div class="event-post-txt city-jobs">
                                 <h5><a href="{% url 'web:city_jobs_all' %}">Business Development Executive
-                                </a></h5>
+                                    </a></h5>
                                 <ul class="event-meta">
                                     <li>COMPANY : Gedexo Technologies LLP
                                     </li>
-                                    <li>CONTACT   : +91 8547 733 528</li>
-                                    <li>MAIL		: gedexohr@gmail.com
+                                    <li>CONTACT : +91 8547 733 528</li>
+                                    <li>MAIL : gedexohr@gmail.com
                                     </li>
                                 </ul>
                                 <p>Strong communication & Presentation skill
                                     A..
-                                    </p>
+                                </p>
                             </div>
                             <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
                                     href="{% url 'web:city_jobs_all' %}"><i class="fas fa-arrow-right"></i></a> </div>
@@ -187,19 +198,19 @@
                     </div>
                 </div>
                 <!--Event End-->
-                 <!--Event Start-->
-                 <div class="col-md-4 col-sm-6">
+                <!--Event Start-->
+                <div class="col-md-4 col-sm-6">
                     <div class="event-post">
-                       
+
                         <div class="event-post-content">
                             <div class="event-post-txt city-jobs">
                                 <h5><a href="{% url 'web:city_jobs_all' %}"> Python Developer
-                                </a></h5>
+                                    </a></h5>
                                 <ul class="event-meta">
                                     <li>COMPANY : Gedexo Technologies LLP
                                     </li>
-                                    <li>CONTACT   : +91 8547 733 528</li>
-                                    <li>MAIL		: gedexohr@gmail.com
+                                    <li>CONTACT : +91 8547 733 528</li>
+                                    <li>MAIL : gedexohr@gmail.com
                                     </li>
                                     <li>2 - 3 Years experience
                                     </li>
@@ -221,13 +232,13 @@
                                 <ul class="event-meta">
                                     <li>COMPANY : Gedexo Technologies LLP
                                     </li>
-                                    <li>CONTACT   : +91 8547 733 528</li>
-                                    <li>MAIL		: gedexohr@gmail.com
+                                    <li>CONTACT : +91 8547 733 528</li>
+                                    <li>MAIL : gedexohr@gmail.com
                                     </li>
                                 </ul>
                                 <p>Good Communication Skills (Verbal & Written ...
-                                    
-                                    
+
+
                                 </p>
                             </div>
                             <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
@@ -236,10 +247,10 @@
                     </div>
                 </div>
                 <!--Event End-->
-               <div class="col-md-12 text-center mt-10">
-                <a href="{% url 'web:city_jobs_all' %}" class="btn btn-warning">More jobs</a>
-               </div>
-                
+                <div class="col-md-12 text-center mt-10">
+                    <a href="{% url 'web:city_jobs_all' %}" class="btn btn-warning">More jobs</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -253,7 +264,7 @@
     <section class="wf100 city-news ">
         <div class="container">
             <div class="title-style-3">
-                <h3>  News & Updates</h3>
+                <h3> News & Updates</h3>
                 <!-- <p>Read the News Updates and Articles about Government </p> -->
             </div>
             <div class="row">
@@ -266,9 +277,10 @@
                         <div class="new-txt">
                             <ul class="news-meta">
                                 <li>{{ news.news_date }}</li>
-                                
+
                             </ul>
-                            <h6><a href="{% url 'web:news-single' news.id %}" class="newscontent-heading">{{ news.news_heading|truncatechars:30 }}</a></h6>
+                            <h6><a href="{% url 'web:news-single' news.id %}" class="newscontent-heading">{{
+                                    news.news_heading|truncatechars:30 }}</a></h6>
                             <p class="newscontent"> {{ news.news_content|safe }}</p>
                         </div>
                         <style>
@@ -282,7 +294,7 @@
                                 -webkit-box-orient: vertical;
                             }
                         </style>
-                        <div class="news-box-f"> 
+                        <div class="news-box-f">
                             <span class="ml-2">Read more</span>
                             <a href="{% url 'web:news-single' news.id %}"><i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -306,62 +318,64 @@
                     <div class="row">
                         <!--Icon Box Start-->
                         <a href="{% url 'web:history_tourism' %}">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
-                            <div class="deprt-icon-box"> <img src="{% static 'web/images/history & tourism-01.png' %}" alt="">
-                                <h6> <a href="{% url 'web:history_tourism' %}">History & Tourism</a> </h6>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
+                                <div class="deprt-icon-box"> <img
+                                        src="{% static 'web/images/history & tourism-01.png' %}" alt="">
+                                    <h6> <a href="{% url 'web:history_tourism' %}">History & Tourism</a> </h6>
+
+                                </div>
 
                             </div>
-                        
-                        </div>
-                    </a>
+                        </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
                         <a href="{% url 'web:muncipality_village' %}">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
-                            <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon2.png' %}" alt="">
-                                <h6> <a href="{% url 'web:muncipality_village' %}">Municipality & Villages </a> </h6>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
+                                <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon2.png' %}" alt="">
+                                    <h6> <a href="{% url 'web:muncipality_village' %}">Municipality & Villages </a>
+                                    </h6>
 
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
                         <a href="{% url 'web:education' %}">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
-                            <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon3.png' %}" alt="">
-                                <h6> <a href="{% url 'web:education' %}">Educational Institute</a> </h6>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
+                                <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon3.png' %}" alt="">
+                                    <h6> <a href="{% url 'web:education' %}">Educational Institute</a> </h6>
 
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
                         <a href="{% url 'web:health_hospital' %}">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
-                            <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon4.png' %}" alt="">
-                                <h6> <a href="{% url 'web:health_hospital' %}">Health & Hospital</a> </h6>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
+                                <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon4.png' %}" alt="">
+                                    <h6> <a href="{% url 'web:health_hospital' %}">Health & Hospital</a> </h6>
 
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
                         <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
                             <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon5.png' %}" alt="">
-                                <h6> <a >Business & Shops</a> </h6>
+                                <h6> <a>Business & Shops</a> </h6>
 
                             </div>
                         </div>
                         <!--Icon Box End-->
                         <!--Icon Box Start-->
                         <a href="{% url 'web:help_line' %}">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
-                            <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon6.png' %}" alt="">
-                                <h6> <a href="{% url 'web:help_line' %}">Helpline Service</a> </h6>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-6 col-xs-6">
+                                <div class="deprt-icon-box"> <img src="{% static 'web/images/deprticon6.png' %}" alt="">
+                                    <h6> <a href="{% url 'web:help_line' %}">Helpline Service</a> </h6>
 
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                         <!--Icon Box End-->
                     </div>
                 </div>
@@ -385,8 +399,8 @@
                                             <li> <i class="fas fa-user-tie"></i> T.V Ibrahim</li>
                                             <li> <i class="far fa-building"></i> 673638 Kondotty,</li>
                                             <li> <i class="fas fa-phone"></i> 9446774400</li>
-                                            
-                                            
+
+
                                         </ul>
                                     </div>
                                 </div>
@@ -403,13 +417,13 @@
                                     aria-labelledby="heading2">
                                     <div class="panel-body">
                                         <ul>
-                                            <li>  Mahakavi Moyinkutty Vaidyar Smarakam,</li>
-                                            <li>  Kozhikode - Palakkad Hwy, Kondotty, </li>
+                                            <li> Mahakavi Moyinkutty Vaidyar Smarakam,</li>
+                                            <li> Kozhikode - Palakkad Hwy, Kondotty, </li>
                                             <li>Kerala 673638
                                             </li>
                                             <li> <i class="fas fa-phone"></i> 0483 271 2037</li>
-                                            
-                                            
+
+
                                         </ul>
                                     </div>
                                 </div>
@@ -430,7 +444,7 @@
                                             <li> <i class="far fa-building"></i> Kerala 673638</li>
                                             <li> <i class="fas fa-phone"></i> 0483 271 2041
                                             </li>
-                                            
+
                                         </ul>
                                     </div>
                                 </div>
@@ -453,7 +467,7 @@
                                             </li>
                                             <li> <i class="fas fa-phone"></i> 070336 99531
                                             </li>
-                                            
+
                                         </ul>
                                     </div>
                                 </div>
@@ -472,7 +486,8 @@
                                         <ul>
                                             <li> <i class="fas fa-user-tie"></i> Akshayaecentre Kondotty
                                             </li>
-                                            <li> <i class="far fa-building"></i> HilalBuilding, BypassRoad, Kondotty, 673638
+                                            <li> <i class="far fa-building"></i> HilalBuilding, BypassRoad, Kondotty,
+                                                673638
                                             </li>
                                             <li> <i class="fas fa-phone"></i> 9846218366</li>
                                             <li> <i class="far fa-envelope"></i> aksmpm058@gmail.com
@@ -486,9 +501,12 @@
                     </div>
                     <a href="#" class="jobs-link">Job Vacancies</a>
                     <ul class="reports">
-                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Business Executive</a> </li>
-                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Content Writer</a> </li>
-                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Court Case about TAX</a> </li>
+                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Business
+                                Executive</a> </li>
+                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Content Writer</a>
+                        </li>
+                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Court Case about
+                                TAX</a> </li>
                     </ul>
                 </div>
             </div>
@@ -533,8 +551,8 @@
                 <div class="col-md-7">
                     <h3>Upcoming Schedules</h3>
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#Events" class="upcoming-event" aria-controls="Events" role="tab"
-                                data-toggle="tab">Upcoming Events</a></li>
+                        <li role="presentation" class="active"><a href="#Events" class="upcoming-event"
+                                aria-controls="Events" role="tab" data-toggle="tab">Upcoming Events</a></li>
 
                     </ul>
                     <!-- Tab panes -->
@@ -573,21 +591,24 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Explore Community</h3>
-                   
-                            <ul class="community-links-style-two">
-                                <div class="row">
-                                    <div class="col-md-12 col-xs-6">
-                                        {% for explore_comunity in explore_comunity_1 %}
-                                        <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{% static 'web/images/excomm-icon1.png' %}" alt="">{{explore_comunity.comunity_name}}</a> </li>
-                                        <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
+
+                    <ul class="community-links-style-two">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-6">
+                                {% for explore_comunity in explore_comunity_1 %}
+                                <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img
+                                            src="{% static 'web/images/excomm-icon1.png' %}"
+                                            alt="">{{explore_comunity.comunity_name}}</a> </li>
+                                <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
                                         <li> <a href="#"> <img src="{% static 'web/images/excomm-icon3.png' %}" alt=""> BNI</a> </li>
                                         <li> <a href="#"> <img src="{% static 'web/images/excomm-icon4.png' %}" alt=""> M Park -->
-                                            </a> </li>
-                                            {% endfor %}
-                                    </div>
-                                    <div class="col-md-12 col-xs-6">
-                                        {% for explore_comunity in explore_comunity_2 %}
-                                        <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{% static 'web/images/excomm-icon5.png' %}" alt=""> CITU</a> </li>
+                                </a> </li>
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-12 col-xs-6">
+                                {% for explore_comunity in explore_comunity_2 %}
+                                <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img
+                                            src="{% static 'web/images/excomm-icon5.png' %}" alt=""> CITU</a> </li>
                                 <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon6.png' %}" alt=""> STU
                                     </a> </li>
                                 <li> <a href="#"> <img src="{% static 'web/images/excomm-icon7.png' %}" alt="">Political Parties
@@ -595,17 +616,17 @@
                                 <li> <a href="#"> <img src="{% static 'web/images/excomm-icon8.png' %}" alt=""> Sports </a>
                                 </li> -->
                                 {% endfor %}
-                                    </div>
-                                </div>
-                               
-                                
-                                <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon9.png' %}" alt=""> City Council
+                            </div>
+                        </div>
+
+
+                        <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon9.png' %}" alt=""> City Council
                                     </a> </li>
                                 <li> <a href="#"> <img src="{% static 'web/images/excomm-icon10.png' %}" alt=""> Important
                                         Numbers </a> </li> -->
-                            </ul>
-                       
-                   
+                    </ul>
+
+
                 </div>
                 <div class="col-md-6 ">
                     <h3>Meet Officials</h3>
@@ -685,24 +706,29 @@
 <div id="fade" onClick="lightbox_close();"></div>
 <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
-        <div class="embed-responsive embed-responsive-16by9">
-          <video id="gossVideo" class="embed-responsive-item" controls="controls" poster="http://www.gossettmktg.com/video/dangot.png">
-            <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/mp4">
-            <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/webm">
-            <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/ogg">
-            <object type="application/x-shockwave-flash" data="https://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="353" height="190">
-              <param name="movie" value="https://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
-              <param name="allowFullScreen" value="true">		<param name="wmode" value="transparent">
-              <param name="flashVars" value="config={'playlist':['http%3A%2F%2Fwww.gossettmktg.com%2Fvideo%2Fdangot.png',{'url':'http%3A%2F%2Fwww.gossettmktg.com%2Fvideo%2Fdangot.mp4','autoPlay':false}]}">
-              <img alt="Big Buck Bunny" src="http://www.gossettmktg.com/video/dangot.png" width="353" height="190" title="No video playback capabilities, please download the video below">
-            </object>
-          </video>
+        <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+                <video id="gossVideo" class="embed-responsive-item" controls="controls"
+                    poster="http://www.gossettmktg.com/video/dangot.png">
+                    <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/mp4">
+                    <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/webm">
+                    <source src="{% static 'web/images/digitalkondotty.mp4' %}" type="video/ogg">
+                    <object type="application/x-shockwave-flash"
+                        data="https://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="353" height="190">
+                        <param name="movie" value="https://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+                        <param name="allowFullScreen" value="true">
+                        <param name="wmode" value="transparent">
+                        <param name="flashVars"
+                            value="config={'playlist':['http%3A%2F%2Fwww.gossettmktg.com%2Fvideo%2Fdangot.png',{'url':'http%3A%2F%2Fwww.gossettmktg.com%2Fvideo%2Fdangot.mp4','autoPlay':false}]}">
+                        <img alt="Big Buck Bunny" src="http://www.gossettmktg.com/video/dangot.png" width="353"
+                            height="190" title="No video playback capabilities, please download the video below">
+                    </object>
+                </video>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 <!-- <div id="vidBox">
     <div id="videCont">
         <video autoplay id="v1" loop controls="controls">
@@ -712,15 +738,15 @@
     </div>
 </div> -->
 <script>
-    var vid = document.getElementById("gossVideo"); 
+    var vid = document.getElementById("gossVideo");
 
-function playVid() { 
-vid.play(); 
-} 
+    function playVid() {
+        vid.play();
+    }
 
-function pauseVid() { 
-vid.pause(); 
-} 
+    function pauseVid() {
+        vid.pause();
+    } 
 </script>
 
 {% endblock %}

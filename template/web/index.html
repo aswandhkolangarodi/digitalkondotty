@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 
-
 <!--Slider Start-->
 <div class="main-slider wf100">
     <div class="home2-slider rev_slider_wrapper">
@@ -11,7 +10,7 @@
         <div class="rev_slider_wrapper fullwidthbanner-container">
             <div id="rev-slider2" class="rev_slider fullwidthabanner">
                 <ul>
-                    <li data-transition="fade"> <img src="{% static 'web/images/banner2.jpg' %}" alt="" width="1920"
+                    <li data-transition="fade"> <img src="{% static 'web/images/banner2 copy xs.jpg' %}" alt="" width="1920"
                             height="685" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"
                             data-bgparallax="1">
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -46,7 +45,7 @@
                             <!-- <div class="slide-content-box"> <a href="#" class="con">Join us Now</a> </div> -->
                         </div>
                     </li>
-                    <li data-transition="slidehorizontal"> <img src="{% static 'web/images/banner2 copy xs.jpg' %}"
+                    <li data-transition="slidehorizontal"> <img src="{% static 'web/images/banner3.jpg' %}"
                             alt="" width="1920" height="685" data-bgposition="top center" data-bgfit="cover"
                             data-bgrepeat="no-repeat" data-bgparallax="1">
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -80,7 +79,7 @@
                             <!-- <div class="slide-content-box"> <a href="#" class="con">Learn More</a> </div> -->
                         </div>
                     </li>
-                    <li data-transition="slidevertical"> <img src="{% static 'web/images/banner3.jpg' %}" alt=""
+                    <li data-transition="slidevertical"> <img src="{% static 'web/images/banner2.jpg' %}" alt=""
                             width="1920" height="685" data-bgposition="top center" data-bgfit="cover"
                             data-bgrepeat="no-repeat" data-bgparallax="1">
                         <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -143,8 +142,7 @@
                     <div class="Mayor-welcome">
                         <h5>Welcome to Digital Kondotty
                         </h5>
-                        <p>Digital transformation is happening everywhere around the world. Bringing leading-edge
-                            technology into Malappuram, #DigitalKondotty forges a path to digital ease for everyone.
+                        <p>#Digital Kondotty is the technological revolution of Kondotty to empower the digital culture by educating and make available of technology for every individual of Kondotty. We have started the milestone journey of #Digital Kondotty. Join this digital revolution of Kondotty and together we can easily achieve our technological triumph. The digital kondotty project looks forward to the overall development of the city and its individuals. The digitalisation will aid the public in more reliable ways and digital kondotty will be a milestone in this achievement of the city. Together we can bring our city to the greatest digital achievement.
                         </p>
                        
 
@@ -660,9 +658,7 @@
 
                             {% for testimonial in testimonial %}
                             <div class="item">
-                                <p>
-                                    {{ testimonial.testimonial }}
-                                </p>
+                                <p>{{ testimonial.testimonial }} </p>
                                 <div class="tuser"> <img src="{{ testimonial.person_img.url }}" alt="">
                                     <strong>{{ testimonial.name }}</strong> {{ testimonial.designation }}
                                 </div>

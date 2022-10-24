@@ -586,21 +586,14 @@
                                     <div class="col-md-12 col-xs-6">
                                         {% for explore_comunity in explore_comunity_1 %}
                                         <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{{explore_comunity.icon_image.crop.45x45}}" alt="">{{explore_comunity.comunity_name}}</a> </li>
-                                        <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon2.png' %}" alt=""> OCI</a> </li>
-                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon3.png' %}" alt=""> BNI</a> </li>
-                                        <li> <a href="#"> <img src="{% static 'web/images/excomm-icon4.png' %}" alt=""> M Park -->
+
                                             </a> </li>
                                             {% endfor %}
                                     </div>
                                     <div class="col-md-12 col-xs-6">
                                         {% for explore_comunity in explore_comunity_2 %}
                                         <li> <a href="{% url 'web:explore_comunity_single' explore_comunity.id %}"> <img src="{{explore_comunity.icon_image.crop.45x45}}" alt=""> {{explore_comunity.comunity_name}}</a> </li>
-                                <!-- <li> <a href="#"> <img src="{% static 'web/images/excomm-icon6.png' %}" alt=""> STU
-                                    </a> </li>
-                                <li> <a href="#"> <img src="{% static 'web/images/excomm-icon7.png' %}" alt="">Political Parties
-                                    </a> </li>
-                                <li> <a href="#"> <img src="{% static 'web/images/excomm-icon8.png' %}" alt=""> Sports </a>
-                                </li> -->
+                              
                                 {% endfor %}
                             </div>
                         </div>

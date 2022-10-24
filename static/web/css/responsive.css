@@ -854,14 +854,17 @@ ul.funds li strong, .event-counter .countdown-period {
 	
 }
 body h3 {
-    font-size: 21px;
+    font-size: 21px !important;
 }
 body h6 {
-    font-size: 13px;
+    font-size: 13px !important;
 }
 .Mayor-welcome h5{
-    font-size: 12px;
+    font-size: 12px !important;
 	margin: 0 0 6px;
+}
+.mt-sm-5{
+	margin-top: 10px !important;
 }
 .Mayor-welcome p {
 	font-size: 9px;

@@ -920,6 +920,9 @@ body h6 {
 	line-height: 24px !important;
 	padding: 0 20px !important;
 }
+.slide-content-box a i {
+	font-size: 10px !important;
+}
 .lb-ser-box {
 	margin-bottom: 30px;
 }

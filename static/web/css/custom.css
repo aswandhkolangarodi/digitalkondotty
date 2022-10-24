@@ -1041,7 +1041,7 @@ header {
 }
 
 .mb20 {
-	margin-bottom: 20px;
+	margin-bottom: 20px !important;
 }
 
 .event-post:hover .thumb:after {
@@ -4509,7 +4509,7 @@ ul.reports a i {
 	padding: 25px 30px;
 	list-style: none;
 	width: 100%;
-	float: left;
+	
 }
 
 .community-links-style-two li {
@@ -4525,12 +4525,14 @@ ul.reports a i {
 	background: #40407e;
 	border-radius: 100%;
 	margin-right: 10px;
+	 
 }
 
 .community-links-style-two li a {
 	font-size: 16px;
 	font-weight: 600;
 	color: #444444;
+	cursor: pointer !important;
 }
 
 .community-links-style-two li a:hover {

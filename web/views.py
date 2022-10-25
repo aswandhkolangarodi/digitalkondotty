@@ -4,6 +4,8 @@ from web.models import *
 from django.shortcuts import get_object_or_404, render
 # Create your views here.
 
+
+
 def base(request):
     return render(request,'web/partials/base.html')
 
@@ -106,9 +108,11 @@ def muncipality_village(request):
     return render(request, "web/muncipality-village.html",context)
 
 def education(request):
-    educational_institution = Educational_Institution.objects.all()
+    schools = School.objects.all()
+    colleges = College.objects.all()
     context = {
-        "educational_institution" : educational_institution
+        "schools" : schools,
+        'colleges':colleges
     }
     return render(request, 'web/education.html',context)
 
@@ -120,14 +124,15 @@ def health_hospital(request):
     return render(request, "web/health_hospital.html",context)
 
 def business(request):
-    return render(request, "web/business.html")
+    data = BusinesAndShops.objects.all().order_by('-id')
+    return render(request, "web/business.html",{'data':data})
 
 def help_line(request):
     helpline_Service = Helpline_Service.objects.all()
     context = {
         "helpline_Service" : helpline_Service
     }
-    return render(request, "web/help-line.html")
+    return render(request, "web/help-line.html" ,context)
 
 def explore_comunity_single(request, id):
     data = ExploreComunity.objects.get(id=id)

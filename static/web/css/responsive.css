@@ -769,6 +769,26 @@ ul.funds li strong, .event-counter .countdown-period {
 .service-page-bottom .newsletter-form, .facts-counter {
 	padding: 20px;
 }
+html body {
+	font-size: 12px !important;
+}
+/* .explore-community-p p{
+	font-size: 12px !important;
+} */
+.widget .categories a {
+	font-size: 13px !important;
+	line-height: 20px ;
+	font-weight: 650;
+}
+.business-shop ul li{
+	font-size: 10px;
+}
+.city-jobs h5 {
+	font-size: 13px !important;
+}
+.business-shop .event-post-txt {
+	padding: 5px 10px;
+}
 .img-right {
 	max-width: 100%;
 	height: auto;

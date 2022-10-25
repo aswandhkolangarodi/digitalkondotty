@@ -28,12 +28,12 @@
                   <div class="thumb">  <img src="{{ event.event_image.url }}" alt=""></div>
                   <div class="event-post-content">
                      <div class="event-post-txt">
-                        <h5>{{ event.event_heading }}</h5>
+                        <h5>{{ event.event_heading|truncatechars:65 }}</h5>
                         <ul class="event-meta">
                            <li><i class="far fa-calendar-alt"></i> {{ event.event_date }}</li>
                            <li><i class="far fa-clock"></i> {{ event.event_start_time }} - {{ event.event_end_time }}</li>
                         </ul>
-                        <p>{{ event.event_description|safe }}</p>
+                        <p>{{ event.event_description|safe|truncatechars:100 }}</p>
                      </div>
                      <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> {{ event.event_location }} <a href="#"><i class="fas fa-arrow-right"></i></a> </div>
                   </div>

@@ -1,10 +1,14 @@
-from distutils.command.upload import upload
-from email import message
+
 from django.db import models
 from tinymce.models import HTMLField
 from versatileimagefield.fields import VersatileImageField
 # Create your models here.
+from django.contrib.auth.models import User
 
+
+class Profile(models.Model):
+    user = models.OneToOneField(User , on_delete=models.CASCADE)
+    status = models.BooleanField()
 
 class News(models.Model):
     news_catagory = models.CharField(max_length=100)
@@ -34,12 +38,26 @@ class Municipality_Villages(models.Model):
     def __str__(self):
         return self.village_head
 
-class Educational_Institution(models.Model):
-    school_name = models.CharField( max_length=100)
-    college_name = models.CharField( max_length=100)
+
+class BusinesAndShops(models.Model):
+    shop_name = models.CharField( max_length=100)
+    shop_image = VersatileImageField(upload_to = "Explore city images")
+    phone = models.CharField(max_length=13, default="+91")
+    email = models.EmailField(null=True, blank=True)
+    def __str__(self):
+        return self.shop_name
+
+class School(models.Model):
+    school_name = models.TextField()
 
     def __str__(self):
         return self.school_name
+
+class College(models.Model):
+    college_name = models.TextField()
+
+    def __str__(self):
+        return self.college_name
 
 class Helpline_Service(models.Model):
     helpline_head = models.CharField( max_length=100)

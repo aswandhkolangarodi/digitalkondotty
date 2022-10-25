@@ -18,24 +18,20 @@
     <!-- Gallery Page Start -->
     <div class="container">
        
-        <div class="city-updates">
+        <div class="city-updates explore-community-p">
             <h3>About {{data.comunity_name}}</h3>
-            <p>{{data.content|safe}}</p>
+            <p class="">{{data.content|safe}}</p>
 
         </div>
         <div class="row pt25">
           
-            <!--Team Box Start-->
-           
-            <!--Team Box End--> 
-            <!--Team Box Start-->
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-3 col-xs-6">
                 <div class="widget">
                     <h4>
                         <img src="{{data.president_image.url}}" style="width: 100%;" alt="">
                     </h4>
                        <div class="categories inner">
-                          <ul>
+                          <ul class="comunity-heads">
                              <li><a >{{data.president_name}}</a></li>
                              <li><a >President</a></li>
                              
@@ -45,13 +41,13 @@
             </div>
             <!--Team Box End--> 
             <!--Team Box Start-->
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-3 col-xs-6">
                 <div class="widget">
                     <h4>
                         <img src="{{data.vice_president_image.url}}" style="width: 100%;" alt="">
                     </h4>
                        <div class="categories inner">
-                          <ul>
+                          <ul class="comunity-heads">
                              <li><a >{{data.vice_president_name}}</a></li>
                              <li><a >Vice President</a></li>
                              
@@ -59,27 +55,13 @@
                        </div>
                     </div>
             </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="widget">
-                    <h4>
-                        <img src="{{data.secretary_image.url}}" style="width: 100%;" alt="">
-                    </h4>
-                       <div class="categories inner">
-                          <ul>
-                             <li><a >{{data.secretary_name}}</a></li>
-                             <li><a >Secretary</a></li>
-                             
-                          </ul>
-                       </div>
-                    </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-3 col-xs-6">
                 <div class="widget">
                     <h4>
                         <img src="{{data.chairman_image.url}}" style="width: 100%;" alt="">
                     </h4>
                        <div class="categories inner">
-                          <ul>
+                          <ul class="comunity-heads">
                              <li><a >{{data.chairman_name}}</a></li>
                              <li><a >Chairman</a></li>
                             
@@ -87,8 +69,25 @@
                        </div>
                     </div>
             </div>
+            <div class="col-md-3 col-xs-6">
+                <div class="widget">
+                    <h4>
+                        <img src="{{data.secretary_image.url}}" style="width: 100%;" alt="">
+                    </h4>
+                       <div class="categories inner">
+                          <ul class="comunity-heads">
+                             <li><a >{{data.secretary_name}}</a></li>
+                             <li><a >Secretary</a></li>
+                             
+                          </ul>
+                       </div>
+                    </div>
+            </div>
+            
+            
             <!--Team Box End--> 
          </div>
+           
          <div class="city-updates pt25">
             <h3>Connect</h3>
             <div class="wf100 department-links ">

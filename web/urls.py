@@ -26,7 +26,10 @@ urlpatterns = [
     path('health&hospitals/',views.health_hospital, name="health_hospital"),
     path('business/',views.business, name="business"),
     path('help-line-services/',views.help_line, name="help_line"),
-    path('explore-community-single/<str:id>', views.explore_comunity_single, name = "explore_comunity_single")
+    path('explore-community-single/<str:id>', views.explore_comunity_single, name = "explore_comunity_single"),
+    path('signup/', views.signup, name="signup"),
+    path('login/', views.login, name="login"),
+    
 
 
 ]

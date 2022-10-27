@@ -1,10 +1,9 @@
-import email
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from web.models import *
 from django.shortcuts import get_object_or_404, render
 # Create your views here.
-
-
+from jobs.models import *
+from django.contrib import messages
 
 def base(request):
     return render(request,'web/partials/base.html')
@@ -137,5 +136,42 @@ def help_line(request):
 def explore_comunity_single(request, id):
     data = ExploreComunity.objects.get(id=id)
     return render(request, "web/explore-comunity-single.html",{"data":data})
+
+
+def signup(request):
+    try:
+        if request.method == "POST":
+            first_name = request.POST['first_name']
+            email = request.POST['email']
+            phone = request.POST['phone']
+            password = request.POST['password']
+            profile_exist = Profile.objects.filter(email = email).exists()
+            if profile_exist:
+                messages.warning(request, "User already exist")
+                return redirect('web:signup')
+            Profile.objects.create(first_name=first_name, email= email, phone=phone, password=password)
+            messages.success(request, "Successfully Registered")
+            return redirect('web:signup')
+    except Exception as e:
+            print(e)
+            messages.warning(request, "Something Went Wrong")
+    return render(request, "web/signup.html")
     
-    
+def login(request):
+    try:
+        if request.method == "POST":
+            email = request.POST['email']
+            password = request.POST['password']
+            user = Profile.objects.filter(email = email).first()
+            if user is None:
+                messages.error(request, "User not found")
+                return redirect('web:login')
+            if user.password != password:
+                messages.error(request, "Wrong Password")
+                return redirect('web:login')
+            request.session['user']=email
+            return redirect('/job-portal/')
+    except Exception as e:
+        print(e)
+        messages.warning(request, "Something Went Wrong")
+    return render(request, "web/login.html")

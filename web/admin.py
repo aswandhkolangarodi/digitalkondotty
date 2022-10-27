@@ -2,29 +2,33 @@ from django.contrib import admin
 from web.models import *
 # Register your models here.
 
-class ProfileAdmin(admin.ModelAdmin):
-    model = Profile
-    list_display = ['user','status']
-    search_fields=('user',)
-admin.site.register(Profile,ProfileAdmin)
+# class ProfileAdmin(admin.ModelAdmin):
+#     model = Profile
+#     list_display = ['user','status']
+#     search_fields=('user',)
+# admin.site.register(Profile,ProfileAdmin)
+
+# admin.site.register(User)
 
 class NewsAdmin(admin.ModelAdmin):
     model = News
     list_display = ['news_heading','news_catagory','news_date','news_content']
     search_fields=('news_heading','news_catagory','news_date','news_content')
-
+    list_filter = ('news_date','news_catagory',)
 admin.site.register(News, NewsAdmin)
 
 class TestimonialAdmin(admin.ModelAdmin):
     model = Testimonial
     list_display = ['name','testimonial']
     search_fields=('name','testimonial')
+    list_filter = ('name',)
 admin.site.register(Testimonial,TestimonialAdmin)
 
 class EventAdmin(admin.ModelAdmin):
     model = Event
     list_display = ['event_heading','event_catagory','event_date','event_location']
     search_fields=('event_heading','event_catagory','event_date','event_location')
+    list_filter = ('event_catagory','event_date',)
 admin.site.register(Event,EventAdmin)
 
 class GalleryAdmin(admin.ModelAdmin):
@@ -37,6 +41,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ['name','email','subject','message']
     search_fields=('name','email','subject','message')
 admin.site.register(Contact,ContactAdmin)
+
 
 class OfficialAdmin(admin.ModelAdmin):
     model = Official

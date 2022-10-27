@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Kondotty Job Portal</title>
+    <link rel="stylesheet" href="{% static 'jobs/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{% static 'jobs/css/style.css' %}">
+    <link rel="icon" href="{% static 'web/images/DK-FAV.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+</head>
+
+<body>
+
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+         
+            
+               <a href="{% url 'jobs:add-job' %}" class="btn btn-outline-warning text-dark">Add Job</a>
+            
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> <a href="{% url 'jobs:home' %}" class="nav_logo">
+                        <svg height="25" width="25" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32.4 36.2"
+                            style="enable-background:new 0 0 32.4 36.2;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0 {
+                                    fill: #FFFFFF;
+                                }
+                            </style>
+                            <path class="st0" d="M28.4,1.2c0,0.7-0.2,1.4-0.4,2.1c-0.4,2.1-0.9,4.3-1.4,6.4c-0.1,0.4,0,0.5,0.4,0.5c1,0,1.9,0,2.9,0
+	c0.4,0,0.6,0.1,0.6,0.5c0,1.2,0,2.3,0,3.5c0,0.4-0.2,0.5-0.6,0.5c-1.3,0-2.5,0-3.8,0c-0.4,0-0.5,0.1-0.6,0.5c-0.4,2-0.8,4.1-1.3,6.1
+	c-0.1,0.3,0,0.4,0.4,0.4c1.8,0,3.5,0,5.3,0c0.5,0,0.6,0.2,0.6,0.6c0,1.1,0,2.3,0,3.4c0,0.4-0.1,0.5-0.5,0.5c-2,0-4,0-5.9,0
+	c-0.7,0-0.7,0-0.8,0.7c-0.5,2.5-1.1,5-1.6,7.5C21.4,35,21.4,35,20.7,35c-1.1,0-2.2,0-3.3,0c-0.4,0-0.5-0.1-0.4-0.5
+	c0.6-2.6,1.1-5.2,1.7-7.8c0.1-0.6,0.1-0.6-0.5-0.6c-2.4,0-4.8,0-7.2,0c-0.4,0-0.6,0.1-0.7,0.5c-0.5,2.6-1.1,5.2-1.6,7.8
+	c-0.1,0.4-0.2,0.6-0.7,0.6c-1.2,0-2.3,0-3.5,0c-0.4,0-0.5-0.1-0.4-0.5c0.6-2.6,1.1-5.2,1.7-7.8C6,26.2,6,26.1,5.4,26.1
+	c-1.1,0-2.3,0-3.4,0c0-1.5,0-3,0-4.5c1.5,0,2.9,0,4.4,0c0.4,0,0.5-0.1,0.6-0.5c0.4-2,0.8-4,1.2-6c0.1-0.4,0-0.5-0.4-0.5
+	c-1.9,0-3.9,0-5.8,0c0-1.5,0-3,0-4.5c2.2,0,4.5,0,6.7,0c0.4,0,0.5-0.1,0.6-0.5C9.5,8.7,9.8,7.8,10,6.9c0.4-1.9,0.8-3.8,1.2-5.7
+	c1.5,0,3,0,4.5,0c0,0.1,0,0.3-0.1,0.4c-0.6,2.7-1.2,5.3-1.8,8c-0.1,0.4,0,0.5,0.4,0.5c2.4,0,4.8,0,7.2,0c0.3,0,0.5-0.1,0.6-0.5
+	c0.2-1.2,0.5-2.3,0.7-3.5c0.4-1.7,0.7-3.4,1.1-5C25.4,1.2,26.9,1.2,28.4,1.2z M15.6,21.6c1.2,0,2.4,0,3.6,0c0.3,0,0.5-0.1,0.5-0.4
+	c0.4-2,0.8-4,1.2-6.1c0.1-0.4,0-0.5-0.4-0.5c-2.4,0-4.9,0-7.3,0c-0.3,0-0.5,0.1-0.5,0.4c-0.4,2-0.8,4-1.3,6
+	c-0.1,0.5-0.1,0.5,0.5,0.5C13.2,21.6,14.4,21.6,15.6,21.6z" />
+                        </svg>
+                        <span class="nav_logo-name">DigitalKondotty</span> </a>
+                    <div class="nav_list"> 
+                        <a href="{% url 'jobs:home' %}" class="nav_link active"> 
+                            <i class='bx bx-grid-alt nav_icon'></i>
+                            <span class="nav_name">Dashboard</span>
+                         </a> 
+                         <!-- <a href="#" class="nav_link"> 
+                            <i class='bx bx-user nav_icon'></i>
+                                 <span class="nav_name">Users</span> 
+                                </a>
+                                 <a href="#" class="nav_link">
+                             <i class='bx bx-message-square-detail nav_icon'></i> 
+                             <span class="nav_name">Messages</span>
+                                 </a> 
+                                 <a href="#" class="nav_link"> <i
+                                class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a
+                            href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span
+                                class="nav_name">Files</span> </a>  -->
+                         <a href="{% url 'jobs:home' %}" class="nav_link"> <i
+                                class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Jobs</span> </a>
+                    </div>
+                </div>
+                <a href="{% url 'jobs:logout' %}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                        class="nav_name">SignOut</span> </a>
+            </nav>
+        </div>
+        <!--Container Main start-->
+        
+            {% block content %}
+            {% endblock %}
+           
+            
+        <!--Container Main end-->
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId),
+                    bodypd = document.getElementById(bodyId),
+                    headerpd = document.getElementById(headerId)
+
+                // Validate that all variables exist
+                if (toggle && nav && bodypd && headerpd) {
+                    toggle.addEventListener('click', () => {
+                        // show navbar
+                        nav.classList.toggle('show')
+                        // change icon
+                        toggle.classList.toggle('bx-x')
+                        // add padding to body
+                        bodypd.classList.toggle('body-pd')
+                        // add padding to header
+                        headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
+
+            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+            /*===== LINK ACTIVE =====*/
+            const linkColor = document.querySelectorAll('.nav_link')
+
+            function colorLink() {
+                if (linkColor) {
+                    linkColor.forEach(l => l.classList.remove('active'))
+                    this.classList.add('active')
+                }
+            }
+            linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+            // Your code to run since DOM is loaded and ready
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+        $('#example').DataTable();
+    });
+    
+    $(document).ready(function () {
+        $('#added_jobs').DataTable();   
+    });
+    </script>
+
+</html>

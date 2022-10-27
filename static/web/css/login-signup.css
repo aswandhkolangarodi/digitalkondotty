@@ -1,0 +1,73 @@
+body {
+    background-color: rgba(204, 160, 75, 1)
+}
+
+
+
+.card {
+    width: 100%;
+    padding: 30px
+}
+
+.form {
+    padding: 20px
+}
+
+.form-control {
+    height: 50px;
+    background-color: #eee
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgba(204, 160, 75, 1);
+    outline: 0;
+    box-shadow: none;
+    background-color: #eee
+}
+
+.inputbox {
+    margin-bottom: 15px
+}
+
+.register {
+    width: 200px;
+    height: 51px;
+    background-color: rgba(204, 160, 75, 1);
+    border-color: rgba(204, 160, 75, 1)
+}
+
+.register:hover {
+    width: 200px;
+    height: 51px;
+    background-color: rgba(204, 160, 75, 1);
+    border-color: rgba(204, 160, 75, 1)
+}
+
+.login {
+    color: rgba(204, 160, 75, 1);
+    text-decoration: none
+}
+
+.login:hover {
+    color: rgba(204, 160, 75, 1);
+    text-decoration: none
+}
+
+.form-check-input:checked {
+    background-color: rgba(204, 160, 75, 1);
+    border-color: rgba(204, 160, 75, 1)
+}
+.errors{
+    color: red;
+}
+@media (min-width: 280px) and (max-width: 767px){
+    .card{
+        padding: 5px;
+        
+    }
+    .container{
+        height: 100vh;
+    }
+}

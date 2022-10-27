@@ -3,12 +3,13 @@ from django.db import models
 from tinymce.models import HTMLField
 from versatileimagefield.fields import VersatileImageField
 # Create your models here.
-from django.contrib.auth.models import User
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User , on_delete=models.CASCADE)
-    status = models.BooleanField()
+
+
+# class Profile(models.Model):
+#     user = models.OneToOneField( , on_delete=models.CASCADE)
+#     status = models.BooleanField()
 
 class News(models.Model):
     news_catagory = models.CharField(max_length=100)
@@ -21,6 +22,9 @@ class News(models.Model):
     def __str__(self):
         return self.news_heading
 
+    class Meta:
+        verbose_name_plural = "News"
+
 class History_Tourism(models.Model):
     history_heading = models.CharField( max_length=100)
     history_image = VersatileImageField(upload_to = "Explore city images")
@@ -28,6 +32,9 @@ class History_Tourism(models.Model):
 
     def __str__(self):
         return self.history_heading
+
+    class Meta:
+        verbose_name_plural = "History And Tourism"
 
 class Municipality_Villages(models.Model):
     village_head = models.CharField( max_length=100)
@@ -38,6 +45,9 @@ class Municipality_Villages(models.Model):
     def __str__(self):
         return self.village_head
 
+    class Meta:
+        verbose_name_plural = "Municipality And Villages"
+
 
 class BusinesAndShops(models.Model):
     shop_name = models.CharField( max_length=100)
@@ -46,6 +56,10 @@ class BusinesAndShops(models.Model):
     email = models.EmailField(null=True, blank=True)
     def __str__(self):
         return self.shop_name
+
+    class Meta:
+        verbose_name_plural = "Busines And Shops"
+
 
 class School(models.Model):
     school_name = models.TextField()
@@ -68,6 +82,10 @@ class Helpline_Service(models.Model):
     def __str__(self):
         return self.helpline_head
 
+    class Meta:
+        verbose_name_plural = "Helpline Services"
+
+
 class Health_Hospital(models.Model):
     hospital_head = models.CharField( max_length=100)
     hospital_image = VersatileImageField(upload_to = "Explore city images")
@@ -76,6 +94,9 @@ class Health_Hospital(models.Model):
 
     def __str__(self):
         return self.hospital_head
+
+    class Meta:
+        verbose_name_plural = "Health And Hospital"
 
 class Testimonial(models.Model):
     testimonial = models.TextField()
@@ -89,6 +110,9 @@ class Testimonial(models.Model):
 class Gallery(models.Model):
     gallery = VersatileImageField(upload_to = "gallery")
     image_description = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name_plural = "Gallery"
 
 class Event(models.Model):
     event_catagory = models.CharField(max_length=100)
@@ -121,6 +145,7 @@ class Official(models.Model):
     def __str__(self):
         return self.officials_name
 
+    
 class ExploreComunity(models.Model):
     comunity_name =models.CharField(max_length=100)
     icon_image = VersatileImageField(upload_to = "explorecity")
@@ -138,3 +163,7 @@ class ExploreComunity(models.Model):
 
     def __str__(self):
         return self.comunity_name
+
+    class Meta:
+        verbose_name_plural = "Explore Comunity"
+        

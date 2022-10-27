@@ -1,0 +1,89 @@
+{% extends 'jobs/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="height-100 bg-light">
+    <div class="row">
+        <h3 class="font-weight-bold">Job Requests</h3>
+        <div class="table-responsive">
+            <table id="example" class=" table table-striped table-bordered p-3" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011-04-25</td>
+                        <td>$320,800</td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3 class="font-weight-bold mt-5">Added JobS</h3>
+        <div class="table-responsive">
+            <table id="added_jobs" class=" table table-striped table-bordered p-3" style="width:100%">
+                <thead>
+                    <tr class="text-capitalize">
+                        <th>Job Title</th>
+                        <th>Location</th>
+                        <th>date</th>
+                        <th>Vacancy</th>
+                        <th>phone</th>
+                        <th>email</th>
+                        <th>job type</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{job.job_title}}</td>
+                        <td>{{job.location}}</td>
+                        <td>{{job.date}}</td>
+                        <td>{{job.vacancy}}</td>
+                        <td>{{job.phone}}</td>
+                        <td>{{job.email}}</td>
+                        <td>{{job.job_type}}</td>
+                        <td>{{job.status}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

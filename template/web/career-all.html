@@ -1,6 +1,8 @@
 {% extends 'web/partials/base.html' %}
 {% load static %}
 {% block content %}
+
+
 <!--Sub Header Start-->
 <section class="wf100 subheader ">
     <div class="container">
@@ -18,112 +20,32 @@
         
         <div class="row">
             <!--Event Start-->
-            
-            <div class="col-md-4 col-sm-6">
+            {% for jobs in jobs %}
+            <div class="col-md-4 col-sm-6 mt-3">
                 <div class="event-post">
-                    <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> </div>
+
                     <div class="event-post-content">
-                        <div class="event-post-txt">
-                            <h5><a href="{% url 'web:city_jobs_all' %}"> React JS Developer
-                            </a></h5>
+                        <div class="event-post-txt city-jobs">
+                            <h5><a href="{% url 'web:single_job' jobs.id %}">{{jobs.job_title}}
+                                </a></h5>
                             <ul class="event-meta">
-                                <li>COMPANY : Gedexo Technologies LLP
+                                <li>COMPANY : {{jobs.company_name}}
                                 </li>
-                                <li>CONTACT   : +91 8547 733 528</li>
-                                <li>MAIL		: gedexohr@gmail.com
+                                <li>CONTACT : +91 {{jobs.phone}}</li>
+                                <li>MAIL : {{jobs.email}}
                                 </li>
                             </ul>
-                            <p>Experienced candidates preferred 
-                                
-                                   <br>Freshers can also apply
-                                
-                                
+                            <p>{{jobs.basic_requirements|truncatechars:100}}
                             </p>
                         </div>
-                        <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
-                                href="#"><i class="fas fa-arrow-right"></i></a> </div>
+                        <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> {{jobs.location|truncatechars:34}} <a
+                                href="{% url 'web:single_job' jobs.id %}"><i class="fas fa-arrow-right"></i></a> </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
             <!--Event End-->
-            <!--Event Start-->
-            <div class="col-md-4 col-sm-6">
-                <div class="event-post">
-                    
-                    <div class="event-post-content">
-                        <div class="event-post-txt">
-                            <h5><a href="{% url 'web:city_jobs_all' %}">Business Development Executive
-                            </a></h5>
-                            <ul class="event-meta">
-                                <li>COMPANY : Gedexo Technologies LLP
-                                </li>
-                                <li>CONTACT   : +91 8547 733 528</li>
-                                <li>MAIL		: gedexohr@gmail.com
-                                </li>
-                            </ul>
-                            <p>Strong communication & Presentation skill
-                                Any Degree or Marketing Experience
-                                Freshers can also apply.
-                                </p>
-                        </div>
-                        <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
-                                href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                    </div>
-                </div>
-            </div>
-            <!--Event End-->
-             <!--Event Start-->
-            <div class="col-md-4 col-sm-6">
-                <div class="event-post">
-                   
-                    <div class="event-post-content">
-                        <div class="event-post-txt">
-                            <h5><a href="{% url 'web:city_jobs_all' %}"> Python Developer
-                            </a></h5>
-                            <ul class="event-meta">
-                                <li>COMPANY : Gedexo Technologies LLP
-                                </li>
-                                <li>CONTACT   : +91 8547 733 528</li>
-                                <li>MAIL		: gedexohr@gmail.com
-                                </li>
-                                <li>2 - 3 Years experience
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Millenia Orlando, USA <a
-                                href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                    </div>
-                </div>
-            </div>
            
-            <!--Event End-->
-            <!--Event Start-->
-            <div class="col-md-4 col-sm-6 mt-5">
-                <div class="event-post">
-                    <div class="thumb"> <a href="#"><i class="fas fa-link"></i></a> </div>
-                    <div class="event-post-content">
-                        <div class="event-post-txt">
-                            <h5><a href="{% url 'web:city_jobs_all' %}">Content Writer</a></h5>
-                            <ul class="event-meta">
-                                <li>COMPANY : Gedexo Technologies LLP
-                                </li>
-                                <li>CONTACT   : +91 8547 733 528</li>
-                                <li>MAIL		: gedexohr@gmail.com
-                                </li>
-                            </ul>
-                            <p>Good Communication Skills (Verbal & Written in English)
-                                Adaptability    <br>Passion for IT & Interest in Latest Digital Marketting Trends
-                                Freshers can also apply
-                                
-                                
-                            </p>
-                        </div>
-                        <div class="event-post-loc"> <i class="fas fa-map-marker-alt"></i> Kondotty , MALAPPURAM <a
-                                href="#"><i class="fas fa-arrow-right"></i></a> </div>
-                    </div>
-                </div>
-            </div>
-            <!--Event End-->
             
            
         </div>

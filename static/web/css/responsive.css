@@ -772,6 +772,15 @@ ul.funds li strong, .event-counter .countdown-period {
 html body {
 	font-size: 12px !important;
 }
+.basic_requirements{
+	margin-top: 15px !important;
+}
+.job_title{
+	margin-top: 15px !important;
+}
+.basic_requirements_text{
+	margin-top: 15px !important;
+}
 /* .explore-community-p p{
 	font-size: 12px !important;
 } */

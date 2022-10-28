@@ -20,7 +20,7 @@ def add_jobs(request):
     email = request.session['user']
     user = Profile.objects.get(email = email)
     if request.method =="POST":
-        form = JobAdd(request.POST)
+        form = JobAdd(request.POST,request.FILES)
         if form.is_valid():
             saved_obj = form.save()
             Job.objects.filter(id=saved_obj.id).update(user = user)  

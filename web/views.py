@@ -15,6 +15,7 @@ def home(request):
     explore_comunity_2 = ExploreComunity.objects.all()[explore_all/2:explore_all]
     news = News.objects.all().order_by('-id')[:4]
     event = Event.objects.all().order_by('-id')[:4]
+    jobs = Job.objects.filter(status = True).order_by('-id')[:3]
     testimonial = Testimonial.objects.all()
     official = Official.objects.all()
     context = {
@@ -24,6 +25,7 @@ def home(request):
         "official":official,
         "explore_comunity_1":explore_comunity_1,
         "explore_comunity_2":explore_comunity_2,
+        'jobs':jobs
     }
     return render(request,'web/index.html',context)
 
@@ -87,7 +89,8 @@ def gallery(request):
     return render(request, 'web/gallery.html',context)
 
 def career_all(request):
-    return render(request, "web/career-all.html")
+    jobs = Job.objects.all().order_by('-id')
+    return render(request, "web/career-all.html",{'jobs':jobs})
 
 
 def history_tourism(request):
@@ -175,3 +178,7 @@ def login(request):
         print(e)
         messages.warning(request, "Something Went Wrong")
     return render(request, "web/login.html")
+
+def single_job(request,id):
+    job=Job.objects.get(id= id)
+    return render(request,'web/single-job.html',{'job':job})

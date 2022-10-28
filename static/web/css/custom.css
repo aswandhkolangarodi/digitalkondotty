@@ -5206,6 +5206,9 @@ a.join-now {
 /*Team Details*/
 
 .team-img img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: auto;
 	border-radius: 3px;
@@ -5233,9 +5236,10 @@ a.join-now {
 }
 
 .team-detail p {
-	font-size: 18px;
-	line-height: 28px;
-	margin-bottom: 30px;
+	font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 15px;
+	margin-top: 10px;
 }
 
 .contact-team {
@@ -5310,7 +5314,9 @@ a.yt {
 .m90 {
 	margin-bottom: 84px;
 }
-
+.mt-3{
+	margin-top: 15px;
+}
 .m40 {
 	margin-bottom: 40px;
 }
@@ -5318,7 +5324,6 @@ a.yt {
 .team-detail {
 	width: 100%;
 	float: left;
-	padding-top: 47px;
 }
 
 ul.check-list {
@@ -5368,7 +5373,6 @@ ul.check-list i {
 }
 
 .team-details-txt h3 {
-	font-weight: 700;
 	margin: 0 0 15px;
 }
 

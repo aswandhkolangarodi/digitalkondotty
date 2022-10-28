@@ -10,6 +10,9 @@
     color: red;
     list-style: none;
   }
+  .text-italic{
+	font-style: italic !important;
+}
 </style>
 <div class="height-100 bg-light">
 <div class="row">
@@ -54,7 +57,7 @@
         
     {% endif %}
       </div>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="row">
             <div class="col-md-6">
@@ -75,15 +78,31 @@
                 {{form.phone.errors}}
               </div>
               <div class="form-group">
+                <label for="exampleInputEmail1">Company Name</label>
+                {{form.company_name}}
+                {{form.company_name.errors}}
+              </div>  
+              <div class="form-group">
                 <label for="exampleInputEmail1">Basic Requirements</label>
                 {{form.basic_requirements}}
                 {{form.basic_requirements.errors}}
               </div>  
               <div class="form-group">
-                <label for="exampleInputEmail1">About Company</label>
-                {{form.about_company}}
-                {{form.about_company.errors}}
-              </div>
+                <label for="exampleInputEmail1">Facebool Link ( <span class="text-italic">Optional</span> ) </label>
+                {{form.facebook}}
+                {{form.facebook.errors}}
+              </div>  
+              <div class="form-group">
+                <label for="exampleInputEmail1">Linkedin Link ( <span class="text-italic">Optional</span> )</label>
+                {{form.linked_in}}
+                {{form.linked_in.errors}}
+              </div>  
+              <div class="form-group">
+                <label for="exampleInputEmail1">Instagram Link ( <span class="text-italic">Optional</span> )</label>
+                {{form.instagram}}
+                {{form.instagram.errors}}
+              </div>  
+              
             </div>
             <div class="col-md-6">
               <div class="form-group">
@@ -101,6 +120,16 @@
                 {{form.email}}
                 {{form.email.errors}}
               </div> 
+              <div class="form-group my-3">
+                <label for="exampleInputEmail1">Image</label>
+                {{form.image}}
+                {{form.image.errors}}
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">About Company</label>
+                {{form.about_company}}
+                {{form.about_company.errors}}
+              </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">About Job</label>
                 {{form.about_job}}

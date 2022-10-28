@@ -1,6 +1,7 @@
 from enum import unique
 from random import choices
 from django.db import models
+from versatileimagefield.fields import VersatileImageField
 
 # Create your models here.
 
@@ -28,6 +29,7 @@ class Job(models.Model):
     location = models.CharField(max_length=100)
     vacancy = models.IntegerField()
     phone = models.CharField(max_length = 10)
+    company_name = models.CharField(max_length=100)
     email = models.EmailField()
     basic_requirements = models.TextField()
     job_type = models.CharField(max_length=100,choices=CHOICES)
@@ -35,3 +37,7 @@ class Job(models.Model):
     about_company = models.TextField()
     date = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     status  =models.BooleanField(default = False)
+    image = models.ImageField(upload_to = "company images")
+    facebook = models.URLField(null=True,blank=True)
+    linked_in = models.URLField(null=True,blank=True)
+    instagram = models.URLField(null=True,blank=True)

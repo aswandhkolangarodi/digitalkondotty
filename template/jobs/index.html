@@ -3,6 +3,7 @@
 {% block content %}
 
 <div class="height-100 pt-2">
+    
     <div class="row">
         <h3 class="font-weight-bold">Job Requests</h3>
         <div class="table-responsive">
@@ -10,32 +11,39 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
+                        <th>Job</th>
+                        <th>Email</th>
+                        <th>Phone</th>
                         <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Date</th>
+                        <th>Resume</th>
+                        <th>Expected Salary</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for users in job_applyed_users %}
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011-04-25</td>
-                        <td>$320,800</td>
+                        <td>{{users.name}}</td>
+                        <td>{{users.job}}</td>
+                        <td>{{users.email}}</td>
+                        <td>{{users.phone}}</td>
+                        <td>{{users.age}}</td>
+                        <td>{{users.date}}</td>
+                        <td><a href="{{users.resume.url}}" target="_blank" class="btn btn-warning">Resume</a></td>
+                        <td>{{users.expected_salary}} LPA</td>
                     </tr>
-
+                    {% endfor %}
                 </tbody>
                 <tfoot>
                     <tr>
                         <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
+                        <th>Job</th>
+                        <th>Email</th>
+                        <th>Phone</th>
                         <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Date</th>
+                        <th>Resume</th>
+                        <th>Expected Salary</th>
                     </tr>
                 </tfoot>
             </table>

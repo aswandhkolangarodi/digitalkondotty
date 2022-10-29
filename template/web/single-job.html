@@ -12,6 +12,12 @@
 .basic_requirements{
     margin-top: 10px;
 }
+.card{
+    padding: 10px;
+}
+.errors{
+    color: red;
+}
 </style>
 <!--Sub Header Start-->
 <section class="wf100 subheader">
@@ -31,6 +37,37 @@
     <div class="team-details">
         <div class="container">
             <div class="row">
+                {% if messages %}
+          
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                <!-- <script>
+                    alert('{{message}}')
+                </script> -->
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="me-2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                    </path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <strong>Warning!</strong> {{message}}.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                {% endif %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success " role="alert">
+                    
+                <strong>Success!</strong> {{message}}.
+                 
+                  </div>
+                {% endif %}
+                {% endfor %}
+                
+            {% endif %}
                 <div class="team-details-txt m90">
                     <div class="col-md-5">
                         <div class="team-img"> <img src="{{job.image.url}}" alt="{{job.image}}"> </div>
@@ -75,7 +112,7 @@
                             <h5 class="basic_requirements">Basic Requirements</h5>
                             <p class="basic_requirements_text">  {{job.basic_requirements}}.</p>
                             <div class="text-center">
-                                <a href="#" class="btn btn-lg btn-success">Apply Now</a>
+                                <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal">Apply Now</a>
                             </div>
                         </div>
 
@@ -92,4 +129,107 @@
 </div>
 <!--Main Content End-->
 
+<!-- Modal Code -->
+<div class="modal fade centered-modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title">{{job.job_title}}</h5>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <form action="" method="post" enctype="multipart/form-data" id="job_req">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name </label>
+                    {{form.name}}
+                    {{form.name.errors}}
+                  </div>  
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    {{form.email}}
+                    {{form.email.errors}}
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Phone Number</label>
+                    {{form.phone}}
+                    {{form.phone.errors}}
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Expected Salary</label>
+                    {{form.expected_salary}}
+                    {{form.expected_salary.errors}}
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Age</label>
+                    {{form.age}}
+                    {{form.age.errors}}
+                  </div> 
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Upload Resume</label>
+                    {{form.resume}}
+                    {{form.resume.errors}}
+                  </div> 
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Apply</button>
+                  </div>
+            </form>
+          </div>
+        </div>
+       
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <script>
+    $('#job_req').validate({
+    errorClass: 'errors',
+    rules: {
+        name: {
+            required: true,
+            maxlength:30
+        },
+        phone: {
+            required: true,
+            phoneUS: true
+            
+
+        },
+        email: {
+            required: true,
+            email: true,
+        },
+        resume: {
+            required: true,
+        },
+expected_salary: {
+            required: true,
+        },
+        
+    },
+    messages: {
+        first_name: {
+            required: "Please enter first name",
+        },
+        email: {
+            required: "Please enter email address",
+            email: "Enter a valid email"
+
+        },
+        
+    },
+    submitHandler: function (form) {
+        console.log('test');
+        form.submit();
+    
+    }
+})
+
+  </script>
+ 
 {% endblock %}

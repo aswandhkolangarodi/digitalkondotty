@@ -167,11 +167,13 @@
     <!-- career -->
     <section class="wf100 city-news p50">
         <div class="container">
+            {% if jobs %}
             <div class="title-style-3">
                 <h3>City Jobs</h3>
                 <!-- <p>Place your career in the most promising firms
                 </p> -->
             </div>
+           
             <div class="row">
                 <!--Event Start-->
                 {% for jobs in jobs %}
@@ -204,6 +206,7 @@
                 </div>
 
             </div>
+            {% endif %}
         </div>
     </section>
 

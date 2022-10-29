@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, render
 # Create your views here.
 from jobs.models import *
 from django.contrib import messages
-
+from jobs.forms import RequestJob 
 def base(request):
     return render(request,'web/partials/base.html')
 
@@ -89,7 +89,7 @@ def gallery(request):
     return render(request, 'web/gallery.html',context)
 
 def career_all(request):
-    jobs = Job.objects.all().order_by('-id')
+    jobs = Job.objects.filter(status = True).order_by('-id')
     return render(request, "web/career-all.html",{'jobs':jobs})
 
 
@@ -154,7 +154,7 @@ def signup(request):
                 return redirect('web:signup')
             Profile.objects.create(first_name=first_name, email= email, phone=phone, password=password)
             messages.success(request, "Successfully Registered")
-            return redirect('web:signup')
+            return redirect('web:login')
     except Exception as e:
             print(e)
             messages.warning(request, "Something Went Wrong")
@@ -180,5 +180,13 @@ def login(request):
     return render(request, "web/login.html")
 
 def single_job(request,id):
+    form = RequestJob()
     job=Job.objects.get(id= id)
-    return render(request,'web/single-job.html',{'job':job})
+    if request.method == "POST":
+        form = RequestJob(request.POST,request.FILES)
+        if form.is_valid():
+            instance = form.save()
+            JobAppliedUsers.objects.filter(id=instance.id).update(job = job)
+            messages.success(request, "Applyed Successfully")
+            return redirect(f'/single-job/{id}')
+    return render(request,'web/single-job.html',{'job':job,'form':form})

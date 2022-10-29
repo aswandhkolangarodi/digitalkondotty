@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import JobAdd
-from jobs.models import Job, Profile
+from jobs.models import Job, JobAppliedUsers, Profile
 from django.contrib import messages
 
 # Create your views here.
@@ -10,8 +10,9 @@ def index(request):
         return redirect('web:login')
     email = request.session['user']
     user = Profile.objects.filter(email = email).first()
+    job_applyed_users = JobAppliedUsers.objects.filter(job__user =user ).order_by('-id')
     jobs = Job.objects.filter(user = user)
-    return render(request, "jobs/index.html",{'jobs':jobs})
+    return render(request, "jobs/index.html",{'jobs':jobs,'job_applyed_users':job_applyed_users})
 
 def add_jobs(request):
     if 'user' not in request.session:

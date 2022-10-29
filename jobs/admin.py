@@ -17,3 +17,11 @@ class JobAdmin(admin.ModelAdmin):
     search_fields=('job_title','location','vacancy','phone','email','job_type','date')
     list_filter = ('job_title','location','job_type','date','status')
 admin.site.register(Job,JobAdmin)
+
+
+class JobAppliedUsersAdmin(admin.ModelAdmin):
+    model = JobAppliedUsers
+    list_display = ['job','name','email','phone']
+    search_fields=('job','name','email','phone')
+    list_filter = ('job',)
+admin.site.register(JobAppliedUsers,JobAppliedUsersAdmin)

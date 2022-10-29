@@ -36,3 +36,19 @@ class JobAdd(forms.ModelForm):
                 'instagram': forms.TextInput(attrs={'placeholder':'Instagram link','class':'form-control','name':'instagram','id':'instagram'}),
                
             }
+
+
+class RequestJob(forms.ModelForm):
+    phone = forms.CharField(validators=[phone_number_validation],max_length=10,min_length=10,widget=forms.TextInput(attrs={'placeholder':'phone','class':'form-control','name':'phone','id':'phone'}))
+    class Meta:
+            model = JobAppliedUsers
+            fields = ['name', 'email','phone','age','resume','expected_salary']
+            widgets= {
+                'name': forms.TextInput(attrs={'placeholder':'Name','class':'form-control','id':'name','name':'name'}),
+                'phone': forms.TextInput(attrs={'placeholder':'Phone','class':'form-control','name':'phone','id':'phone'}),
+                'email': forms.EmailInput(attrs={'placeholder':'Email','class':'form-control','name':'email','id':'email'}),
+                'expected_salary': forms.NumberInput(attrs={'placeholder':'Expected salary in LPA','class':'form-control','name':'expected_salary','id':'expected_salary'}),
+                'age': forms.NumberInput(attrs={'placeholder':'Age','class':'form-control','name':'age','id':'age'}),
+                'resume': forms.FileInput(attrs={'class':'','name':'resume','id':'resume','onchange':'return fileValidation()'}),
+               
+            }

@@ -41,3 +41,23 @@ class Job(models.Model):
     facebook = models.URLField(null=True,blank=True)
     linked_in = models.URLField(null=True,blank=True)
     instagram = models.URLField(null=True,blank=True)
+
+    def __str__(self):
+        return self.job_title
+  
+class JobAppliedUsers(models.Model):
+    job=models.ForeignKey(Job,on_delete=models.CASCADE,blank=True,null=True,related_name='JobAppliedUsers')
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=10)
+    age = models.IntegerField()
+    expected_salary = models.IntegerField()
+    date = models.DateTimeField(auto_now_add=True)
+    resume =models.FileField()
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Job Applied Users"

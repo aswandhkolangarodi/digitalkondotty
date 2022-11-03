@@ -30,6 +30,8 @@ urlpatterns = [
     path('single-job/<str:id>', views.single_job, name = 'single_job'),
     path('signup/', views.signup, name="signup"),
     path('login/', views.login, name="login"),
+    path('forget-password/', views.forget_password, name="forget-password"),
+    path('reset-password/<token>/',views.reset_password, name="reset-password")
     
 
 

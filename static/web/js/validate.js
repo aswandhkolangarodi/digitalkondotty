@@ -12,6 +12,7 @@ $.validator.addMethod("checkdigit", function (value) {
 $.validator.addMethod("pwcheck", function (value) {
     return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) && /[a-z]/.test(value) && /\d/.test(value) && /[A-Z]/.test(value);
 });
+
 $('#signup').validate({
     errorClass: 'errors',
     rules: {
@@ -29,7 +30,9 @@ $('#signup').validate({
             required: true,
             email: true,
         },
-
+        place:{
+            required: true,
+        },
         password: {
             minlength: 8,
             maxlength: 30,

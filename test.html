@@ -1,183 +1,134 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>DisplayPDF</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head><style>
-
-.popup-trigger {
-  display: block;
-  width: 170px;
-  right: 2rem;
-  margin: 3em auto;
-  text-align: center;
-  color: #FFF;
-  font-size: 18px;
-  padding:1rem 2rem;
-  text-decoration:none;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 50em;
-  background: #35a785;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.07);
-  transition:300ms all;
-}
-
-.popup-trigger:hover {
-    opacity:.8;
-}
-
-.popup {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  z-index: 1000;
-  width: 100%;
-  background-color: rgba(94, 110, 141, 0.9);
-  opacity: 0;
-  visibility: hidden;
-  transition:500ms all;
-
-}
-
-.popup.is-visible {
-  opacity: 1;
-  visibility: visible;
- transition:1s all;
-}
-
-.popup-container {
-  transform:translateY(-50%);
-  transition:500ms all;
-  position: relative;
-  width: 40%;
-  margin: 2em auto;
-  top: 5%;
-  padding:5rem;
-  background: #FFF;
-  border-radius: .25em .25em .4em .4em;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.is-visible .popup-container {
-  transform:translateY(0);
-  transition:500ms all;
-}
-
-.popup-container .popup-close {
-  position: absolute;
-  top: 8px;
-  font-size:0;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-}
 
 
-.popup-container .popup-close::before,
-.popup-container .popup-close::after {
-  content: '';
-  position: absolute;
-  top: 12px;
-  width: 14px;
-  height: 3px;
-  background-color: #8f9cb5;
-}
 
-.popup-container .popup-close::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  left: 8px;
-}
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
 
-.popup-container .popup-close::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  right: 8px;
-}
-
-
-.popup-container .popup-close:hover:before,
-.popup-container .popup-close:hover:after {
-  background-color:#35a785;
-  transition:300ms all;
-}
-
-</style>
-<body>
-    <div class="container">
-      <a href="#0" id="popup-trigger" class="info " title="info">Popup</a>
-
-<div class="popup" role="alert">
-  <div class="popup-container">
-    <a href="#0" class="popup-close img-replace">Close</a>
-    
-    <embed src="https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf"
-    frameborder="0" width="100%" height="400px">
-  </div> 
-</div> 
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        <embed src="https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf"
-                               frameborder="0" width="100%" height="400px">
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
+<div class="main-content p80">
+    <div class="my-account">
+       <div class="container">
+        {% if messages %}
+  
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+        <!-- <script>
+            alert('{{message}}')
+        </script> -->
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" class="me-2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+            </path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <strong>Warning!</strong> {{message}}.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" class="me-2">
+        <polyline points="9 11 12 14 22 4"></polyline>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+    </svg>
+        <strong>Success!</strong> {{message}}.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+        {% endfor %}
+        
+    {% endif %}
+          <div class="row "  >
+        <div class="col-md-2"></div>
+             <div class="col-md-8 col-sm-7 mx-auto" >
+                <div class="row">
+                   <div class="register-account">
+                    <form action="">
+                        <ul>
+                            <li class="col-md-12">
+                               <p>Going to Be A New User</p>
+                               <h4>Register Your Account!</h4>
+                            </li>
+                            <li class="col-md-6">
+                               <input type="text" placeholder="Your Name" class="linput">
+                            </li>
+                            <li class="col-md-6">
+                               <input type="text" placeholder="Email" class="linput">
+                            </li>
+                            <li class="col-md-6">
+                               <input type="text" placeholder="Contact Number" class="linput">
+                            </li>
+                            <li class="col-md-6">
+                               <input type="text" placeholder="Username" class="linput">
+                            </li>
+                            <li class="col-md-6">
+                               <input type="Password" placeholder="Password" class="linput">
+                            </li>
+                            <li class="col-md-6">
+                               <input type="Password" placeholder="Confirm Password" class="linput">
+                            </li>
+                            <li class="col-md-12">
+                               <input type="checkbox"> I agree to the Terms of <a href="#">Service &amp; Privacy Policy</a> 
+                            </li>
+                            <li class="col-md-12">
+                               <input value="Register Now" type="submit">
+                            </li>
+                         </ul>
+                    </form>
+                     
+                   </div>
                 </div>
+             </div>
+             <div class="col-md-2"></div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+ <div class="container d-flex justify-content-center align-items-center">
+        
+    <div class="card">
+       
+      
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="post" id="signup">
+                    {% csrf_token %}
+                    <div class="form">
+                        <h2>Registration</h2>
+                        <div class="inputbox mt-3"> <span>First Name</span> <input type="text" placeholder="Name"
+                                name="first_name" class="form-control"> </div>
+                        <div class="inputbox mt-3"> <span>Email</span> <input type="text" placeholder="Email" name="email"
+                                class="form-control"> </div>
+                        <div class="inputbox mt-3"> <span>Phone</span> <input type="tel" placeholder=" 455 445 4532"
+                                name="phone" class="form-control"> </div>
+                        <div class="inputbox mt-3"> <span>Password</span> <input type="password" placeholder="Password"
+                                    name="password" class="form-control" id="password_reg"> </div>
+                        <div class="inputbox mt-3"> <span>Confirm Password</span> <input type="password" placeholder="Confirm Password"
+                                        name="confirm_password" class="form-control"> </div>
+                       
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="text-right"> <button type="submit"
+                                    class="btn btn-success register btn-block">Register</button> </div> <a href="{% url 'web:login' %}"
+                                class="login">Login</a>
+                        </div>
+                       
+                    </div>
+                </form>
+             
+            </div>
+            <div class="col-md-6  d-none d-lg-block d-md-block ">
+                <div class="text-center mt-5 d-flex justify-content-center align-items-center"> <img src="https://i.imgur.com/98GXnDD.png" width="400"> </div>
             </div>
         </div>
     </div>
-<script>
-  jQuery(document).ready(function($){
-  //open popup
-  $('#popup-trigger').on('click', function(event){
-    event.preventDefault();
-    $('.popup').addClass('is-visible');
-  });
-  
-  //close popup
-  $('.popup').on('click', function(event){
-    if( $(event.target).is('.popup-close') || $(event.target).is('.popup') ) {
-      event.preventDefault();
-      $(this).removeClass('is-visible');
-    }
-  });
-  //close popup when clicking the esc keyboard button
-  $(document).keyup(function(event){
-      if(event.which=='27'){
-        $('.popup').removeClass('is-visible');
-      }
-    });
-});
-</script>
-</body>
-</html>
+</div>
+ {% endblock %}

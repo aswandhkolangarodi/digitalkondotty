@@ -445,14 +445,16 @@
                             <!--Panel End-->
                         </div>
                     </div>
-                    <a href="#" class="jobs-link">Job Vacancies</a>
+                    <a href="{% url 'web:city_jobs_all' %}" class="jobs-link">Job Vacancies</a>
                     <ul class="reports">
-                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Business
-                                Executive</a> </li>
-                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Content Writer</a>
+                        {% for jobs in jobs %}
+                        <li> <a href="{% url 'web:single_job' jobs.id %}"><i class="fas fa-file-alt"></i> {{jobs.job_title|truncatechars:25}}
+                                </a> </li>
+                        <!-- <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Content Writer</a>
                         </li>
-                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Court Case about
-                                TAX</a> </li>
+                        <li> <a href="{% url 'web:city_jobs_all' %}"><i class="fas fa-file-alt"></i> Court Case about -->
+                                <!-- </a> </li> -->
+                                {% endfor %}
                     </ul>
                 </div>
             </div>

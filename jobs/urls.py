@@ -7,5 +7,6 @@ urlpatterns = [
   path('',views.index, name ="home"),
   path('add-job/',views.add_jobs, name ="add-job"),
   path('logout/',views.logout, name ="logout"),
+  path('job-approve/<str:token>/',views.job_approve, name ="job-approve"),
 
 ]

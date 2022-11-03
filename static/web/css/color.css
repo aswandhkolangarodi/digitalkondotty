@@ -38,14 +38,16 @@ a.dbutton,
 li.form-submit button,
 .donator-details input[type="submit"],
 .login-box input[type="submit"],
-.login-account,
+
 .register-account input[type="submit"],
 .home3.emergency-numbers .newsletter-form button {
 	background-color: #ffffff;
 	color: black;
 	border: 1px solid rgb(235, 176, 13);
 }
-
+.login-account{
+	background-color: #f8a106;
+}
 .header .topbar{
 	background-color: #002f3d;
 }

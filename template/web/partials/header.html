@@ -156,16 +156,36 @@
                                 <li><a href="{% url 'web:event' %}">Events</a></li>
                                 <li><a href="{% url 'web:contact' %}">Connect</a></li>
                                 <li><a href="{% url 'web:gallery' %}">Gallery</a></li>
-
+                                <li class="search-btn"><a class="search-icon d-sm-only" href="#search"> <i class="fas fa-search"></i> </a></li>
                                 <li >
                                     <a href="{% url 'web:login' %}" class="btn btn-warning d-sm-only"> Business Login</a>
                                 </li>   
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
+                                <li class="search-btn"><a class="search-icon" href="#search"> <i class="fas fa-search"></i> </a></li>
                                 <li >
                                     <a href="{% url 'web:login' %}" class="btn btn-warning"> Business Login</a>
                                 </li>
+                               
                             </ul>
+                            <div id="search" class="">
+                                <button type="button" class="close">×</button>
+                                <form class="search-overlay-form">
+                                  <input type="search" value="" placeholder="type keyword(s) here">
+                                  <ul class="live-search-list">
+                                    <li>This</li>
+                                    <li>Is</li>
+                                    <li>My</li>
+                                    <li>Search</li>
+                                    <li>With</li>
+                                    <li>Black Jack</li>
+                                    <li>and</li>
+                                    <li>test</li>
+                                    <li>bells</li>
+                                  </ul>
+                                  <!-- <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button> -->
+                                </form>
+                              </div>
                         </div>
                     </nav>
                 </div>

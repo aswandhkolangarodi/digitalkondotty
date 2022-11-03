@@ -3,6 +3,7 @@ from .forms import JobAdd
 from jobs.models import Job, JobAppliedUsers, Profile
 from django.contrib import messages
 
+from web.helpers import job_add_email
 # Create your views here.
 def index(request):
     
@@ -24,7 +25,8 @@ def add_jobs(request):
         form = JobAdd(request.POST,request.FILES)
         if form.is_valid():
             saved_obj = form.save()
-            Job.objects.filter(id=saved_obj.id).update(user = user)  
+            Job.objects.filter(id=saved_obj.id).update(user = user)
+            job_add_email(email)
             messages.success(request, "Job added succesfully")
             return redirect('jobs:add-job')
     return render(request, "jobs/add-jobs.html",{'form':form})
@@ -36,3 +38,8 @@ def logout(request):
     except:
         return redirect('web:login')
     return redirect('web:login')
+
+
+def job_approve(request, token):
+    Job.objects.filter(test_id=token).update(status=True)
+    return redirect('web:home')

@@ -1,8 +1,9 @@
+from email.policy import default
 from enum import unique
 from random import choices
 from django.db import models
 from versatileimagefield.fields import VersatileImageField
-
+import uuid
 # Create your models here.
 
 
@@ -11,7 +12,7 @@ class Profile(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=13)
     password = models.CharField(max_length=30)
-
+    forget_password_token = models.UUIDField(null =True, blank =True, unique= True)
 
     def __str__(self):
         return self.first_name
@@ -41,7 +42,7 @@ class Job(models.Model):
     facebook = models.URLField(null=True,blank=True)
     linked_in = models.URLField(null=True,blank=True)
     instagram = models.URLField(null=True,blank=True)
-
+    test_id = models.CharField(max_length=100,default=uuid.uuid4())
     def __str__(self):
         return self.job_title
   

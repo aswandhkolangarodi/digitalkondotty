@@ -54,26 +54,16 @@
                             <i class='bx bx-grid-alt nav_icon'></i>
                             <span class="nav_name">Dashboard</span>
                          </a> 
-                         <!-- <a href="#" class="nav_link"> 
-                            <i class='bx bx-user nav_icon'></i>
-                                 <span class="nav_name">Users</span> 
-                                </a>
-                                 <a href="#" class="nav_link">
-                             <i class='bx bx-message-square-detail nav_icon'></i> 
-                             <span class="nav_name">Messages</span>
-                                 </a> 
-                                 <a href="#" class="nav_link"> <i
-                                class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a
-                            href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span
-                                class="nav_name">Files</span> </a>  -->
-                         <a href="{% url 'jobs:home' %}" class="nav_link"> <i
-                                class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Jobs</span> </a>
                     </div>
                 </div>
-                <a href="{% url 'jobs:logout' %}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                <a href="#" class="nav_link" id="logout"> <i class='bx bx-log-out nav_icon'></i> <span
                         class="nav_name">SignOut</span> </a>
             </nav>
         </div>
+        
+        <form name="logoutform" action="{% url 'jobs:logout' %}" id="logoutform">
+          
+        </form>
         <!--Container Main start-->
         
             {% block content %}
@@ -95,6 +85,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -144,5 +135,25 @@
         $('#added_jobs').DataTable();   
     });
     </script>
+<script>
 
+$('#logout').click(function(){
+  
+  swal({
+  title: 'Are you sure?',
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}).then((willDelete) => {
+    if (willDelete) {
+        $('#logoutform').submit()
+  } else {
+    
+  }
+  
+})
+
+  
+})
+</script>
 </html>

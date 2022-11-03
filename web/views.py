@@ -5,6 +5,10 @@ from django.shortcuts import get_object_or_404, render
 from jobs.models import *
 from django.contrib import messages
 from jobs.forms import RequestJob 
+
+from .helpers import forget_password_email
+import uuid
+
 def base(request):
     return render(request,'web/partials/base.html')
 
@@ -25,7 +29,8 @@ def home(request):
         "official":official,
         "explore_comunity_1":explore_comunity_1,
         "explore_comunity_2":explore_comunity_2,
-        'jobs':jobs
+        'jobs':jobs,
+       
     }
     return render(request,'web/index.html',context)
 
@@ -167,7 +172,7 @@ def login(request):
             password = request.POST['password']
             user = Profile.objects.filter(email = email).first()
             if user is None:
-                messages.error(request, "User not found")
+                messages.warning(request, "User not found")
                 return redirect('web:login')
             if user.password != password:
                 messages.error(request, "Wrong Password")
@@ -190,3 +195,27 @@ def single_job(request,id):
             messages.success(request, "Applyed Successfully")
             return redirect(f'/single-job/{id}')
     return render(request,'web/single-job.html',{'job':job,'form':form})
+
+
+def forget_password(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        if Profile.objects.filter(email = email).exists() is False:
+            messages.error(request, 'User not found')
+            return redirect('web:forget-password')
+        token = uuid.uuid4()
+        user = Profile.objects.filter(email=email).update(forget_password_token=token)
+        forget_password_email(token)
+        messages.success(request, "An Email is send")
+        return redirect('web:forget-password')
+    return render(request, 'web/forget-password.html')
+
+def reset_password(request,token):
+    if Profile.objects.filter(forget_password_token= token).exists() is False:
+        return redirect('web:signup')
+    if request.method == 'POST':
+        new_password = request.POST['password']
+        Profile.objects.filter(forget_password_token= token).update(password=new_password, forget_password_token=uuid.uuid4())
+        messages.success(request, 'Password Reset Successfully')
+        return redirect('web:login')
+    return render(request, "web/reset-password.html")

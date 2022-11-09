@@ -128,12 +128,15 @@ body h5 {
 body h6 {
 	font-size: 18px;
 }
+
 .upcoming-event {
 	font-size: 10px !important;
 }
-.city-jobs h5{
+
+.city-jobs h5 {
 	font-size: 16px !important;
 }
+
 .wf100 {
 	width: 100%;
 	float: left;
@@ -142,12 +145,15 @@ body h6 {
 .p80 {
 	padding: 80px 0;
 }
+
 .p30 {
 	padding: 40px 0;
 }
-.my-5{
+
+.my-5 {
 	margin: 25px 0;
 }
+
 .p80-0 {
 	padding: 80px 0 0;
 }
@@ -179,9 +185,11 @@ body h6 {
 .p70 {
 	padding: 70px 0;
 }
-.p50{
+
+.p50 {
 	padding: 40px 0;
 }
+
 body a,
 body a:hover,
 body a:active,
@@ -330,12 +338,12 @@ header {
 
 .logo-nav-row ul.nav.navbar-nav.navbar-right .bars-btn a {
 	margin-top: 19px;
-    margin-right: 22px;
-    background-color: #f99f00;
-    padding: 10px;
-    color: #002f3d;
-    font-size: 13px;
-    border-radius: 20px;
+	margin-right: 22px;
+	background-color: #f99f00;
+	padding: 10px;
+	color: #002f3d;
+	font-size: 13px;
+	border-radius: 20px;
 }
 
 .logo-nav-row .navbar-nav>li>.dropdown-menu {
@@ -484,7 +492,9 @@ header {
 	line-height: 34px;
 	margin: 0 0 30px;
 }
-.slide-content-box a, .slider-caption a {
+
+.slide-content-box a,
+.slider-caption a {
 	background: #f99f00;
 	color: #1d1d1d;
 	font-family: 'Montserrat', sans-serif;
@@ -4333,18 +4343,22 @@ ul.reports a i {
 	width: 40%;
 	font-size: 10px;
 }
-.event-list li.el-title h6{
+
+.event-list li.el-title h6 {
 	font-size: 13px;
 }
+
 .event-list li.el-title h6 {
 	color: #222222;
 	margin: 0 0 7px;
 	font-weight: 400;
 	line-height: 18px;
 }
-.d-sm-only{
+
+.d-sm-only {
 	display: none !important;
 }
+
 .event-list li.el-title h6 a {
 	color: #222;
 }
@@ -4403,14 +4417,16 @@ ul.reports a i {
 	padding: 20px;
 	height: 88px;
 }
+
 #homeVideo button.btn.btn-default {
-    background: black;
-    border-radius: 50%;
-    position: absolute;
-    right: 0;
-    z-index: 5;
-    color: white;
+	background: black;
+	border-radius: 50%;
+	position: absolute;
+	right: 0;
+	z-index: 5;
+	color: white;
 }
+
 .event-cap h5 {
 	font-weight: 700;
 	color: #fff;
@@ -4489,12 +4505,12 @@ ul.reports a i {
 
 /*********** Explore Community Start ***********/
 
-@media (min-width: 280px) and (max-width: 767px){
-.explore-community h3 {
-    font-size: 21px;
-	margin: 0 0 25px;
-	font-weight: 700;
-}
+@media (min-width: 280px) and (max-width: 767px) {
+	.explore-community h3 {
+		font-size: 21px;
+		margin: 0 0 25px;
+		font-weight: 700;
+	}
 }
 
 .explore-community h3 {
@@ -4509,7 +4525,7 @@ ul.reports a i {
 	padding: 25px 30px;
 	list-style: none;
 	width: 100%;
-	
+
 }
 
 .community-links-style-two li {
@@ -4525,7 +4541,7 @@ ul.reports a i {
 	background: #40407e;
 	border-radius: 100%;
 	margin-right: 10px;
-	 
+
 }
 
 .community-links-style-two li a {
@@ -5237,8 +5253,8 @@ a.join-now {
 
 .team-detail p {
 	font-size: 14px;
-    line-height: 21px;
-    margin-bottom: 15px;
+	line-height: 21px;
+	margin-bottom: 15px;
 	margin-top: 10px;
 }
 
@@ -5314,9 +5330,11 @@ a.yt {
 .m90 {
 	margin-bottom: 84px;
 }
-.mt-3{
+
+.mt-3 {
 	margin-top: 15px;
 }
+
 .m40 {
 	margin-bottom: 40px;
 }
@@ -5926,9 +5944,11 @@ body .panel-group .panel+.panel {
 	margin: 0px;
 	background: #fff;
 }
-.pt25{
+
+.pt25 {
 	padding-top: 40px;
 }
+
 .city-updates ul li {
 	border-bottom: 1px solid #e8e8e8;
 	padding: 19px 0;
@@ -8633,9 +8653,10 @@ ul.team-social a,
  }
   */
 
-.about-vibrant-city{
+.about-vibrant-city {
 	height: 294px;
 }
+
 /* banner video */
 #fade {
 	display: none;
@@ -8649,9 +8670,9 @@ ul.team-social a,
 	-moz-opacity: 0.8;
 	opacity: .80;
 	filter: alpha(opacity=80);
-  }
-  
-  #light {
+}
+
+#light {
 	display: none;
 	position: absolute;
 	top: 50%;
@@ -8665,9 +8686,9 @@ ul.team-social a,
 	background: #FFF;
 	z-index: 1002;
 	overflow: visible;
-  }
-  
-  #boxclose {
+}
+
+#boxclose {
 	float: right;
 	cursor: pointer;
 	color: #fff;
@@ -8684,32 +8705,57 @@ ul.team-social a,
 	top: 2px;
 	z-index: 1002;
 	opacity: 0.9;
-  }
-  
-  .boxclose:before {
+}
+
+.boxclose:before {
 	content: "×";
-  }
-  
-  #fade:hover ~ #boxclose {
-	display:none;
-  }
-  
-  .test:hover ~ .test2 {
+}
+
+#fade:hover~#boxclose {
 	display: none;
-  }
-#VisaChipCardVideo{
+}
+
+.test:hover~.test2 {
+	display: none;
+}
+
+#VisaChipCardVideo {
 	width: 600px;
-	 height: 350px;
+	height: 350px;
 }
 
 
-.mt-5{
+.mt-5 {
 	margin-top: 10px;
 }
-.ml-2{
+
+.ml-2 {
 	margin-left: 15px;
 }
-.mt-10{
+
+.mt-10 {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.search-box-result {
+
+	padding: 15px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+.not-visible{
+display: none;
+}
+.search-result div{
+	color: #f0f0f0;
+}
+.search-result div:hover{
+	color: #f4a416;
+}
+.error-search{
+	color: white;
 }

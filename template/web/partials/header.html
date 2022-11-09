@@ -162,27 +162,25 @@
                                 </li>   
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="search-btn"><a class="search-icon" href="#search"> <i class="fas fa-search"></i> </a></li>
-                                <li >
+                                <li class="search-btn "><a class="search-icon" href="#search"> <i class="fas fa-search"></i> </a></li>
+                                <li class="ml-2">
                                     <a href="{% url 'web:login' %}" class="btn btn-warning"> Business Login</a>
                                 </li>
                                
                             </ul>
                             <div id="search" class="">
                                 <button type="button" class="close">×</button>
-                                <form class="search-overlay-form">
-                                  <input type="search" value="" placeholder="type keyword(s) here">
-                                  <ul class="live-search-list">
-                                    <li>This</li>
-                                    <li>Is</li>
-                                    <li>My</li>
-                                    <li>Search</li>
-                                    <li>With</li>
-                                    <li>Black Jack</li>
-                                    <li>and</li>
-                                    <li>test</li>
-                                    <li>bells</li>
-                                  </ul>
+                                <form class="search-overlay-form" id="search_form">
+                                    {% csrf_token %}
+                                  <input type="search" value="" placeholder="Search city job" id="search_input">
+                                
+                                  <div class='search-box-result not-visible' id="search-box-results"> 
+                                    
+                                   
+                                        
+                                        
+                                       
+                                </div>
                                   <!-- <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button> -->
                                 </form>
                               </div>

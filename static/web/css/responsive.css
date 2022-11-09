@@ -802,6 +802,10 @@ html body {
 	max-width: 100%;
 	height: auto;
 }
+#search input[type="search"] {
+	line-height: 25px;
+	font-size: 20px;
+}
 .causes-listing .campaign-txt h4 {
 	font-size: 24px;
 }

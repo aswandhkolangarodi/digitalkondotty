@@ -8,6 +8,16 @@ from jobs.forms import RequestJob
 
 from .helpers import forget_password_email
 import uuid
+import json
+from django.http import JsonResponse
+
+
+
+from django.shortcuts import HttpResponse
+
+
+def is_ajax(request):
+    return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
 def base(request):
     return render(request,'web/partials/base.html')
@@ -22,6 +32,8 @@ def home(request):
     jobs = Job.objects.filter(status = True).order_by('-id')[:3]
     testimonial = Testimonial.objects.all()
     official = Official.objects.all()
+    all_jobs = json.dumps(list(Job.objects.filter(status = True).values('job_title')))
+    print(all_jobs)
     context = {
         "news":news,
         "event":event,
@@ -30,6 +42,7 @@ def home(request):
         "explore_comunity_1":explore_comunity_1,
         "explore_comunity_2":explore_comunity_2,
         'jobs':jobs,
+        'all_jobs':all_jobs,
        
     }
     return render(request,'web/index.html',context)
@@ -219,3 +232,26 @@ def reset_password(request,token):
         messages.success(request, 'Password Reset Successfully')
         return redirect('web:login')
     return render(request, "web/reset-password.html")
+
+
+
+
+
+def search_result(request):
+    if is_ajax(request=request):
+        job = request.POST.get('job')
+        qs = Job.objects.filter(status = True, job_title__icontains = job)
+        res=None
+        if len(qs)>0 and len(job)>0:
+            data=[]
+            for pos in qs:
+                item={
+                    'pk':pos.pk,
+                    'job_title':pos.job_title
+                }
+                data.append(item)
+            res = data
+        else:
+            res = 'No Job Found ......'
+        return JsonResponse({'data':res})
+    return JsonResponse({})

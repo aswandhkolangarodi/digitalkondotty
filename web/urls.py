@@ -31,7 +31,8 @@ urlpatterns = [
     path('signup/', views.signup, name="signup"),
     path('login/', views.login, name="login"),
     path('forget-password/', views.forget_password, name="forget-password"),
-    path('reset-password/<token>/',views.reset_password, name="reset-password")
+    path('reset-password/<token>/',views.reset_password, name="reset-password"),
+    path('search',views.search_result, name="search")
     
 
 

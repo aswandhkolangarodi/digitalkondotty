@@ -113,6 +113,54 @@
         }
     }
 </script>
+<script>
+  const url =window.location.href
+  const searchform = document.getElementById('search_form')
+  const searchInput = document.getElementById('search_input')
+  const resultsBox = document.getElementById('search-box-results')
+  console.log(resultsBox)
+  const csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value
+  const sendSearchData = (job)=>{
+      $.ajax({
+          type:'POST',
+          url : '{% url "web:search" %}',
+          data : {
+              'csrfmiddlewaretoken':csrf,
+              'job':job,
 
+          },
+          success :(result)=> {
+              const data = result.data
+              if (Array.isArray(data)){
+                  resultsBox.innerHTML = ""
+                  data.forEach(job=>{
+                      resultsBox.innerHTML+=`
+                      <a href="/single-job/${job.pk}" class="search-result">
+                          <div>${job.job_title}</div>
+                      `
+                  })
+              }else{
+                  if(searchInput.value.length>0){
+                      
+                      resultsBox.innerHTML = `<h6 class="error-search"><b>${data}</b></h6>`
+                  }else{
+                      resultsBox.classList.add('not-visible')
+                  }
+              }
+          },
+          error:(error)=>{
+              console.log(error)
+          }
+      })
+  }
+  searchInput.addEventListener('keyup', e=>{
+      
+      console.log(e.target.value)
+      if(resultsBox.classList.contains('not-visible')){
+          resultsBox.classList.remove('not-visible')
+      }
+      sendSearchData(e.target.value)
+  })
+</script>
 </body>
 </html>

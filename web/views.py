@@ -178,9 +178,9 @@ def signup(request):
             messages.warning(request, "Something Went Wrong")
     return render(request, "web/signup.html")
     
-def login(request):
-    try:
-        if request.method == "POST":
+def login_lg(request):
+    if request.method == 'POST':
+        try:
             email = request.POST['email']
             password = request.POST['password']
             user = Profile.objects.filter(email = email).first()
@@ -192,9 +192,10 @@ def login(request):
                 return redirect('web:login')
             request.session['user']=email
             return redirect('/job-portal/')
-    except Exception as e:
-        print(e)
-        messages.warning(request, "Something Went Wrong")
+        except Exception as e:
+            print(e)
+            messages.warning(request, "Something Went Wrong")
+            return redirect('web:login')
     return render(request, "web/login.html")
 
 def single_job(request,id):

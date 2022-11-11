@@ -3,36 +3,49 @@
 {% block content %}
 
 <div class="main-content p80">
-    <div class="my-account">
-       <div class="container">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 col-sm-5">
+   <div class="my-account">
+      <div class="container">
+         <div class="col-md-4"></div>
+         <div class="col-md-4 col-sm-5">
             <div class="login-account">
                <p>Already A Member?</p>
+               {%comment%}
                <h4>Login Account</h4>
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <ul>
-                        <li>
-                           <input type="email" name="email" placeholder="Enter Email" class="linput" required>
-                        </li>
-                        <li>
-                           <input type="Password" name="password" placeholder="Enter Password" class="linput" required>
-                        </li>
-                        <li>
-                            <a href="{% url 'web:signup' %}">Don't have an account</a> <a class="pull-right" href="{% url 'web:forget-password' %}">Forgot Password?</a> 
-                        </li> 
-                        <li class="text-center">
-                           <button type="submit" class="btn btn-light" style="color: black;">Login Account</button>
-                        </li>
-                     </ul>
-                </form>
+               <form action="" method="POST" role="form">
+                  {% csrf_token %}
+                  {{form}}
+                  <button type="submit" >Login Account</button>
+               {%endcomment%}
+
+
+               </form>
+               <h4>Login Account</h4>
+               <form method="post" action="{% url 'web:login' %}" role="form" id="form-id">
+                   {% csrf_token %}
+                  <ul>
+                     <li>
+                        <input type="email" class="linput" placeholder="Enter email" name="email" id="login-email" required>
+                        
+                     </li>
+                     <li>
+                        <input type="password" class="linput" placeholder="Enter password" name="password" id="login-pass" required>
+                        
+                     </li>
+                     <li>
+                        <a href="{% url 'web:signup' %}">Don't have an account</a> <a class="pull-right"
+                           href="{% url 'web:forget-password' %}">Forgot Password?</a>
+                     </li>
+                     <li class="text-center">
+                        <button type="submit" class="btn btn-light" style="color: black;" id="login-btn">Login Account</button>
+                     </li>
+                  </ul>
+               </form>
             </div>
          </div>
          <div class="col-md-4"></div>
-        
-       </div>
-    </div>
+
+      </div>
+   </div>
 </div>
 
 
@@ -40,36 +53,52 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
-
- {% if messages %}
-      
- {% for message in messages %}
- {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
- <script>
-     swal({
-  title: "{{message}}!",
-  icon: "error",
-});
- </script>
- {% endif %}
- {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-    <script>
-        swal({
-  title: "Wrong Password !",
-  icon: "error",
-});
-    </script>
- {% endif %}
- {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
 <script>
-     swal({
-  title: "Good job!",
-  text: "Password Reset Successfully ",
-  icon: "success",
+   var form = document.getElementById("form-id");
+   var email = document.getElementById("login-email")
+   var pass = document.getElementById("login-pass")
+
+   var flag = 0
+   document.getElementById("login-btn").addEventListener("click", function () {
+      if(email.value != "" && pass.value!=""){
+        flag = 1
+      }
+      if(flag == 1){
+         form.submit();
+      }
+  
 });
 </script>
- {% endif %}
- {% endfor %}
- 
+
+{% if messages %}
+
+{% for message in messages %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+<script>
+   swal({
+      title: "{{message}}!",
+      icon: "error",
+   });
+</script>
+{% endif %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+<script>
+   swal({
+      title: "Wrong Password !",
+      icon: "error",
+   });
+</script>
+{% endif %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<script>
+   swal({
+      title: "Good job!",
+      text: "{{message}} ",
+      icon: "success",
+   });
+</script>
+{% endif %}
+{% endfor %}
+
 {% endif %}
 {% endblock %}

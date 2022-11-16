@@ -2,158 +2,298 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
 <head>
-    <meta charset="UTF-8">
+
+
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Kondotty Job Portal</title>
-    <link rel="stylesheet" href="{% static 'jobs/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="{% static 'jobs/css/style.css' %}">
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Zenix - Crypto Admin Dashboard Django Template" />
+    <meta property="og:title" content="Zenix - Crypto Admin Dashboard Django Template" />
+    <meta property="og:description" content="Zenix - Crypto Admin Dashboard Django Template" />
+    <meta property="og:image" content="../../zenix.dexignzone.com/django/social-image.png" />
+    <meta name="format-detection" content="telephone=no">
+    <title>Digital Kondotty | Job Portal</title>
+    <!-- Favicon icon -->
     <link rel="icon" href="{% static 'web/images/DK-FAV.png' %}" type="image/png">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+
+
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'jobs/vendor/datatables/css/jquery.dataTables.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'jobs/vendor/bootstrap-select/dist/css/bootstrap-select.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'jobs/css/style.css' %}">
+    {% endblock %}
+
+
+
+
 </head>
 
 <body>
 
-    <body id="body-pd">
-        <header class="header" id="header">
-            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-         
-            
-               <a href="{% url 'jobs:add-job' %}" class="btn btn-outline-warning text-dark">Add Job</a>
-            
-        </header>
-        <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div> <a href="{% url 'jobs:home' %}" class="nav_logo">
-                        <svg height="25" width="25" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32.4 36.2"
-                            style="enable-background:new 0 0 32.4 36.2;" xml:space="preserve">
-                            <style type="text/css">
-                                .st0 {
-                                    fill: #FFFFFF;
-                                }
-                            </style>
-                            <path class="st0" d="M28.4,1.2c0,0.7-0.2,1.4-0.4,2.1c-0.4,2.1-0.9,4.3-1.4,6.4c-0.1,0.4,0,0.5,0.4,0.5c1,0,1.9,0,2.9,0
-	c0.4,0,0.6,0.1,0.6,0.5c0,1.2,0,2.3,0,3.5c0,0.4-0.2,0.5-0.6,0.5c-1.3,0-2.5,0-3.8,0c-0.4,0-0.5,0.1-0.6,0.5c-0.4,2-0.8,4.1-1.3,6.1
-	c-0.1,0.3,0,0.4,0.4,0.4c1.8,0,3.5,0,5.3,0c0.5,0,0.6,0.2,0.6,0.6c0,1.1,0,2.3,0,3.4c0,0.4-0.1,0.5-0.5,0.5c-2,0-4,0-5.9,0
-	c-0.7,0-0.7,0-0.8,0.7c-0.5,2.5-1.1,5-1.6,7.5C21.4,35,21.4,35,20.7,35c-1.1,0-2.2,0-3.3,0c-0.4,0-0.5-0.1-0.4-0.5
-	c0.6-2.6,1.1-5.2,1.7-7.8c0.1-0.6,0.1-0.6-0.5-0.6c-2.4,0-4.8,0-7.2,0c-0.4,0-0.6,0.1-0.7,0.5c-0.5,2.6-1.1,5.2-1.6,7.8
-	c-0.1,0.4-0.2,0.6-0.7,0.6c-1.2,0-2.3,0-3.5,0c-0.4,0-0.5-0.1-0.4-0.5c0.6-2.6,1.1-5.2,1.7-7.8C6,26.2,6,26.1,5.4,26.1
-	c-1.1,0-2.3,0-3.4,0c0-1.5,0-3,0-4.5c1.5,0,2.9,0,4.4,0c0.4,0,0.5-0.1,0.6-0.5c0.4-2,0.8-4,1.2-6c0.1-0.4,0-0.5-0.4-0.5
-	c-1.9,0-3.9,0-5.8,0c0-1.5,0-3,0-4.5c2.2,0,4.5,0,6.7,0c0.4,0,0.5-0.1,0.6-0.5C9.5,8.7,9.8,7.8,10,6.9c0.4-1.9,0.8-3.8,1.2-5.7
-	c1.5,0,3,0,4.5,0c0,0.1,0,0.3-0.1,0.4c-0.6,2.7-1.2,5.3-1.8,8c-0.1,0.4,0,0.5,0.4,0.5c2.4,0,4.8,0,7.2,0c0.3,0,0.5-0.1,0.6-0.5
-	c0.2-1.2,0.5-2.3,0.7-3.5c0.4-1.7,0.7-3.4,1.1-5C25.4,1.2,26.9,1.2,28.4,1.2z M15.6,21.6c1.2,0,2.4,0,3.6,0c0.3,0,0.5-0.1,0.5-0.4
-	c0.4-2,0.8-4,1.2-6.1c0.1-0.4,0-0.5-0.4-0.5c-2.4,0-4.9,0-7.3,0c-0.3,0-0.5,0.1-0.5,0.4c-0.4,2-0.8,4-1.3,6
-	c-0.1,0.5-0.1,0.5,0.5,0.5C13.2,21.6,14.4,21.6,15.6,21.6z" />
-                        </svg>
-                        <span class="nav_logo-name">DigitalKondotty</span> </a>
-                    <div class="nav_list"> 
-                        <a href="{% url 'jobs:home' %}" class="nav_link active"> 
-                            <i class='bx bx-grid-alt nav_icon'></i>
-                            <span class="nav_name">Dashboard</span>
-                         </a> 
-                    </div>
-                </div>
-                <a href="#" class="nav_link" id="logout"> <i class='bx bx-log-out nav_icon'></i> <span
-                        class="nav_name">SignOut</span> </a>
-            </nav>
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
         </div>
-        
-        <form name="logoutform" action="{% url 'jobs:logout' %}" id="logoutform">
-          
-        </form>
-        <!--Container Main start-->
-        
-            {% block content %}
-            {% endblock %}
-           
-            
-        <!--Container Main end-->
-    </body>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function (event) {
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
 
-            const showNavbar = (toggleId, navId, bodyId, headerId) => {
-                const toggle = document.getElementById(toggleId),
-                    nav = document.getElementById(navId),
-                    bodypd = document.getElementById(bodyId),
-                    headerpd = document.getElementById(headerId)
+        <!--**********************************
+            Nav header start
+        ***********************************-->
 
-                // Validate that all variables exist
-                if (toggle && nav && bodypd && headerpd) {
-                    toggle.addEventListener('click', () => {
-                        // show navbar
-                        nav.classList.toggle('show')
-                        // change icon
-                        toggle.classList.toggle('bx-x')
-                        // add padding to body
-                        bodypd.classList.toggle('body-pd')
-                        // add padding to header
-                        headerpd.classList.toggle('body-pd')
-                    })
-                }
-            }
+        <div class="nav-header">
+            <a href="{% url 'jobs:home' %}" class="brand-logo">
+                <svg class="logo-abbr" width="50" height="50" viewBox="0 0 2581 2581" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="0.319336" width="2580.38" height="2580.38" rx="207" fill="#F99F00"/>
+                    <path d="M911.658 1216.3L888.056 1326.73H989.209V1456.54H860.239L832.422 1585.51H697.551L725.368 1456.54H585.439L557.622 1585.51H422.752L450.569 1456.54H325.813V1326.73H478.386L501.988 1216.3H379.761V1086.49H528.962L555.936 961.734H690.807L663.833 1086.49H803.761L830.736 961.734H965.606L938.632 1086.49H1043.16V1216.3H911.658ZM776.787 1216.3H636.859L613.257 1326.73H753.185L776.787 1216.3ZM1345.18 993.766C1407.56 993.766 1462.07 1006.13 1508.71 1030.86C1555.35 1055.58 1591.32 1090.42 1616.61 1135.38C1642.46 1179.78 1655.38 1231.19 1655.38 1289.64C1655.38 1347.52 1642.46 1398.94 1616.61 1443.9C1591.32 1488.85 1555.07 1523.7 1507.87 1548.42C1461.23 1573.15 1407 1585.51 1345.18 1585.51H1123.49V993.766H1345.18ZM1335.91 1460.76C1390.42 1460.76 1432.85 1445.86 1463.19 1416.08C1493.54 1386.3 1508.71 1344.15 1508.71 1289.64C1508.71 1235.13 1493.54 1192.7 1463.19 1162.35C1432.85 1132.01 1390.42 1116.84 1335.91 1116.84H1267.63V1460.76H1335.91ZM2079.01 1585.51L1880.08 1324.2V1585.51H1735.94V993.766H1880.08V1253.39L2077.33 993.766H2246.76L2017.48 1283.74L2255.19 1585.51H2079.01Z" fill="white"/>
+                    </svg>
+                    
+                    
+                <!-- <svg class="logo-abbr" width="50" height="50" viewBox="0 0 50 50" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect class="svg-logo-rect" width="50" height="50" rx="6" fill="#EB8153" />
+                    <path class="svg-logo-path"
+                        d="M17.5158 25.8619L19.8088 25.2475L14.8746 11.1774C14.5189 9.84988 15.8701 9.0998 16.8205 9.75055L33.0924 22.2055C33.7045 22.5589 33.8512 24.0717 32.6444 24.3951L30.3514 25.0095L35.2856 39.0796C35.6973 40.1334 34.4431 41.2455 33.3397 40.5064L17.0678 28.0515C16.2057 27.2477 16.5504 26.1205 17.5158 25.8619ZM18.685 14.2955L22.2224 24.6007L29.4633 22.6605L18.685 14.2955ZM31.4751 35.9615L27.8171 25.6886L20.5762 27.6288L31.4751 35.9615Z"
+                        fill="white" />
+                </svg> -->
+                <svg class="brand-title" width="194" height="22" viewBox="0 0 6991 908" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M222.433 84.316C284.811 84.316 339.321 96.6791 385.964 121.405C432.607 146.132 468.572 180.973 493.86 225.93C519.711 270.325 532.636 321.745 532.636 380.189C532.636 438.071 519.711 489.49 493.86 534.447C468.572 579.404 432.326 614.246 385.121 638.972C338.478 663.698 284.249 676.062 222.433 676.062H0.738993V84.316H222.433ZM213.16 551.306C267.671 551.306 310.099 536.414 340.445 506.63C370.791 476.846 385.964 434.699 385.964 380.189C385.964 325.678 370.791 283.25 340.445 252.904C310.099 222.558 267.671 207.386 213.16 207.386H144.882V551.306H213.16ZM685.682 156.809C660.394 156.809 639.602 149.503 623.305 134.892C607.57 119.72 599.702 101.175 599.702 79.2583C599.702 56.7798 607.57 38.2351 623.305 23.6241C639.602 8.45111 660.394 0.864625 685.682 0.864625C710.409 0.864625 730.639 8.45111 746.374 23.6241C762.671 38.2351 770.82 56.7798 770.82 79.2583C770.82 101.175 762.671 119.72 746.374 134.892C730.639 149.503 710.409 156.809 685.682 156.809ZM757.332 205.7V676.062H613.189V205.7H757.332ZM1040.5 198.956C1073.65 198.956 1102.59 205.7 1127.32 219.187C1152.61 232.674 1171.99 250.376 1185.48 272.292V205.7H1329.62V675.219C1329.62 718.49 1320.91 757.546 1303.49 792.388C1286.63 827.791 1260.5 855.889 1225.1 876.682C1190.26 897.474 1146.71 907.871 1094.44 907.871C1024.76 907.871 968.283 891.293 925.012 858.137C881.741 825.543 857.015 781.148 850.833 724.952H993.291C997.786 742.935 1008.46 756.984 1025.32 767.099C1042.18 777.777 1062.97 783.115 1087.7 783.115C1117.48 783.115 1141.09 774.405 1158.51 756.984C1176.49 740.125 1185.48 712.87 1185.48 675.219V608.626C1171.43 630.543 1152.04 648.525 1127.32 662.574C1102.59 676.062 1073.65 682.805 1040.5 682.805C1001.72 682.805 966.597 672.971 935.127 653.302C903.658 633.071 878.65 604.692 860.106 568.165C842.123 531.075 833.131 488.366 833.131 440.038C833.131 391.709 842.123 349.281 860.106 312.753C878.65 276.226 903.658 248.128 935.127 228.459C966.597 208.79 1001.72 198.956 1040.5 198.956ZM1185.48 440.881C1185.48 404.915 1175.37 376.536 1155.14 355.743C1135.47 334.951 1111.3 324.555 1082.64 324.555C1053.98 324.555 1029.54 334.951 1009.31 355.743C989.638 375.974 979.803 404.072 979.803 440.038C979.803 476.003 989.638 504.663 1009.31 526.018C1029.54 546.81 1053.98 557.207 1082.64 557.207C1111.3 557.207 1135.47 546.81 1155.14 526.018C1175.37 505.225 1185.48 476.846 1185.48 440.881ZM1506.4 156.809C1481.11 156.809 1460.32 149.503 1444.02 134.892C1428.29 119.72 1420.42 101.175 1420.42 79.2583C1420.42 56.7798 1428.29 38.2351 1444.02 23.6241C1460.32 8.45111 1481.11 0.864625 1506.4 0.864625C1531.12 0.864625 1551.36 8.45111 1567.09 23.6241C1583.39 38.2351 1591.54 56.7798 1591.54 79.2583C1591.54 101.175 1583.39 119.72 1567.09 134.892C1551.36 149.503 1531.12 156.809 1506.4 156.809ZM1578.05 205.7V676.062H1433.91V205.7H1578.05ZM1944.66 553.835V676.062H1871.33C1819.06 676.062 1778.32 663.417 1749.1 638.129C1719.88 612.279 1705.27 570.413 1705.27 512.531V325.397H1647.95V205.7H1705.27V91.0595H1849.41V205.7H1943.82V325.397H1849.41V514.217C1849.41 528.266 1852.78 538.381 1859.53 544.563C1866.27 550.744 1877.51 553.835 1893.24 553.835H1944.66ZM1996.29 440.038C1996.29 391.709 2005.28 349.281 2023.27 312.753C2041.81 276.226 2066.82 248.128 2098.29 228.459C2129.76 208.79 2164.88 198.956 2203.66 198.956C2236.81 198.956 2265.75 205.7 2290.48 219.187C2315.77 232.674 2335.16 250.376 2348.64 272.292V205.7H2492.79V676.062H2348.64V609.469C2334.59 631.386 2314.93 649.087 2289.64 662.574C2264.91 676.062 2235.97 682.805 2202.81 682.805C2164.6 682.805 2129.76 672.971 2098.29 653.302C2066.82 633.071 2041.81 604.692 2023.27 568.165C2005.28 531.075 1996.29 488.366 1996.29 440.038ZM2348.64 440.881C2348.64 404.915 2338.53 376.536 2318.3 355.743C2298.63 334.951 2274.46 324.555 2245.8 324.555C2217.14 324.555 2192.7 334.951 2172.47 355.743C2152.8 375.974 2142.97 404.072 2142.97 440.038C2142.97 476.003 2152.8 504.663 2172.47 526.018C2192.7 546.81 2217.14 557.207 2245.8 557.207C2274.46 557.207 2298.63 546.81 2318.3 526.018C2338.53 505.225 2348.64 476.846 2348.64 440.881ZM2741.21 52.2842V676.062H2597.07V52.2842H2741.21ZM3367.38 676.062L3168.44 414.749V676.062H3024.3V84.316H3168.44V343.942L3365.69 84.316H3535.12L3305.84 374.288L3543.55 676.062H3367.38ZM3826.16 682.805C3780.08 682.805 3738.5 672.971 3701.41 653.302C3664.88 633.633 3635.94 605.535 3614.58 569.008C3593.79 532.48 3583.4 489.771 3583.4 440.881C3583.4 392.552 3594.07 350.124 3615.43 313.596C3636.78 276.507 3666 248.128 3703.09 228.459C3740.18 208.79 3781.77 198.956 3827.85 198.956C3873.93 198.956 3915.51 208.79 3952.6 228.459C3989.69 248.128 4018.92 276.507 4040.27 313.596C4061.62 350.124 4072.3 392.552 4072.3 440.881C4072.3 489.209 4061.34 531.918 4039.43 569.008C4018.07 605.535 3988.57 633.633 3950.92 653.302C3913.83 672.971 3872.24 682.805 3826.16 682.805ZM3826.16 558.05C3853.7 558.05 3877.02 547.934 3896.13 527.704C3915.8 507.473 3925.63 478.532 3925.63 440.881C3925.63 403.229 3916.08 374.288 3896.97 354.058C3878.43 333.827 3855.39 323.712 3827.85 323.712C3799.75 323.712 3776.43 333.827 3757.88 354.058C3739.34 373.726 3730.07 402.667 3730.07 440.881C3730.07 478.532 3739.06 507.473 3757.04 527.704C3775.59 547.934 3798.63 558.05 3826.16 558.05ZM4435.37 200.642C4490.45 200.642 4534.28 218.625 4566.87 254.59C4600.03 289.994 4616.61 338.885 4616.61 401.262V676.062H4473.31V420.65C4473.31 389.18 4465.16 364.735 4448.86 347.314C4432.56 329.893 4410.65 321.183 4383.11 321.183C4355.57 321.183 4333.66 329.893 4317.36 347.314C4301.06 364.735 4292.92 389.18 4292.92 420.65V676.062H4148.77V205.7H4292.92V268.077C4307.53 247.285 4327.2 230.988 4351.92 219.187C4376.65 206.824 4404.47 200.642 4435.37 200.642ZM4688.11 440.038C4688.11 391.709 4697.1 349.281 4715.09 312.753C4733.63 276.226 4758.64 248.128 4790.11 228.459C4821.58 208.79 4856.7 198.956 4895.48 198.956C4926.38 198.956 4954.48 205.419 4979.77 218.344C5005.62 231.269 5025.85 248.69 5040.46 270.606V52.2842H5184.6V676.062H5040.46V608.626C5026.97 631.105 5007.59 649.087 4982.3 662.574C4957.57 676.062 4928.63 682.805 4895.48 682.805C4856.7 682.805 4821.58 672.971 4790.11 653.302C4758.64 633.071 4733.63 604.692 4715.09 568.165C4697.1 531.075 4688.11 488.366 4688.11 440.038ZM5040.46 440.881C5040.46 404.915 5030.35 376.536 5010.12 355.743C4990.45 334.951 4966.28 324.555 4937.62 324.555C4908.96 324.555 4884.52 334.951 4864.29 355.743C4844.62 375.974 4834.78 404.072 4834.78 440.038C4834.78 476.003 4844.62 504.663 4864.29 526.018C4884.52 546.81 4908.96 557.207 4937.62 557.207C4966.28 557.207 4990.45 546.81 5010.12 526.018C5030.35 505.225 5040.46 476.846 5040.46 440.881ZM5502.99 682.805C5456.91 682.805 5415.33 672.971 5378.24 653.302C5341.71 633.633 5312.77 605.535 5291.41 569.008C5270.62 532.48 5260.23 489.771 5260.23 440.881C5260.23 392.552 5270.9 350.124 5292.26 313.596C5313.61 276.507 5342.83 248.128 5379.92 228.459C5417.01 208.79 5458.6 198.956 5504.68 198.956C5550.76 198.956 5592.34 208.79 5629.43 228.459C5666.52 248.128 5695.75 276.507 5717.1 313.596C5738.45 350.124 5749.13 392.552 5749.13 440.881C5749.13 489.209 5738.17 531.918 5716.26 569.008C5694.9 605.535 5665.4 633.633 5627.75 653.302C5590.66 672.971 5549.07 682.805 5502.99 682.805ZM5502.99 558.05C5530.53 558.05 5553.85 547.934 5572.96 527.704C5592.63 507.473 5602.46 478.532 5602.46 440.881C5602.46 403.229 5592.91 374.288 5573.8 354.058C5555.26 333.827 5532.21 323.712 5504.68 323.712C5476.58 323.712 5453.26 333.827 5434.71 354.058C5416.17 373.726 5406.9 402.667 5406.9 440.881C5406.9 478.532 5415.89 507.473 5433.87 527.704C5452.42 547.934 5475.46 558.05 5502.99 558.05ZM6087.76 553.835V676.062H6014.42C5962.16 676.062 5921.42 663.417 5892.19 638.129C5862.97 612.279 5848.36 570.413 5848.36 512.531V325.397H5791.04V205.7H5848.36V91.0595H5992.5V205.7H6086.91V325.397H5992.5V514.217C5992.5 528.266 5995.88 538.381 6002.62 544.563C6009.36 550.744 6020.6 553.835 6036.34 553.835H6087.76ZM6430.2 553.835V676.062H6356.87C6304.6 676.062 6263.86 663.417 6234.64 638.129C6205.42 612.279 6190.81 570.413 6190.81 512.531V325.397H6133.49V205.7H6190.81V91.0595H6334.95V205.7H6429.36V325.397H6334.95V514.217C6334.95 528.266 6338.32 538.381 6345.07 544.563C6351.81 550.744 6363.05 553.835 6378.78 553.835H6430.2ZM6990.97 205.7L6695.94 899.441H6540.84L6648.74 660.046L6457.39 205.7H6618.39L6727.13 499.887L6835.03 205.7H6990.97Z" fill="#141414"/>
+                    </svg>
+                    
+                <!-- <svg class="brand-title" width="74" height="22" viewBox="0 0 74 22" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="svg-logo-path"
+                        d="M0.784 17.556L10.92 5.152H1.176V1.12H16.436V4.564L6.776 16.968H16.548V21H0.784V17.556ZM25.7399 21.28C24.0785 21.28 22.6599 20.9347 21.4839 20.244C20.3079 19.5533 19.4025 18.6387 18.7679 17.5C18.1519 16.3613 17.8439 15.1293 17.8439 13.804C17.8439 12.3853 18.1519 11.088 18.7679 9.912C19.3839 8.736 20.2799 7.79333 21.4559 7.084C22.6319 6.37467 24.0599 6.02 25.7399 6.02C27.4012 6.02 28.8199 6.37467 29.9959 7.084C31.1719 7.79333 32.0585 8.72667 32.6559 9.884C33.2719 11.0413 33.5799 12.2827 33.5799 13.608C33.5799 14.1493 33.5425 14.6253 33.4679 15.036H22.6039C22.6785 16.0253 23.0332 16.7813 23.6679 17.304C24.3212 17.808 25.0585 18.06 25.8799 18.06C26.5332 18.06 27.1585 17.9013 27.7559 17.584C28.3532 17.2667 28.7639 16.8373 28.9879 16.296L32.7959 17.36C32.2172 18.5173 31.3119 19.46 30.0799 20.188C28.8665 20.916 27.4199 21.28 25.7399 21.28ZM22.4919 12.292H28.8759C28.7825 11.3587 28.4372 10.6213 27.8399 10.08C27.2612 9.52 26.5425 9.24 25.6839 9.24C24.8252 9.24 24.0972 9.52 23.4999 10.08C22.9212 10.64 22.5852 11.3773 22.4919 12.292ZM49.7783 21H45.2983V12.74C45.2983 11.7693 45.1116 11.0693 44.7383 10.64C44.3836 10.192 43.9076 9.968 43.3103 9.968C42.6943 9.968 42.069 10.2107 41.4343 10.696C40.7996 11.1813 40.3516 11.8067 40.0903 12.572V21H35.6103V6.3H39.6423V8.764C40.1836 7.90533 40.949 7.23333 41.9383 6.748C42.9276 6.26267 44.0663 6.02 45.3543 6.02C46.3063 6.02 47.0716 6.19733 47.6503 6.552C48.2476 6.888 48.6956 7.336 48.9943 7.896C49.3116 8.43733 49.517 9.03467 49.6103 9.688C49.7223 10.3413 49.7783 10.976 49.7783 11.592V21ZM52.7548 4.62V0.559999H57.2348V4.62H52.7548ZM52.7548 21V6.3H57.2348V21H52.7548ZM63.4657 6.3L66.0697 10.444L66.3497 10.976L66.6297 10.444L69.2337 6.3H73.8537L68.9257 13.608L73.9657 21H69.3457L66.6017 16.884L66.3497 16.352L66.0977 16.884L63.3537 21H58.7337L63.7737 13.692L58.8457 6.3H63.4657Z"
+                        fill="black" />
+                </svg> -->
+            </a>
 
-            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
 
-            /*===== LINK ACTIVE =====*/
-            const linkColor = document.querySelectorAll('.nav_link')
 
-            function colorLink() {
-                if (linkColor) {
-                    linkColor.forEach(l => l.classList.remove('active'))
-                    this.classList.add('active')
-                }
-            }
-            linkColor.forEach(l => l.addEventListener('click', colorLink))
 
-            // Your code to run since DOM is loaded and ready
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-        $('#example').DataTable();
-    });
+        <!--**********************************
+            Header start
+        ***********************************-->
+
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+
+                            
+                        </div>
+                        <ul class="navbar-nav header-right main-notification">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-theme-mode" href="#">
+                                    <i id="icon-light" class="far fa-sun"></i>
+                                    <i id="icon-dark" class="far fa-moon"></i>
+                                </a>
+                            </li>
+                          
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell dz-fullscreen" href="#">
+                                    <svg id="icon-full" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                        class="css-i6dzq1">
+                                        <path
+                                            d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+                                            style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path>
+                                    </svg>
+                                    <svg id="icon-minimize" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-minimize">
+                                        <path
+                                            d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
+                                            style="stroke-dasharray: 37, 57; stroke-dashoffset: 0;"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                           
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="btn btn-primary" href="{% url 'jobs:add-job' %}">
+                                    Add job
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                                   
+                                    <div class="header-info">
+                                        <span>{{user.first_name}}</span>
+                                        <small>Member</small>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <!-- <a href="../app_profile/index.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a> -->
+                                    <!-- <a href="../email_inbox/index.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                            </path>
+                                            <polyline points="22,6 12,13 2,6"></polyline>
+                                        </svg>
+                                        <span class="ms-2">Inbox </span>
+                                    </a> -->
+                                    <a href="{% url 'jobs:logout' %}" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                            width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                            <polyline points="16 17 21 12 16 7"></polyline>
+                                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                                        </svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                {% block subheader %}
+                
+                {% endblock %}
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+
+
+        <div class="deznav">
+            <div class="deznav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label first">Main Menu</li>
+                    <li><a href="{% url 'jobs:home' %}" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-144-layout"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li><a href="{% url 'jobs:jobs' %}" class="ai-icon" aria-expanded="false">
+                            <i class="flaticon-165-menu"></i>
+                            <span class="nav-text">Jobs</span>
+                        </a>
+                    </li>
+                   
+                  
+                </ul>
+              
+            </div>
+        </div>
+
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+      {% block content %}
+      {% endblock %}
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+
+
+
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="gedexo.com"
+                        target="_blank">Gedexo Design & Technology</a> 2022</p>
+            </div>
+        </div>
+
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+
+
+
+
+{% block js %}
+
+    <script src="{% static 'jobs/vendor/global/global.min.js' %}"></script>
+
+    <script src="{% static 'jobs/vendor/bootstrap-select/dist/js/bootstrap-select.min.js' %}"></script>
+
+    <script src="{% static 'jobs/vendor/datatables/js/jquery.dataTables.min.js' %}"></script>
     
-    $(document).ready(function () {
-        $('#added_jobs').DataTable();   
-    });
-    </script>
-<script>
+    <script src="{% static 'jobs/js/plugins-init/datatables.init.js' %}"></script>
 
-$('#logout').click(function(){
-  
-  swal({
-  title: 'Are you sure?',
-  icon: "warning",
-  buttons: true,
-  dangerMode: true,
-}).then((willDelete) => {
-    if (willDelete) {
-        $('#logoutform').submit()
-  } else {
-    
-  }
-  
-})
+    <script src="{% static 'jobs/js/dashboard/dashboard-1.js' %}"></script>
 
-  
-})
-</script>
+    <script src="{% static 'jobs/js/custom.js' %}"></script>
+
+    <script src="{% static 'jobs/js/deznav-init.js' %}"></script>
+
+    <script src="{% static 'jobs/js/demo.js' %}"></script>
+
+
+{% endblock %}
+
+
+
+
+</body>
+
 </html>

@@ -1,0 +1,70 @@
+{% extends 'jobs/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+  <!--**********************************
+            Content body start
+        ***********************************-->
+    {% block subheader %}
+  <div class="sub-header">
+    <div class="d-flex align-items-center flex-wrap me-auto">
+        <h5 class="dashboard_bar">{{job_applied_user.name}}  Applied for {{job_applied_user.job|truncatechars:50}} job</h5>
+    </div>
+   
+</div>
+{% endblock %}
+
+        <div class="content-body">
+            <div class="container-fluid">
+               <div class="row">
+                <div class="col-md-6">
+                    <iframe src="https://docs.google.com/viewer?url=https://digitalkondotty.com/{{job_applied_user.resume.url}}&embedded=true" frameborder="0" height="500px" width="100%"></iframe>
+                </div>
+                <div class=" col-md-6">
+                    <div class="card {% comment %}user-card{% endcomment %}">
+                        <div class="card-body pb-0">
+                            <div class="d-flex mb-3 align-items-center">
+                                <div>
+                                    <h5 class="title"><a href="javascript:void(0);">{{job_applied_user.name}}</a></h5>
+                                    <span class="text-info">{{job_applied_user.email}}</span>
+                                </div>
+                            </div>
+                            <!-- <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans, and more.</p> -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <span class="mb-0 title">Phone</span> :
+                                    <span class="text-black ms-2">{{job_applied_user.phone}}</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="mb-0 title">Date</span> :
+                                    <span class="text-black ms-2">{{job_applied_user.date}}</span>
+                                </li>
+                               
+                                <li class="list-group-item">
+                                    <span class="mb-0 title">Location</span> :
+                                    <span class="text-black desc-text ms-2">Kondotty</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="mb-0 title">Expected Salary</span> :
+                                    <span class="text-black ms-2">{{job_applied_user.expected_salary}} LPA</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="mb-0 title">Age</span> :
+                                    <span class="text-black ms-2">{{job_applied_user.age}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="tel:{{job_applied_user.phone}}" class="btn btn-info light btn-xs">connect</a>
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+{% endblock %}

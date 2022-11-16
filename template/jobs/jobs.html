@@ -1,0 +1,68 @@
+{% extends 'jobs/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+  <!--**********************************
+            Content body start
+        ***********************************-->
+    {% block subheader %}
+  <div class="sub-header">
+    <div class="d-flex align-items-center flex-wrap me-auto">
+        <h5 class="dashboard_bar">Added Jobs</h5>
+    </div>
+   
+</div>
+{% endblock %}
+
+        <div class="content-body">
+            <div class="container-fluid">
+               <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Jobs</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example3" class="display" style="min-width: 845px">
+                                    <thead>
+                                        <tr>
+                                           
+                                            <th>Job Title</th>
+                                            <th>Location</th>
+                                            <th>Date</th>
+                                            <th>Vacancy</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Job Type</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                   <tbody>
+                                    {% for jobs in jobs %}
+                                    <tr>
+                                        <td>{{jobs.job_title}}</td>
+                                        <td>{{jobs.location}}</td>
+                                        <td>{{jobs.date|date}}</td>
+                                        <td>{{jobs.vacancy}}</td>
+                                        <td>{{jobs.phone}}</td>
+                                        <td>{{jobs.email}}</td>
+                                        <td>{{jobs.job_type}}</td>
+                                        <td>{{jobs.status}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                   </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+{% endblock %}

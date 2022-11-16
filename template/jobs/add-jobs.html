@@ -1,159 +1,189 @@
-
-
-
-
 {% extends 'jobs/partials/base.html' %}
 {% load static %}
 {% block content %}
 <style>
   .errorlist{
     color: red;
-    list-style: none;
   }
-  .text-italic{
-	font-style: italic !important;
-}
 </style>
-<div class="height-100 bg-light">
-<div class="row">
-  
-    <h3 class="font-weight-bold">Add Job</h3>
-   <div class="col-md-10 mx-auto" >
-    <div class="card p-4">
-      <div class="col-md-12">
+<!--**********************************
+            Content body start
+        ***********************************-->
+{% block subheader %}
+<div class="sub-header">
+  <div class="d-flex align-items-center flex-wrap me-auto">
+    <h5 class="dashboard_bar">Add Job</h5>
+  </div>
+
+</div>
+{% endblock %}
+
+<div class="content-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
         {% if messages %}
           
         {% for message in messages %}
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
         <!-- <script>
             alert('{{message}}')
         </script> -->
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-            stroke-linecap="round" stroke-linejoin="round" class="me-2">
-            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-            </path>
-            <line x1="12" y1="9" x2="12" y2="13"></line>
-            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-        </svg>
-        <strong>Warning!</strong> {{message}}.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        {% endif %}
-        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-        <div class="alert alert-success " role="alert">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-        stroke-linecap="round" stroke-linejoin="round" class="me-2">
-        <polyline points="9 11 12 14 22 4"></polyline>
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-    </svg>
-        <strong>Success!</strong> {{message}}.
-         
-          </div>
+        <div class="alert alert-success alert-dismissible fade show">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="me-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>	
+          <strong>Success!</strong> {{message}} .
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+          </button>
+      </div>
         {% endif %}
         {% endfor %}
-        
-    {% endif %}
-      </div>
-        <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Job Title</label>
-                {{form.job_title}}
-                {{form.job_title.errors}}
-
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Vacancy</label>
-                {{form.vacancy}}
-                {{form.vacancy.errors}}
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Phone</label>
-                {{form.phone}}
-                {{form.phone.errors}}
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Company Name</label>
-                {{form.company_name}}
-                {{form.company_name.errors}}
-              </div>  
-              <div class="form-group">
-                <label for="exampleInputEmail1">Basic Requirements</label>
-                {{form.basic_requirements}}
-                {{form.basic_requirements.errors}}
-              </div>  
-              <div class="form-group">
-                <label for="exampleInputEmail1">Facebool Link ( <span class="text-italic">Optional</span> ) </label>
-                {{form.facebook}}
-                {{form.facebook.errors}}
-              </div>  
-              <div class="form-group">
-                <label for="exampleInputEmail1">Linkedin Link ( <span class="text-italic">Optional</span> )</label>
-                {{form.linked_in}}
-                {{form.linked_in.errors}}
-              </div>  
-              <div class="form-group">
-                <label for="exampleInputEmail1">Instagram Link ( <span class="text-italic">Optional</span> )</label>
-                {{form.instagram}}
-                {{form.instagram.errors}}
-              </div>  
-              
+        {% endif %}
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Form Label Size</h4>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Location</label>
-                {{form.location}}
-                {{form.location.errors}}
+            <div class="card-body">
+              <div class="basic-form">
+                <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+
+                  <div class="mb-3 row">
+                    <div class="col-md-6">
+                      <label class="form-label">Job Title</label>
+                      <div class="col-md-12">
+                        {{form.job_title}}
+                        {{form.job_title.errors}}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Location</label>
+                      <div class="col-md-12">
+                        {{form.location}}
+                        {{form.location.errors}}
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="mb-3 row">
+                    <div class="col-md-6">
+                      <label class="form-label">Vacancy</label>
+                      <div class="col-md-12">
+                        {{form.vacancy}}
+                        {{form.vacancy.errors}}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Job Type</label>
+                      <div class="col-md-12">
+                        {{form.job_type}}
+                        {{form.job_type.errors}}
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-md-6">
+                      <label class="form-label">Phone</label>
+                      <div class="col-md-12">
+                        {{form.phone}}
+                        {{form.phone.errors}}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Email</label>
+                      <div class="col-md-12">
+                        {{form.email}}
+                        {{form.email.errors}}
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-md-6">
+                      <label class="form-label">Company Name</label>
+                      <div class="col-md-12">
+                        {{form.company_name}}
+                        {{form.company_name.errors}}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Image</label>
+                      <div class="col-md-12">
+                        {{form.image}}
+                        {{form.image.errors}}
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="mb-3 row">
+                    <div class="col-md-6">
+                      <label class="form-label">Basic Requirements </label>
+                      <div class="col-md-12">
+                        {{form.basic_requirements}}
+                        {{form.basic_requirements.errors}}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">About Company</label>
+                      <div class="col-md-12">
+                        {{form.about_company}}
+                        {{form.about_company.errors}}
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="mb-3 row">
+                    
+                    <div class="col-md-6">
+                      <label class="form-label">About Job</label>
+                      <div class="col-md-12">
+                        {{form.about_job}}
+                        {{form.about_job.errors}}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Facebook Link ( <span class="col-form-label-sm">Optional</span> )</label>
+                      <div class="col-md-12">
+                        {{form.facebook}}
+                        {{form.facebook.errors}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3 row">
+                    
+                    <div class="col-md-6">
+                      <label class="form-label">LinkedIn Link ( <span class="col-form-label-sm">Optional</span> )</label>
+                      <div class="col-md-12">
+                        {{form.linked_in}}
+                        {{form.linked_in.errors}}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Instagram Link ( <span class="col-form-label-sm">Optional</span> )</label>
+                      <div class="col-md-12">
+                        {{form.instagram}}
+                        {{form.instagram.errors}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-end">
+                    <button type="submit" class="btn btn-success">Save Job</button>
+                  </div>
+                </form>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Job Type</label>
-                {{form.job_type}}
-                {{form.job_type.errors}}
-              </div> 
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                {{form.email}}
-                {{form.email.errors}}
-              </div> 
-              <div class="form-group my-3">
-                <label for="exampleInputEmail1">Image</label>
-                {{form.image}}
-                {{form.image.errors}}
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">About Company</label>
-                {{form.about_company}}
-                {{form.about_company.errors}}
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">About Job</label>
-                {{form.about_job}}
-                {{form.about_job.errors}}
-              </div> 
             </div>
           </div>
-            
-          
-           
-           
-            
-           <div class="text-center mt-3">
-            <button type="submit" class="btn btn-primary">Submit</button>
-           </div>
-             
-            
-           
-            
-          </form>
+        </div>
+      </div>
     </div>
-   </div>
-</div>
+  </div>
 </div>
 
+<!--**********************************
+            Content body end
+        ***********************************-->
 
- {% endblock %}
+{% endblock %}

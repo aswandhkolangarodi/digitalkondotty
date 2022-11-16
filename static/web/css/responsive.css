@@ -777,6 +777,13 @@ html body {
 }
 .job_title{
 	margin-top: 15px !important;
+	font-size: 16px !important;
+}
+.advisor{
+	font-size: 16px !important;
+}
+.about_job{
+	font-size: 15px !important;
 }
 .basic_requirements_text{
 	margin-top: 15px !important;

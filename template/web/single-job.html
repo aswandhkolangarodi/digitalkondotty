@@ -78,12 +78,12 @@
                             
                             <strong class="advisor">{{job.company_name}}</strong>
                             
-                            <h5>About Job</h5>
+                            <h5 class="about_job">About Job</h5>
                             <p> {{job.about_job}}.</p>
                             <ul class="check-list">
                                 <li><i class="fas fa-check"></i> {{job.job_type}}</li>
                             </ul>
-                            <h5>About Company</h5>
+                            <h5 class="about_job">About Company</h5>
 
                             <p> {{job.about_company}}. </p>
                             <a class="contact-team" href="tel:+91{{job.phone}}">Contact</a>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="team-details-txt m40">
-                            <h5 class="basic_requirements">Basic Requirements</h5>
+                            <h5 class="basic_requirements about_job">Basic Requirements</h5>
                             <p class="basic_requirements_text">  {{job.basic_requirements}}.</p>
                             <div class="text-center">
                                 <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal">Apply Now</a>
